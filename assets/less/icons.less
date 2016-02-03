@@ -1,0 +1,160 @@
+.stitches-i(@x: 0, @y: 0, @width: 0, @height: 0) {
+	background-position: @x @y;
+	width: @width;
+	height: @height;
+}
+
+.i {
+	background-image: url(../images/icons/spritesheet.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+
+	&.i-arrow-l {
+		.stitches-i(-5px, -5px, 51px, 110px);
+	}
+
+	&.i-arrow-r {
+		.stitches-i(-66px, -5px, 51px, 110px);
+	}
+
+	&.i-arrow-top {
+		.stitches-i(-127px, -5px, 31px, 18px);
+	}
+
+	&.i-arrow-y-l {
+		.stitches-i(-168px, -5px, 51px, 110px);
+	}
+
+	&.i-arrow-y-r {
+		.stitches-i(-229px, -5px, 51px, 110px);
+	}
+
+	&.i-back-2 {
+		.stitches-i(-290px, -5px, 24px, 20px);
+	}
+
+	&.i-burger {
+		.stitches-i(-324px, -5px, 24px, 22px);
+	}
+
+	&.i-calc {
+		.stitches-i(-358px, -5px, 25px, 19px);
+	}
+
+	&.i-close {
+		.stitches-i(-393px, -5px, 25px, 24px);
+	}
+
+	&.i-close-w {
+		.stitches-i(-428px, -5px, 29px, 29px);
+	}
+
+	&.i-labirint {
+		.stitches-i(-467px, -5px, 26px, 26px);
+	}
+
+	&.i-lavels {
+		.stitches-i(-503px, -5px, 37px, 35px);
+	}
+
+	&.i-nav {
+		.stitches-i(-550px, -5px, 26px, 26px);
+	}
+
+	&.i-readmore {
+		.stitches-i(-586px, -5px, 24px, 24px);
+	}
+
+	&.i-select-arrow {
+		.stitches-i(-620px, -5px, 12px, 7px);
+	}
+}
+
+@font-face {
+	font-family: "phoenix-icons";
+	src: url("../fonts/phoenix-icons.eot");
+	src: url("../fonts/phoenix-icons.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/phoenix-icons.woff") format("woff"),
+		url("../fonts/phoenix-icons.ttf") format("truetype"),
+		url("../fonts/phoenix-icons.svg#phoenix-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: "phoenix-icons" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="if-"]:before,
+[class*=" if-"]:before {
+	font-family: "phoenix-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.if {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.if-3d:before {
+  content: "\61";
+}
+.if-arrow-left:before {
+  content: "\62";
+}
+.if-arrow-right:before {
+  content: "\63";
+}
+.if-back:before {
+  content: "\64";
+}
+.if-uparrow:before {
+  content: "\65";
+}
+.if-circlearrow:before {
+  content: "\66";
+}
+.if-up-arrow:before {
+  content: "\67";
+}
+.if-cross:before {
+  content: "\68";
+}
+.if-digits:before {
+  content: "\69";
+}
+.if-downarrow:before {
+  content: "\6a";
+}
+.if-filter:before {
+  content: "\6b";
+}
+.if-menu-icon:before {
+  content: "\6c";
+}
+.if-scroll:before {
+  content: "\6d";
+}
+.if-two-levels:before {
+  content: "\6e";
+}
+.if-eye:before {
+  content: "\6f";
+}
