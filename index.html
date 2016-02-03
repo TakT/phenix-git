@@ -1,57 +1,885 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Phenix-git by TakT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Phenix-git</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/TakT/phenix-git" class="btn">View on GitHub</a>
-      <a href="https://github.com/TakT/phenix-git/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/TakT/phenix-git/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Главная</title>
 
-    <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+		<meta name="viewport" content="width=1024px, initial-scale=1.0, maximum-scale=1.0">
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+		<link rel="stylesheet" href="./assets/css/styles.css">
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+	</head>
+	<body class="main__page">
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+		<header id="header">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-xs-3 header__logo">
+						<a href="./index.html" title="">
+							<img src="./assets/images/logo.svg" alt="">
+						</a>
+					</div>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+					<div class="col-xs-3 header__menu header__menu-pl">
+						<ul class="list-unstyled">
+							<li>
+								<a href="./about-developer.html" title="О застройщике">О застройщике</a>
+							</li>
+							<li>
+								<a href="./documents.html" title="Проектная документация">Проектная документация</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" title="Акции">Акции</a>
+							</li>
+							<li>
+								<a href="./contacts.html" title="Контакты">Контакты</a>
+							</li>
+						</ul>
+					</div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+					<div class="col-xs-3 header__menu">
+						<ul class="list-unstyled">
+							<li>
+								<a href="./commercial.html" title="Коммерческие помещения">Коммерческие помещения</a>
+							</li>
+							<li>
+								<a href="./parking.html" title="Паркинг">Паркинг</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" title="Ипотека">Ипотека</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);" title="Рассрочка">Рассрочка</a>
+							</li>
+						</ul>
+						</ul>
+					</div>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+					<div class="col-xs-3 header__info">
+						<div class="header__lang">
+							<a href="javascript:void(0);" title="RU" class="active">RU</a>
+							<span> / </span>
+							<a href="javascript:void(0);" title="EN">EN</a>
+						</div>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+						<div class="info__phones">
+							<div class="phone">
+								<a href="tel:+7 (929) 899-89-89" title="+7 (929) 899-89-89">+7 (929) 899-89-89</a>
+							</div>
+							<div class="phone">
+								<a href="tel:+7 (8712) 29-53-24" title="+7 (8712) 29-53-24">+7 (8712) 29-53-24</a>
+							</div>
+						</div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/TakT/phenix-git">Phenix-git</a> is maintained by <a href="https://github.com/TakT">TakT</a>.</span>
+						<div class="info__callback">
+							<a href="javascript:void(0);" title="Заказать обратный звонок">Заказать обратный звонок</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+		<section id="navigation">
+			<div class="container">
+				<div class="row">
+					
+					<ul class="list-inline navigation__wrapper">
+						<li>
+							<a href="./index.html" title="Главная">Главная</a>
+						</li>
+						<li class="">
+							<a href="./about.html" title="О комплексе">О комплексе</a>
+							<div class="navigation__sub">
+								<ul class="list-inline">
+									<li>
+										<a href="./about.html#about-desc" title="Описание">Описание</a>
+									</li>
+									<li>
+										<a href="./about.html#architecture" title="Архитектура">Архитектура</a>
+									</li>
+									<li>
+										<a href="./about.html#interiors" title="Интерьеры">Интерьеры</a>
+									</li>
+									<li>
+										<a href="./about.html#accomplishment" title="Благоустройство">Благоустройство</a>
+									</li>
+									<li>
+										<a href="./about.html#infrastructure" title="Инфраструктура">Инфраструктура</a>
+									</li>
+									<li>
+										<a href="./about.html#security" title="Инженерия и безопасность">Инженерия и безопасность</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="./location.html" title="Местоположение">Местоположение</a>
+							<div class="navigation__sub">
+								<ul class="list-inline">
+									<li>
+										<a href="./location.html#location-info" title="Расположение">Расположение</a>
+									</li>
+									<li>
+										<a href="./location.html#locat-radius" title="Ближайшее окружение комплекса">Ближайшее окружение комплекса</a>
+									</li>
+									<li>
+										<a href="./location.html#mosque" title="Мечеть">Мечеть</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:void(0);" title="Выбрать квартиру">Выбрать помещение</a>
+							<div class="navigation__sub">
+								<ul class="list-inline">
+									<li>
+										<a href="./selection-flats.html" title="Квартиры">Квартиры</a>
+									</li>
+									<li>
+										<a href="./selection-premises.html" title="Коммерческие помещения">Коммерческие помещения</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Выбор по параметрам">Выбор по параметрам</a>
+									</li>
+									<li>
+										<a href="./3d-tour.html" title="3D-тур">3D-тур</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="./gallery.html" title="Галерея">Галерея</a>
+						</li>
+						<li>
+							<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" title="Программа лояльности" class="text-lgreen">Программа лояльности</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-    </section>
+		<section id="indexslider">
 
-  
-  </body>
+			<div class="indexslider__wrapper">
+				
+				<div class="slider__wrapper">
+					<div class="slider__item">
+						<div class="slider__item-inner">
+							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content">ЖК «Феникс»<br>центр деловой жизни</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slider__item">
+						<div class="slider__item-inner">
+							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content">ЖК «Феникс»<br>центр деловой жизни</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slider__item">
+						<div class="slider__item-inner">
+							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content">ЖК «Феникс»<br>центр деловой жизни</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slider__item">
+						<div class="slider__item-inner">
+							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content">ЖК «Феникс»<br>центр деловой жизни</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="slider__item">
+						<div class="slider__item-inner">
+							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content">ЖК «Феникс»<br>центр деловой жизни</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container slick-arrows">
+					
+					<a href="javascript:void(0);" class="slick-prev slick-arrow" title="Назад">
+						<i class="i i-arrow-l"></i>
+					</a>
+					<a href="javascript:void(0);" class="slick-next slick-arrow" title="Вперед">
+						<i class="i i-arrow-r"></i>
+					</a>
+
+				</div>
+
+				<div class="container slider__desc">
+					<div class="slider__actions">
+						<a href="javascript:void(0);" class="btn btn-light-green" title="ЖК «Феникс» в цифрах"><i class="i i-labirint"></i>ЖК «Феникс» в цифрах</a>
+						<a href="javascript:void(0);" class="btn btn-light-green" title="Прогуляться по ЖК «Феникс»"><i class="i i-nav"></i>Прогуляться по ЖК «Феникс»</a>
+					</div>
+
+					<div class="slider__scroll text-center">
+						<a href="javascript:void(0);" title="ИСПОЛЬЗУЙТЕ КОЛЕСИКО МЫШИ">
+							<img src="./assets/images/hedaer-scroll.png" alt="ИСПОЛЬЗУЙТЕ КОЛЕСИКО МЫШИ">
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		<section id="news" class="section">
+			<div class="container">
+				<div class="page__title">
+					<span>Новости и акции</span>
+				</div>
+
+				<div class="news__wrapper">
+
+					<div class="news__item row">
+						<div class="item__date">
+							<div class="item__date-wrapper">
+								<div class="date__day">8</div>
+								<div class="date__month">октября</div>
+							</div>
+						</div>
+
+						<div class="item__desc">
+							<div class="item__title">ЖК «Феникс» объявляет сезонную скидку региональным клиентам</div>
+							<div class="item__text">Спешите! Только в период с 10 октября по 31 декабря 2015 года региональным клиентам, желающим преобрести апартаменты в ЖК «Феникс», предоставляется 15% скидка</div>
+						</div>
+
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Подробнее">Подробнее<i class="i i-readmore"></i></a>
+						</div>
+					</div>
+
+					<div class="news__item row">
+						<div class="item__date">
+							<div class="item__date-wrapper">
+								<div class="date__day">8</div>
+								<div class="date__month">октября</div>
+							</div>
+						</div>
+
+						<div class="item__desc">
+							<div class="item__title">ЖК «Феникс» объявляет сезонную скидку региональным клиентам</div>
+							<div class="item__text">Спешите! Только в период с 10 октября по 31 декабря 2015 года региональным клиентам, желающим преобрести апартаменты в ЖК «Феникс», предоставляется 15% скидка</div>
+						</div>
+
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Подробнее">Подробнее<i class="i i-readmore"></i></a>
+						</div>
+					</div>
+
+					<div class="news__item row">
+						<div class="item__date">
+							<div class="item__date-wrapper">
+								<div class="date__day">8</div>
+								<div class="date__month">октября</div>
+							</div>
+						</div>
+
+						<div class="item__desc">
+							<div class="item__title">ЖК «Феникс» объявляет сезонную скидку региональным клиентам</div>
+							<div class="item__text">Спешите! Только в период с 10 октября по 31 декабря 2015 года региональным клиентам, желающим преобрести апартаменты в ЖК «Феникс», предоставляется 15% скидка</div>
+						</div>
+
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Подробнее">Подробнее<i class="i i-readmore"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center">
+					<a href="javascript:void(0);" title="Оформить заявку" class="btn btn-yellow">Оформить заявку</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="features" class="section">
+			<div class="clearfix">
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/1.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">01</div>
+						<div class="item__title">Удобное местоположение</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/2.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">02</div>
+						<div class="item__title">Современная архитектура</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/3.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">03</div>
+						<div class="item__title">Инженерия и безопасность</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix">
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/4.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">04</div>
+						<div class="item__title">Роскошные интерьеры</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/5.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">05</div>
+						<div class="item__title">Развитая инфраструктура</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-4 features__item">
+					<div class="item__img">
+						<img src="./assets/images/features/6.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="item__wrapper">
+						<div class="item__step">06</div>
+						<div class="item__title">Предложения от застройщика</div>
+						<div class="item__desc">«Жилье в рассрочку» - это финансовый продукт, позволяющий приобрести жилье с рассрочкой платежа и жить в нем, постепенно его выкупая. Узнайте подробнее о преобретении квартиры в ЖК «Феникс» в рассрочку.</div>
+						<div class="item__readmore">
+							<a href="javascript:void(0);" title="Узнать больше">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="statistic" class="section">
+			<div class="page__title">
+				<span>ЖК «Феникс» в цифрах</span>
+			</div>
+			
+			<div class="text-right clearfix statistic__img">
+				<img src="./assets/images/circle.svg" alt="" class="img__circle">
+				<img src="./assets/images/statistic.png" alt="" class="img__house img-responsive pull-right">
+			</div>
+
+			<div class="statistic__info">
+				<div class="info__item">
+					<div class="item__title">129</div>
+					<div class="item__desc">Количество апартаментов</div>
+				</div>
+				
+				<div class="info__item">
+					<div class="item__title">67-260 м<sup>2</sup></div>
+					<div class="item__desc">Площадь апартаментов</div>
+				</div>
+				
+				<div class="info__item">
+					<div class="item__title">12</div>
+					<div class="item__desc">Минут до Кремля</div>
+				</div>
+				
+				<div class="info__item">
+					<div class="item__title">42 510 м<sup>2</sup></div>
+					<div class="item__desc">Общая площадь</div>
+				</div>
+				
+				<div class="info__item">
+					<div class="item__title">4-7</div>
+					<div class="item__desc">Этажей</div>
+				</div>
+
+				<div class="info__item">
+					<div class="item__title">279</div>
+					<div class="item__desc">Машиномест в подземном <br>паркинге</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="content" class="section">
+			<div class="container">
+				<div class="page__title">
+					<span>ЖК «Феникс»</span>
+				</div>
+
+				<p>Жилой комплекс «Феникс» – это 40-этажная 145-ти метровая башня, которая входит в состав нового бизнес-квартала «Грозный-Сити» (несколько высотных зданий, расположенных в центре города на берегу реки Сунжа). Небоскреб – самое высокое здание России за пределами Москвы.</p>
+				<p>Первоначально здание носило название «Олимп», однако после пожара в апреле 2013 года восстановленный жилой комплекс получил новое имя «Феникс». За пять месяцев восстановительных работ строители полностью сняли всю внешнюю обшивку сгоревшего здания, очистили башню от копоти, установили стеклопакеты и провели облицовочные работы. Жилой комплекс «Феникс» – это 40-этажная 145-ти метровая башня, которая входит в состав нового бизнес-квартала «Грозный-Сити» (несколько высотных зданий, расположенных в центре города на берегу реки Сунжа). Небоскреб – самое высокое здание России за пределами Москвы.</p>
+				<p>Первоначально здание носило название «Олимп», однако после пожара в апреле 2013 года восстановленный жилой комплекс получил новое имя «Феникс». За пять месяцев восстановительных работ строители полностью сняли всю внешнюю обшивку сгоревшего здания, очистили башню от копоти, установили стеклопакеты и провели облицовочные работы. Нового бизнес-квартала «Грозный-Сити» (несколько высотных зданий, расположенных в центре города на берегу реки Сунжа). Небоскреб – самое высокое здание России за пределами Москвы.</p>
+				<p>Жилой комплекс «Феникс» – это 40-этажная 145-ти метровая башня, которая входит в состав нового бизнес-квартала «Грозный-Сити» (несколько высотных зданий, расположенных в центре города на берегу реки Сунжа). Небоскреб – самое высокое здание России за пределами Москвы. <br>Первоначально здание носило название «Олимп», однако после пожара в апреле 2013 года восстановленный жилой комплекс получил новое имя «Феникс». За пять месяцев восстановительных работ строители полностью сняли всю внешнюю обшивку сгоревшего здания, очистили башню от копоти, установили стеклопакеты и провели облицовочные работы.</p>
+			</div>
+		</section>
+
+		<!-- Modal Question -->
+		<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="i i-close"></i></span></button>
+						<h4 class="modal-title" id="questionLabel">Обратная связь</h4>
+					</div>
+					<div class="modal-body">
+						<form action="" method="POST" role="form">
+							<fieldset>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="">Ваше имя</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">E-mail</label>
+											<input type="email" class="form-control" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">Телефон</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="">Сообщение</label>
+										<textarea name="" class="form-control"></textarea>
+									</div>
+								</div>
+							</fieldset>
+							
+							<div class="form__submit">
+								<button type="submit" class="btn btn-light-green">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Callback -->
+		<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="callbackLabel">
+			<div class="modal-dialog modal-dialog-min" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="i i-close"></i></span></button>
+						<h4 class="modal-title" id="callbackLabel">Обратный звонок</h4>
+					</div>
+					<div class="modal-body">
+						<form action="" method="POST" role="form">
+							<fieldset>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="">Ваше имя</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="">Телефон</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="">Удобное время для звонка</label>
+										<div class="select-style form-control">
+											<select>
+												<option value="1">c 12:00 до 15:00</option>
+												<option value="1">c 13:00 до 16:00</option>
+												<option value="1">c 14:00 до 17:00</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+							
+							<div class="form__submit">
+								<button type="submit" class="btn btn-light-green">Позвоните мне</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Modal Reservations -->
+		<div class="modal fade" id="reservations" tabindex="-1" role="dialog" aria-labelledby="reservationsLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="i i-close"></i></span></button>
+						<h4 class="modal-title" id="reservationsLabel">Забронировать <br>квартиру № 38</h4>
+					</div>
+					<div class="modal-body">
+						<form action="" method="POST" role="form">
+							<fieldset>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="">Ваше имя</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">E-mail</label>
+											<input type="email" class="form-control" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">Телефон</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="">Сообщение</label>
+										<textarea name="" class="form-control"></textarea>
+									</div>
+								</div>
+							</fieldset>
+							
+							<div class="form__submit">
+								<button type="submit" class="btn btn-light-green">Оформить заявку</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Reservations Office -->
+		<div class="modal fade" id="reservationsOffice" tabindex="-1" role="dialog" aria-labelledby="reservationsOfficeLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="i i-close"></i></span></button>
+						<h4 class="modal-title" id="reservationsOfficeLabel">Забронировать <br>офисное помещние № 15</h4>
+					</div>
+					<div class="modal-body">
+						<form action="" method="POST" role="form">
+							<fieldset>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="">Ваше имя</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">E-mail</label>
+											<input type="email" class="form-control" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="">Телефон</label>
+											<input type="text" class="form-control" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="">Сообщение</label>
+										<textarea name="" class="form-control"></textarea>
+									</div>
+								</div>
+							</fieldset>
+							
+							<div class="form__submit">
+								<button type="submit" class="btn btn-light-green">Оформить заявку</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="to-top-wrapper">
+			<a href="javascript:void(0);" title="Наверх" class="to-top js-to-top"><i class="i i-arrow-top"></i><br>Наверх</a>
+		</div>
+
+		<footer id="footer">
+			<div class="footer__menus">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2 menu__item menu__item-1">
+							<h4 class="item__title">информация</h4>
+							<ul class="item__menu">
+								<li>
+									<a href="./about-developer.html" title="О застройщике">О застройщике</a>
+								</li>
+								<li>
+									<a href="./documents.html" title="Документация">Документация</a>
+								</li>
+								<li>
+									<a href="./news.html" title="Новости">Новости</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" title="Акции">Акции</a>
+								</li>
+								<li>
+									<a href="./contacts.html" title="Контакты">Контакты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-3 menu__item menu__item-2">
+							<h4 class="item__title">о комплексе</h4>
+							<ul class="item__menu">
+								<li>
+									<a href="./about.html#about-desc" title="Описание">Описание</a>
+								</li>
+								<li>
+									<a href="./about.html#architecture" title="Архитектура">Архитектура</a>
+								</li>
+								<li>
+									<a href="./about.html#interiors" title="Интерьеры">Интерьеры</a>
+								</li>
+								<li>
+									<a href="./about.html#accomplishment" title="Благоустройство">Благоустройство</a>
+								</li>
+								<li>
+									<a href="./about.html#infrastructure" title="Инфраструктура">Инфраструктура</a>
+								</li>
+								<li>
+									<a href="./about.html#security" title="Инженерия и безопасность">Инженерия и безопасность</a>
+								</li>
+								<li>
+									<a href="./location.html#location-info" title="Расположение">Расположение</a>
+								</li>
+								<li>
+									<a href="./location.html#locat-radius" title="Ближайшее окружение комплекса">Ближайшее окружение комплекса</a>
+								</li>
+								<li>
+									<a href="./location.html#mosque" title="Мечеть">Мечеть</a>
+								</li>
+								<li>
+									<a href="./gallery.html" title="Галерея">Галерея</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-2 menu__item menu__item-3">
+							<h4 class="item__title">покупка</h4>
+							<ul class="item__menu">
+								<li>
+									<a href="./selection-flats.html" title="Выбрать квартиру">Выбрать квартиру</a>
+								</li>
+								<li>
+									<a href="./selection-premises.html" title="Коммерческое помещение">Коммерческое помещение</a>
+								</li>
+								<li>
+									<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" title="Ипотека">Ипотека</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" title="Рассрочка">Рассрочка</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-2 menu__item menu__item-4">
+							<h4 class="item__title">квартиры</h4>
+							<ul class="item__menu">
+								<li>
+									<a href="javascript:void(0);" title="2-комнатные">2-комнатные</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" title="4-комнатные">4-комнатные</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" title="2-уровневые">2-уровневые</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-3 menu__item menu__item-5">
+							<h4 class="item__title">коммерческие помещения</h4>
+							<div class="item__menu-sub">
+								<div class="item__menu-title">1 этаж</div>
+								<ul class="item__menu">
+									<li>
+										<a href="javascript:void(0);" title="Офисные помещения">Офисные помещения</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Торговые помещения">Торговые помещения</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Рестораны">Рестораны</a>
+									</li>
+								</ul>
+							</div>
+							<div class="item__menu-sub">
+								<div class="item__menu-title">2 этаж</div>
+								<ul class="item__menu">
+									<li>
+										<a href="javascript:void(0);" title="Офисные помещения">Офисные помещения</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Торговые помещения">Торговые помещения</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="text-center footer__loyalty">
+						<a href="javascript:void(0);" title="программа лояльности">программа лояльности</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer__info">
+				<div class="container">
+					
+					<div class="col-xs-2 footer__logo-wrapper">
+						<div class="footer__logo">
+							<a href="javascript:void(0);" title="">
+								<img src="./assets/images/footer-logo.svg" alt="">
+							</a>
+						</div>
+						<div class="footer__copyright">&copy; 2015 ЖК «Феникс» </div>
+					</div>
+
+					<div class="col-xs-3 info__item info__item-1">
+						<div class="info__item-phones">+7 (929) 899-89-89<br>+7 (8712) 29-53-24</div>
+						<div class="info__item-menu">
+							<ul>
+								<li>
+									<a href="./sitemap.html" data-target="#reservations" data-toggle="modal" title="Карта сайта">Карта сайта</a>
+								</li>
+								<li>
+									<a href="#callback" title="Заказать обратный звонок" data-target="#callback" data-toggle="modal" class="text-yellow">Заказать обратный звонок</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-xs-2 info__item info__item-2">
+						<div class="info__item-phones">Пн-Пт: 9:00–19:00 <br>Сб: 10:00–15:00</div>
+						<div class="info__item-menu">
+							<ul>
+								<li>
+									<a href="mailto:info@fenix-zhk.ru" title="info@fenix-zhk.ru">info@fenix-zhk.ru</a>
+								</li>
+								<li>
+									<a href="#question" title="Обратная связь" data-target="#question" data-toggle="modal" class="text-yellow">Обратная связь</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-xs-3 info__item info__item-3">
+						<div class="info__item-phones">Офис продаж<br>г. Грозный, ул. Димаева, 14</div>
+						<div class="info__item-menu">
+							<ul>
+								<li>
+									<a href="#contacts-form-map" title="Схема проезда">Схема проезда</a>
+								</li>
+								<li>
+									<a href="#reservationsOffice" title="Проектная документация" data-target="#reservationsOffice" data-toggle="modal">Проектная документация</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-xs-2 info__item info__item-4 text-right">
+						<a href="javascript:void(0);" target="_blank" title="BY DESIGN CREATOR" class="logo-dev"></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+
+		<script type="text/javascript" src="./assets/js/bootstrap.modal.min.js"></script>
+		<script type="text/javascript" src="./assets/js/template.js"></script>
+
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				var slider = jQuery('#indexslider .slider__wrapper').slick({
+					arrows: false,
+					dots: true,
+				});
+
+				jQuery('#indexslider .slick-prev').on('click', function(event) {
+					slider.slick('slickPrev');
+				});
+				jQuery('#indexslider .slick-next').on('click', function(event) {
+					slider.slick('slickNext');
+				});
+			});
+		</script>
+	</body>
 </html>
