@@ -2242,6 +2242,8 @@ form {
 			.modal-content {
 				height: 100%;
 				background: #fff;
+				border-radius: 0;
+				border: none;
 				padding: 105px 65px 50px 105px;
 				padding: 9.8vh 3.4vw 6.4vh 5.4vw;
 			}
@@ -2684,7 +2686,7 @@ form {
 		z-index: 798;
 		top: 60px;
 		// top: 5.8vh;
-		top: 3.1vw;
+		top: 3.13vw;
 		right: 60px;
 		right: 3.1vw;
 		> a {
@@ -2712,7 +2714,7 @@ form {
 		top: 50px;
 		top: 3.5vw;
 		right: 60px;
-		right: 3.9vw;
+		right: 3.13vw;
 		display: none;
 		> a {
 			padding: 0;
@@ -2727,7 +2729,7 @@ form {
 
 	.fullscreen__menu-back {
 		left: 60px;
-		left: 3.9vw;
+		left: 3.13vw;
 		right: auto;
 		> a {
 			padding: 4px 18px;
@@ -2944,15 +2946,15 @@ form {
 			width: 100%;
 			padding-left: 160px;
 			padding-right: 100px;
-			padding-left: 8.34vw;
-			padding-right: 5.22vw;
-			top: 200px;
-			top: 21vh;
+			padding-left: 8.4vw;
+			padding-right: 8.22vw;
+			top: 220px;
+			top: 20.4vh;
 			color: #fff;
 
 			.params {
-				margin-bottom: 162px;
-				margin-bottom: 10vh;
+				margin-bottom: 154px;
+				margin-bottom: 14.3vh;
 				.param {
 					margin-bottom: 100px;
 					margin-bottom: 9.3vh;
@@ -2960,15 +2962,21 @@ form {
 
 					.param__title {
 						color: #fff;
-						font-size: 22.5px;
-						font-size: 1.15vw;
+						font-size: 14px;
+						font-size: 0.65vw;
 						font-family: @fontGRegular;
 						padding-top: 40px;
+						padding-left: 0;
 						// width: 180px;
+					}
+
+					.param__content {
+						padding: 0;
 					}
 
 					.param__items {
 						font-size: 0;
+						padding-left: 36px;
 						.param__item {
 							display: inline-block;
 							vertical-align: top;
@@ -2983,11 +2991,11 @@ form {
 
 							&.param__item-icon {
 								a {
-									font-size: 19.7px;
-									font-size: 1.027vw;
+									font-size: 14px;
+									font-size: 0.73vw;
 									font-family: @fontGRegular;
 									padding: 33px 65px;
-									padding: 3.4vh 3.36vw;
+									padding: 2.9vh 2.75vw;
 									line-height: 100%;
 									vertical-align: bottom;
 									.if {
@@ -3004,16 +3012,16 @@ form {
 							}
 
 							a {
-								padding: 0px 14px;
-								padding: 0 0.76vw;
-								line-height: 12.7vh;
-								height: 102px;
-								height: 10.7vh;
+								padding: 0px 20px;
+								padding: 0 1.04vw;
+								line-height: 10.4vh;
+								height: 95px;
+								height: 8.8vh;
 								display: inline-block;
 								color: @yellow;
 								border: 1px solid @yellow;
-								font-size: 87px;
-								font-size: 8.05vh;
+								font-size: 62px;
+								font-size: 5.74vh;
 								font-family: @fontWarnRegular;
 								text-decoration: none;
 								text-align: center;
@@ -3029,12 +3037,14 @@ form {
 
 					&.param__range {
 						&.first__range {
-							margin-bottom: 55px;
-							margin-bottom: 5.1vh;
+							margin-bottom: 42px;
+							margin-bottom: 3.88vh;
 						}
 						.param__title {
-							padding-top: 110px;
-							padding-top: 10.2vh;
+							padding-top: 101px;
+							padding-top: 9.4vh;
+							padding-right: 0;
+							margin-right: -30px;
 						}
 						+ .param__range {
 							margin-bottom: 7.8vh;
@@ -3051,7 +3061,7 @@ form {
 			}
 
 			.filter__results {
-				margin-top: 35px;
+				margin-top: 13px;
 
 				table {
 					th.floor {
@@ -3084,29 +3094,29 @@ form {
 	}
 	&:not(checked)+label {
 		margin-left: 0;
-		padding: 0 0 0 54px;
-		padding: 0px 0 0 2.8vw;
+		padding: 0 0 0 44px;
+		padding: 0px 0 0 2.3vw;
 		position: relative;
 		line-height: 100%;
 		&:before {
-			width: 34px;
-			width: 1.8vw;
-			height: 34px;
-			height: 1.8vw;
+			width: 23px;
+			width: 1.2vw;
+			height: 23px;
+			height: 1.2vw;
 			background: url(../images/icons/checkbox-off.svg) no-repeat;
 			content: '';
 			left: 0;
 			position: absolute;
-			top: -4px;
+			top: 7px;
 		}
 	}
 	&:hover+label,
 	&:checked+label {
 		&:before {
-			width: 34px;
-			width: 1.8vw;
-			height: 34px;
-			height: 1.8vw;
+			width: 23px;
+			width: 1.2vw;
+			height: 23px;
+			height: 1.2vw;
 			background: url(../images/icons/checkbox-on.svg) no-repeat;
 		}
 		&:after {
@@ -3129,7 +3139,7 @@ form {
 				font-family: @fontWarnRegular;
 				padding: 0 10px;
 				padding-bottom: 50px;
-				padding-bottom: 5.3vh;
+				padding-bottom: 4.65vh;
 				border-bottom: 3px solid #fff;
 				text-shadow: none;
 			}
@@ -3147,6 +3157,7 @@ form {
 				border: none;
 				border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 				text-align: center;
+				padding: 14px 8px;
 			}
 
 			&:hover {
@@ -3174,32 +3185,42 @@ form {
 
 .flatschange__page {
 	#premises .premises__content .params {
-		margin-bottom: 90px;
-		margin-bottom: 9vh;
+		margin-bottom: 105px;
+		margin-bottom: 9.7vh;
 	}
 }
 
 .types {
 	.clearfix();
+
+	.type {
+		padding-left: 0;
+		padding-right: 0;
+
+		&[class*="offset"] {
+			margin-left: 142px;
+		}
+	}
+
 	.type__title {
 		color: @yellow;
-		font-size: 31px;
-		font-size: 1.62vw;
+		font-size: 30px;
+		font-size: 1.566vw;
 		font-family: @fontWarnRegular;
 		margin-top: -4px;
 		margin-bottom: 25px;
 	}
 
 	.type__item {
-		margin-bottom: 18px;
+		margin-bottom: 26px;
 		label {
 			color: #fff;
-			font-size: 19.7px;
-			font-size: 1.027vw;
+			font-size: 14px;
+			font-size: 0.73vw;
 			font-weight: 400;
 			font-family: @fontGRegular;
-			padding-top: 5px;
-			padding-top: 0.55vh;
+			padding-top: 10px;
+			padding-top: 0.95vh;
 			margin-bottom: 0;
 		}
 
@@ -3271,6 +3292,22 @@ form {
 				padding-top: 18px;
 				.item__title {
 					margin-bottom: -11px;
+				}
+			}
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		&.info__item-level {
+			padding-top: 0;
+			.info-col {
+				text-align: left;
+				vertical-align: middle;
+				.item__desc {
+					line-height: 25.3px;
+					line-height: 2.7vh;
 				}
 			}
 		}
@@ -3354,6 +3391,22 @@ form {
 				line-height: 25.3px;
 				line-height: 1.35vw;
 				font-family: @fontGRegular;
+			}
+		}
+	}
+}
+
+.js-level_changer {
+	.level {
+		display: block;
+		width: 90px;
+		width: 4.67vw;
+		margin: 0 auto;
+
+		&.active,
+		&:hover {
+			.cls-1 {
+				fill: @yellow;
 			}
 		}
 	}

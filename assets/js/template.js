@@ -25,6 +25,13 @@ jQuery(document).ready(function($) {
 		jQuery(this).toggleClass('active');
 	});
 
+	jQuery('body').on('click', '.js-level_changer .level', function(event) {
+		event.preventDefault();
+
+		jQuery(this).parents('.js-level_changer').children('.level.active').removeClass('active');
+		jQuery(this).toggleClass('active');
+	});
+
 	jQuery('#content').on('click', '.js-news-readmore', function(event) {
 		var newsItem = jQuery(this).parents('.news__item');
 		toggleNews(newsItem);
