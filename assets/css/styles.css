@@ -2728,6 +2728,8 @@ form .select-style select:focus {
 .fullscreen__page #premises .premises__content .customScrollBar {
   height: 598px;
   height: 56vh;
+  margin-right: -60px;
+  margin-right: -3.14vw;
 }
 .fullscreen__page #premises .premises__content .table {
   margin-bottom: 0;
