@@ -2665,13 +2665,13 @@ form .select-style select:focus {
   font-size: 0.73vw;
   font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
   padding: 33px 65px;
-  padding: 2.9vh 2.75vw;
+  padding: 2.5vh 2.75vw;
   line-height: 100%;
   vertical-align: bottom;
 }
 .fullscreen__page #premises .premises__content .params .param .param__items .param__item.param__item-icon a .if {
   font-size: 38px;
-  font-size: 1.96vw;
+  font-size: 3.5vh;
   margin-right: 15px;
   vertical-align: middle;
 }
@@ -2840,6 +2840,7 @@ form .select-style select:focus {
 }
 .types .type__item {
   margin-bottom: 26px;
+  margin-bottom: 2.4vh;
 }
 .types .type__item label {
   color: #fff;
@@ -2853,14 +2854,14 @@ form .select-style select:focus {
 }
 .types .type__item .type__item-view3d {
   display: inline-block;
-  margin-top: -3px;
+  margin-top: 0;
   vertical-align: text-bottom;
   text-decoration: none;
   text-align: right;
   float: right;
   color: #8b9f94;
   font-size: 34px;
-  font-size: 1.8vw;
+  font-size: 3.15vh;
 }
 .types .type__item .type__item-view3d:hover {
   color: #e9d877;
