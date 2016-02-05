@@ -2966,6 +2966,7 @@ form {
 						font-size: 0.65vw;
 						font-family: @fontGRegular;
 						padding-top: 40px;
+						padding-top: 3.7vh;
 						padding-left: 0;
 						// width: 180px;
 					}
@@ -3634,6 +3635,19 @@ form {
 @media (max-width: 1024px) {
 	.fullscreen__page #premises .premises__content {
 		.params .param {
+
+			.param__title {
+				// width: 19.666667%;
+				font-size: 10px;
+			}
+
+			&.param__range {
+				.param__title {
+					width: 19.666667%;
+					font-size: 10px;
+				}
+			}
+
 			.param__items {
 				.param__item {
 					&.param__item-icon {
@@ -3651,9 +3665,12 @@ form {
 	}
 
 	.types {
-		.type[class*="offset"] {
-			width: 41.66666667%;
-			margin-left: 110px;
+		.type {
+			width: 46.333333%;
+			&[class*="offset"] {
+				width: 41.66666667%;
+				margin-left: 50px;
+			}
 		}
 
 		.type__item {
