@@ -2611,10 +2611,10 @@ form .select-style select:focus {
 .fullscreen__page #premises .premises__content {
   position: absolute;
   width: 100%;
-  padding-left: 160px;
+  padding-left: 100px;
   padding-right: 100px;
-  padding-left: 8.4vw;
-  padding-right: 8.22vw;
+  padding-left: 5.22vw;
+  padding-right: 5.22vw;
   top: 220px;
   top: 20.4vh;
   color: #fff;
@@ -2720,6 +2720,8 @@ form .select-style select:focus {
 }
 .fullscreen__page #premises .premises__content .filter__results {
   margin-top: 13px;
+  padding-right: 125px;
+  padding-right: 6.5vw;
 }
 .fullscreen__page #premises .premises__content .filter__results table th.floor {
   font-size: 26px;
@@ -3154,7 +3156,7 @@ form .select-style select:focus {
     font-size: 13px;
   }
   .fullscreen__page #premises .premises__content .filter__results {
-    padding-right: 0;
+    padding-right: 15px;
   }
   .types .type {
     width: 46.333333%;
@@ -3181,9 +3183,6 @@ form .select-style select:focus {
   }
   .mCSB_scrollTools {
     right: -5px;
-  }
-  .mCSB_inside > .mCSB_container {
-    margin-right: 25px;
   }
 }
 @media (max-height: 768px) {
