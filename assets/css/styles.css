@@ -3037,8 +3037,8 @@ form .select-style select:focus {
 @media (max-width: 1290px) {
   .fullscreen__page .fullscreen__menu-close {
     right: 30px;
-    right: 4.9vw;
-    top: 40px;
+    right: 4.6vw;
+    top: 50px;
   }
   .fullscreen__page .fullscreen__header {
     padding-bottom: 36px;
