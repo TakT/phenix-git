@@ -3108,6 +3108,7 @@ form {
 			left: 0;
 			position: absolute;
 			top: 7px;
+			top: 0.5vh;
 		}
 	}
 	&:hover+label,
@@ -3235,9 +3236,21 @@ form {
 			color: #8b9f94;
 			font-size: 34px;
 			font-size: 3.15vh;
+			width: 34px;
+			width: 3.15vh;
+
+			.view-3d-active {
+				display: none;
+			}
 
 			&:hover {
 				color: @yellow;
+				img {
+					display: none;
+					&.view-3d-active {
+						display: inline-block;
+					}
+				}
 			}
 		}
 
@@ -3615,6 +3628,64 @@ form {
 			margin-bottom: 50px;
 			margin-bottom: 4.75vw;
 		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.fullscreen__page #premises .premises__content {
+		.params .param {
+			.param__items {
+				.param__item {
+					&.param__item-icon {
+						a {
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+
+		.filter__results {
+			padding-right: 0;
+		}
+	}
+
+	.types {
+		.type[class*="offset"] {
+			width: 41.66666667%;
+			margin-left: 110px;
+		}
+
+		.type__item {
+			label {
+				padding-top: 5px;
+				font-size: 11px;
+			}
+		}
+	}
+
+	.checkbox__custom {
+		&:hover + label:before, .checkbox__custom:checked + label:before,
+		&:not(checked) + label:before {
+			width: 15px;
+			height: 15px;
+		}
+
+		&:not(checked) + label:before {
+			top: 2px;
+		}
+	}
+
+	.table tbody tr td {
+		font-size: 11px;
+	}
+
+	.mCSB_scrollTools {
+		right: -5px;
+	}
+
+	.mCSB_inside > .mCSB_container {
+		margin-right: 25px;
 	}
 }
 

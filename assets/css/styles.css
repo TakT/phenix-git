@@ -2758,6 +2758,7 @@ form .select-style select:focus {
   left: 0;
   position: absolute;
   top: 7px;
+  top: 0.5vh;
 }
 .checkbox__custom:hover + label:before,
 .checkbox__custom:checked + label:before {
@@ -2862,9 +2863,20 @@ form .select-style select:focus {
   color: #8b9f94;
   font-size: 34px;
   font-size: 3.15vh;
+  width: 34px;
+  width: 3.15vh;
+}
+.types .type__item .type__item-view3d .view-3d-active {
+  display: none;
 }
 .types .type__item .type__item-view3d:hover {
   color: #e9d877;
+}
+.types .type__item .type__item-view3d:hover img {
+  display: none;
+}
+.types .type__item .type__item-view3d:hover img.view-3d-active {
+  display: inline-block;
 }
 .types .type__item .checkbox__custom:checked + label {
   color: #e9d877;
@@ -3125,6 +3137,40 @@ form .select-style select:focus {
   #comfort-info .page__title {
     margin-bottom: 50px;
     margin-bottom: 4.75vw;
+  }
+}
+@media (max-width: 1024px) {
+  .fullscreen__page #premises .premises__content .params .param .param__items .param__item.param__item-icon a {
+    font-size: 13px;
+  }
+  .fullscreen__page #premises .premises__content .filter__results {
+    padding-right: 0;
+  }
+  .types .type[class*="offset"] {
+    width: 41.66666667%;
+    margin-left: 110px;
+  }
+  .types .type__item label {
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox__custom:hover + label:before,
+  .checkbox__custom .checkbox__custom:checked + label:before,
+  .checkbox__custom:not(checked) + label:before {
+    width: 15px;
+    height: 15px;
+  }
+  .checkbox__custom:not(checked) + label:before {
+    top: 2px;
+  }
+  .table tbody tr td {
+    font-size: 11px;
+  }
+  .mCSB_scrollTools {
+    right: -5px;
+  }
+  .mCSB_inside > .mCSB_container {
+    margin-right: 25px;
   }
 }
 @media (max-height: 768px) {
