@@ -2963,7 +2963,7 @@ form .select-style select:focus {
 }
 .modal-plan .plan img {
   width: 460px;
-  width: 24vw;
+  width: 42.594vh;
 }
 .modal-plan .plan-toolbar-wrapper {
   padding-left: 95px;
