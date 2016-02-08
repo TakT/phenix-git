@@ -79,41 +79,54 @@
   width: 12px;
   height: 7px;
 }
-@font-face {
-  font-family: "phoenix-icons";
-  src: url("../fonts/phoenix-icons.eot");
-  src: url("../fonts/phoenix-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/phoenix-icons.woff") format("woff"), url("../fonts/phoenix-icons.ttf") format("truetype"), url("../fonts/phoenix-icons.svg#phoenix-icons") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-[data-icon]:before {
-  font-family: "phoenix-icons" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-[class^="if-"]:before,
-[class*=" if-"]:before {
-  font-family: "phoenix-icons" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .if {
+  height: 32px;
+  width: 32px;
   display: inline-block;
   vertical-align: middle;
 }
+/* @font-face {
+	font-family: "phoenix-icons";
+	src: url("../fonts/phoenix-icons.eot");
+	src: url("../fonts/phoenix-icons.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/phoenix-icons.woff") format("woff"),
+		url("../fonts/phoenix-icons.ttf") format("truetype"),
+		url("../fonts/phoenix-icons.svg#phoenix-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: "phoenix-icons" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="if-"]:before,
+[class*=" if-"]:before {
+	font-family: "phoenix-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.if {
+	display: inline-block;
+	vertical-align: middle;
+}
+
 .if-3d:before {
   content: "\61";
 }
@@ -159,6 +172,7 @@
 .if-eye:before {
   content: "\6f";
 }
+ */
 
 * {
   line-height: 100%;
@@ -286,7 +300,9 @@ sup {
   padding-top: 11px;
 }
 .btn.btn-light-green-2 .i,
-.btn.btn-light-green .i {
+.btn.btn-light-green .i,
+.btn.btn-light-green-2 .if,
+.btn.btn-light-green .if {
   margin-right: 19px;
 }
 .btn.btn-light-green-2.btn-light-green-2,
@@ -753,8 +769,26 @@ sup {
   padding: 9px 0;
   text-align: center;
 }
+.slider__desc .slider__actions .if {
+  fill: #e9d877;
+  width: 26px;
+  height: 26px;
+}
 .slider__desc .slider__scroll {
-  padding-left: 25px;
+  padding-left: 0;
+  text-align: center;
+}
+.slider__desc .slider__scroll .if {
+  fill: #fff;
+  height: 48px;
+  margin-bottom: 10px;
+}
+.slider__desc .slider__scroll span {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
+  text-transform: uppercase;
 }
 .slick-arrows {
   position: absolute;
@@ -763,9 +797,15 @@ sup {
   right: 0;
 }
 .slick-arrows .slick-arrow {
-  position: absolute;
   top: 0;
+  position: absolute;
   display: inline-block;
+}
+.slick-arrows .slick-arrow .if {
+  fill: #fff;
+  width: 111px;
+  height: 110px;
+  margin-left: -34px;
 }
 .slick-arrows .slick-arrow.slick-prev {
   left: 0;
@@ -814,6 +854,11 @@ sup {
   top: 50%;
   z-index: 500;
   margin-top: -25.5px;
+}
+.slick-slider .slick-arrow .if {
+  fill: #e9d877;
+  width: 111px;
+  height: 110px;
 }
 .slick-slider .slick-arrow.slick-prev {
   left: 48px;
@@ -893,7 +938,10 @@ sup {
   font-size: 12px;
   font-family: 'GothamPro-Medium', Arial, Helvetica, Verdana, sans-serif;
 }
-#news .news__wrapper .item__readmore a .i {
+#news .news__wrapper .item__readmore a .if {
+  fill: #e9d877;
+  width: 24px;
+  height: 24px;
   margin-left: 9px;
 }
 #features {
@@ -1353,6 +1401,10 @@ sup {
   padding: 12px 0;
   padding-bottom: 11px;
 }
+#config .config__actions .btn .if {
+  fill: #e9d877;
+  width: 25px;
+}
 .page__inner #indexslider {
   margin-bottom: 0px;
 }
@@ -1534,8 +1586,9 @@ sup {
 .to-top-wrapper .to-top:hover {
   color: #ded27b;
 }
-.to-top-wrapper .to-top .i {
-  margin-bottom: 10px;
+.to-top-wrapper .to-top .if {
+  fill: #e9d877;
+  width: 31px;
 }
 #contacts-form .full__width .full__width-desc {
   background: #133e28 url(../images/pages/form-bg.svg) no-repeat top center;
@@ -1831,7 +1884,10 @@ form .select-style select:focus {
   font-size: 12px;
   font-family: 'GothamPro-Medium', Arial, Helvetica, Verdana, sans-serif;
 }
-.page__news #content .content__news .news__col .news__item .news__readmore a .i {
+.page__news #content .content__news .news__col .news__item .news__readmore a .if {
+  fill: #e9d877;
+  width: 24px;
+  height: 24px;
   margin-left: 9px;
 }
 .page__news #content .content__news .news__col .news__item.active {
@@ -1876,6 +1932,11 @@ form .select-style select:focus {
   position: absolute;
   top: -33px;
   right: 10px;
+}
+.page__news #content .content__news-item .content__news-item-wrapper .js-close .if {
+  fill: #133e28;
+  width: 24px;
+  height: 24px;
 }
 .page__news #content .content__news-item .content__news-item-wrapper .item {
   color: #133e28;
@@ -1924,7 +1985,7 @@ form .select-style select:focus {
   display: block;
 }
 .page__news #content .slick-slider .slick-arrow.slick-prev {
-  left: -60px;
+  left: -85px;
 }
 .page__news #content .slick-slider .slick-arrow.slick-next {
   right: -40px;
@@ -1974,6 +2035,9 @@ form .select-style select:focus {
   opacity: 1;
   z-index: 999;
   outline: none;
+}
+.modal .modal-dialog .modal-content .modal-header .close .if {
+  fill: #e9d877;
 }
 .modal .modal-dialog .modal-content .modal-body {
   padding: 0 60px;
@@ -2042,6 +2106,9 @@ form .select-style select:focus {
   top: 70px;
   top: 3.65vw;
   right: 3.65vw;
+}
+.modal .modal-dialog.modal-dialog-fullscreen .modal-header .close .if {
+  fill: #173e29;
 }
 #documents {
   padding-top: 78px;
@@ -2397,14 +2464,14 @@ form .select-style select:focus {
 .fullscreen__page .fullscreen__menu-close > a .if,
 .fullscreen__page .fullscreen__menu-back > a .if,
 .fullscreen__page .fullscreen__menu > a .if {
-  font-size: 24px;
-  margin-top: 3px;
+  fill: #fff;
+  width: 24px;
   margin-left: 15px;
 }
 .fullscreen__page .fullscreen__menu-close {
   z-index: 901;
   top: 50px;
-  top: 3.8vw;
+  top: 3.6vw;
   right: 60px;
   right: 4vw;
   display: none;
@@ -2429,8 +2496,7 @@ form .select-style select:focus {
   margin-left: 0;
 }
 .fullscreen__page .fullscreen__menu-back > a .if {
-  font-size: 29px;
-  margin-top: 3px;
+  width: 29px;
   margin-left: 15px;
 }
 .fullscreen__page .fullscreen__content {
@@ -2671,8 +2737,9 @@ form .select-style select:focus {
   vertical-align: bottom;
 }
 .fullscreen__page #premises .premises__content .params .param .param__items .param__item.param__item-icon a .if {
-  font-size: 38px;
-  font-size: 3.5vh;
+  fill: #e9d877;
+  width: 38px;
+  width: 3.5vh;
   margin-right: 15px;
   vertical-align: middle;
 }
@@ -2698,6 +2765,10 @@ form .select-style select:focus {
 .fullscreen__page #premises .premises__content .params .param .param__items .param__item a.active {
   color: #173e29;
   background-color: #e9d877;
+}
+.fullscreen__page #premises .premises__content .params .param .param__items .param__item a:hover .if,
+.fullscreen__page #premises .premises__content .params .param .param__items .param__item a.active .if {
+  fill: #173e29;
 }
 .fullscreen__page #premises .premises__content .params .param.param__range.first__range {
   margin-bottom: 42px;
@@ -3070,8 +3141,8 @@ form .select-style select:focus {
 @media (max-width: 1480px) {
   .fullscreen__page .fullscreen__menu-close {
     right: 30px;
-    right: 4.9vw;
-    top: 40px;
+    right: 4.4vw;
+    top: 53px;
   }
 }
 @media (max-width: 1290px) {

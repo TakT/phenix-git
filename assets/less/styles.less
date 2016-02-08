@@ -209,7 +209,7 @@ sup {
 		font-family: @fontGMedium;
 		padding: 9px 56px;
 		padding-top: 11px;
-		.i {
+		.i, .if {
 			margin-right: 19px;
 		}
 
@@ -758,10 +758,29 @@ sup {
 			padding: 9px 0;
 			text-align: center;
 		}
+
+		.if {
+			fill: @yellow;
+			width: 26px;
+			height: 26px;
+		}
 	}
 
 	.slider__scroll {
-		padding-left: 25px;
+		padding-left: 0;
+		text-align: center;
+		.if {
+			fill: #fff;
+			height: 48px;
+			margin-bottom: 10px;
+		}
+		span {
+			display: block;
+			color: #fff;
+			font-size: 12px;
+			font-family: @fontGRegular;
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -771,9 +790,17 @@ sup {
 	left: 0;
 	right: 0;
 	.slick-arrow {
-		position: absolute;
 		top: 0;
+		position: absolute;
 		display: inline-block;
+		
+		.if {
+			fill: #fff;
+			width: 111px;
+			height: 110px;
+			margin-left: -34px;
+		}
+
 		&.slick-prev {
 			left: 0;
 		}
@@ -829,6 +856,13 @@ sup {
 		top: 50%;
 		z-index: 500;
 		margin-top: -25.5px;
+		
+		.if {
+			fill: @yellow;
+			width: 111px;
+			height: 110px;
+		}
+
 		&.slick-prev {
 			left: 48px;
 		}
@@ -916,7 +950,10 @@ sup {
 				color: #fff;
 				font-size: 12px;
 				font-family: @fontGMedium;
-				.i {
+				.if {
+					fill: @yellow;
+					width: 24px;
+					height: 24px;
 					margin-left: 9px;
 				}
 			}
@@ -1449,6 +1486,11 @@ sup {
 				padding: 12px 0;
 				padding-bottom: 11px;
 			}
+
+			.if {
+				fill: @yellow;
+				width: 25px;
+			}
 		}
 	}
 }
@@ -1657,8 +1699,10 @@ sup {
 		&:hover {
 			color: #ded27b;
 		}
-		.i {
-			margin-bottom: 10px;
+
+		.if {
+			fill: @yellow;
+			width: 31px;
 		}
 	}
 }
@@ -2013,7 +2057,10 @@ form {
 							color: #fff;
 							font-size: 12px;
 							font-family: @fontGMedium;
-							.i {
+							.if {
+								fill: @yellow;
+								width: 24px;
+								height: 24px;
 								margin-left: 9px;
 							}
 						}
@@ -2071,6 +2118,12 @@ form {
 					position: absolute;
 					top: -33px;
 					right: 10px;
+
+					.if {
+						fill: #133e28;
+						width: 24px;
+						height: 24px;
+					}
 				}
 
 				.item {
@@ -2135,7 +2188,7 @@ form {
 		.slick-slider {
 			.slick-arrow {
 				&.slick-prev {
-					left: -60px;
+					left: -85px;
 				}
 				&.slick-next {
 					right: -40px;
@@ -2199,6 +2252,9 @@ form {
 					opacity: 1;
 					z-index: 999;
 					outline: none;
+					.if {
+						fill: @yellow;
+					}
 				}
 			}
 
@@ -2279,6 +2335,9 @@ form {
 					top: 70px;
 					top: 3.65vw;
 					right: 3.65vw;
+					.if {
+						fill: #173e29;
+					}
 				}
 			}
 		}
@@ -2702,8 +2761,8 @@ form {
 			text-align: left;
 			text-decoration: none;
 			.if {
-				font-size: 24px;
-				margin-top: 3px;
+				fill: #fff;
+				width: 24px;
 				margin-left: 15px;
 			}
 		}
@@ -2712,7 +2771,7 @@ form {
 	.fullscreen__menu-close {
 		z-index: 901;
 		top: 50px;
-		top: 3.8vw;
+		top: 3.6vw;
 		right: 60px;
 		right: 4vw;
 		display: none;
@@ -2737,8 +2796,7 @@ form {
 			margin-left: 0;
 
 			.if {
-				font-size: 29px;
-				margin-top: 3px;
+				width: 29px;
 				margin-left: 15px;
 			}
 		}
@@ -3000,8 +3058,9 @@ form {
 									line-height: 100%;
 									vertical-align: bottom;
 									.if {
-										font-size: 38px;
-										font-size: 3.5vh;
+										fill: @yellow;
+										width: 38px;
+										width: 3.5vh;
 										margin-right: 15px;
 										vertical-align: middle;
 									}
@@ -3031,6 +3090,9 @@ form {
 								&.active {
 									color: #173e29;
 									background-color: @yellow;
+									.if {
+										fill: #173e29;
+									}
 								}
 							}
 						}
@@ -3504,8 +3566,8 @@ form {
 	.fullscreen__page {
 		 .fullscreen__menu-close {
 		 	right: 30px;
-			right: 4.9vw;
-			top: 40px;
+			right: 4.4vw;
+			top: 53px;
 		 }
 	}
 }
