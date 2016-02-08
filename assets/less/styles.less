@@ -3349,6 +3349,7 @@ form {
 			font-size: 87.2px;
 			font-size: 8.14vh;
 			margin-bottom: -10px;
+			margin-bottom: -1.1vh;
 		}
 		.item__desc {
 			color: #4d4e53;
@@ -3366,7 +3367,8 @@ form {
 				margin-bottom: 0;
 				svg,
 				img {
-					width: 67px;
+					width: 92px;
+					width: 4.8vw;
 					/* > path {
 						fill: #999;
 						cursor: pointer;
@@ -3407,10 +3409,15 @@ form {
 						}
 					}
 				}
+
+				&.js-change-area {
+					font-size: 0;
+					margin-bottom: 5px;
+				}
 			}
 
 			&.info-col-text {
-				padding-top: 18px;
+				padding-top: 0;
 				.item__title {
 					margin-bottom: -11px;
 				}
@@ -3771,7 +3778,7 @@ form {
 		}
 	}
 
-	.types {
+	.flatschange__page .types {
 		.type {
 			width: 46.333333%;
 			&[class*="offset"] {
@@ -3779,7 +3786,9 @@ form {
 				margin-left: 50px;
 			}
 		}
+	}
 
+	.types {
 		.type__item {
 			label {
 				padding-top: 5px;

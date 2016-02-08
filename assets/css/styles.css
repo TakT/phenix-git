@@ -2974,6 +2974,7 @@ form .select-style select:focus {
   font-size: 87.2px;
   font-size: 8.14vh;
   margin-bottom: -10px;
+  margin-bottom: -1.1vh;
 }
 .cart__info .info__item .item__desc {
   color: #4d4e53;
@@ -2992,7 +2993,8 @@ form .select-style select:focus {
 }
 .cart__info .info__item .info-col .item__title svg,
 .cart__info .info__item .info-col .item__title img {
-  width: 67px;
+  width: 92px;
+  width: 4.8vw;
   /* > path {
 						fill: #999;
 						cursor: pointer;
@@ -3033,8 +3035,12 @@ form .select-style select:focus {
 .cart__info .info__item .info-col .item__title img > path.cls-2 + path:hover {
   fill: #f4dc74;
 }
+.cart__info .info__item .info-col .item__title.js-change-area {
+  font-size: 0;
+  margin-bottom: 5px;
+}
 .cart__info .info__item .info-col.info-col-text {
-  padding-top: 18px;
+  padding-top: 0;
 }
 .cart__info .info__item .info-col.info-col-text .item__title {
   margin-bottom: -11px;
@@ -3269,10 +3275,10 @@ form .select-style select:focus {
   .fullscreen__page #premises .premises__content .filter__results {
     padding-right: 15px;
   }
-  .types .type {
+  .flatschange__page .types .type {
     width: 46.333333%;
   }
-  .types .type[class*="offset"] {
+  .flatschange__page .types .type[class*="offset"] {
     width: 41.66666667%;
     margin-left: 50px;
   }
