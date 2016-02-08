@@ -2919,8 +2919,48 @@ form .select-style select:focus {
 .cart__info .info__item .info-col .item__title {
   margin-bottom: 0;
 }
+.cart__info .info__item .info-col .item__title svg,
 .cart__info .info__item .info-col .item__title img {
   width: 67px;
+  /* > path {
+						fill: #999;
+						cursor: pointer;
+					
+						+ path {
+							position: relative;
+							z-index: 1000;
+							fill: transparent;
+							display: none;
+						}
+					
+						&.cls-1 {
+							&:hover {
+								fill: transparent;
+								+ path {
+									display: inline-block;
+									fill: #f4dc74;
+								}
+							}
+						}
+					} */
+}
+.cart__info .info__item .info-col .item__title svg > path.cls-2,
+.cart__info .info__item .info-col .item__title img > path.cls-2 {
+  fill: #999;
+  cursor: pointer;
+}
+.cart__info .info__item .info-col .item__title svg > path.cls-2 + path,
+.cart__info .info__item .info-col .item__title img > path.cls-2 + path {
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  fill: transparent;
+}
+.cart__info .info__item .info-col .item__title svg > path.cls-2 + path.active,
+.cart__info .info__item .info-col .item__title img > path.cls-2 + path.active,
+.cart__info .info__item .info-col .item__title svg > path.cls-2 + path:hover,
+.cart__info .info__item .info-col .item__title img > path.cls-2 + path:hover {
+  fill: #f4dc74;
 }
 .cart__info .info__item .info-col.info-col-text {
   padding-top: 18px;

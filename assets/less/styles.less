@@ -3302,8 +3302,48 @@ form {
 			text-align: center;
 			.item__title {
 				margin-bottom: 0;
+				svg,
 				img {
 					width: 67px;
+					/* > path {
+						fill: #999;
+						cursor: pointer;
+					
+						+ path {
+							position: relative;
+							z-index: 1000;
+							fill: transparent;
+							display: none;
+						}
+					
+						&.cls-1 {
+							&:hover {
+								fill: transparent;
+								+ path {
+									display: inline-block;
+									fill: #f4dc74;
+								}
+							}
+						}
+					} */
+
+					> path.cls-2 {
+						fill: #999;
+						cursor: pointer;
+
+						+ path {
+							cursor: pointer;
+							position: relative;
+							z-index: 1000;
+							// fill: #f4dc74;
+							fill: transparent;
+							// display: none;
+							&.active,
+							&:hover {
+								fill: #f4dc74;
+							}
+						}
+					}
 				}
 			}
 

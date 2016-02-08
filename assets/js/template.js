@@ -32,6 +32,24 @@ jQuery(document).ready(function($) {
 		jQuery(this).toggleClass('active');
 	});
 
+	jQuery('body').on('click', '.js-change-area svg path', function(event) {
+		event.preventDefault();
+
+		// jQuery(this).parents('svg').children('path.cls-2.active').removeClass('active');
+		// console.log(jQuery(this).parents('svg').find('path + path').attr('class'), jQuery(this).parents('svg').find('path + path').attr('class').length);
+
+		var paths = jQuery(this).parents('svg').find('path');
+		for (var i = 0; i < paths.length; i++) {
+			var path = jQuery(paths[i]);
+			if (path.attr('class').length > 5) {
+				path.attr('class', 'cls-1');
+			};
+		};
+
+		jQuery(this).parents('svg').children('path').attr('class');
+		jQuery(this).attr('class', 'cls-1 active');
+	});
+
 	jQuery('#content').on('click', '.js-news-readmore', function(event) {
 		var newsItem = jQuery(this).parents('.news__item');
 		toggleNews(newsItem);
