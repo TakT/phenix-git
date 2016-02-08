@@ -2456,7 +2456,7 @@ form .select-style select:focus {
   color: #fff;
   font-size: 18px;
   font-family: 'WarnockPro-Regular', Arial, Helvetica, Verdana, sans-serif;
-  padding: 10px 18px;
+  padding: 12px 18px;
   padding-bottom: 6px;
   text-align: left;
   text-decoration: none;
@@ -2471,7 +2471,7 @@ form .select-style select:focus {
 .fullscreen__page .fullscreen__menu-close {
   z-index: 901;
   top: 50px;
-  top: 3.6vw;
+  top: 3.8vw;
   right: 60px;
   right: 4vw;
   display: none;
@@ -2491,8 +2491,8 @@ form .select-style select:focus {
   right: auto;
 }
 .fullscreen__page .fullscreen__menu-back > a {
-  padding: 4px 18px;
-  padding-top: 8px;
+  padding: 7px 18px;
+  padding-top: 11px;
   margin-left: 0;
 }
 .fullscreen__page .fullscreen__menu-back > a .if {
