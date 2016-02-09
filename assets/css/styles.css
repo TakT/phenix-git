@@ -3043,13 +3043,13 @@ form .select-style select:focus {
 }
 .cart__info .info__item .info-col .item__title.js-change-area {
   font-size: 0;
-  margin-bottom: 5px;
+  margin-bottom: 21px;
 }
 .cart__info .info__item .info-col.info-col-text {
   padding-top: 0;
 }
 .cart__info .info__item .info-col.info-col-text .item__title {
-  margin-bottom: -11px;
+  margin-bottom: 0;
 }
 .cart__info .info__item:last-child {
   padding-bottom: 0;
