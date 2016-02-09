@@ -2100,7 +2100,6 @@ form .select-style select:focus {
   background-color: #009d73;
 }
 .modal .modal-dialog.modal-dialog-fullscreen .modal-header .close {
-  color: #009d73;
   font-size: 40px;
   right: 70px;
   top: 70px;
@@ -2108,7 +2107,10 @@ form .select-style select:focus {
   right: 3.65vw;
 }
 .modal .modal-dialog.modal-dialog-fullscreen .modal-header .close .if {
-  fill: #173e29;
+  fill: #009d73;
+}
+.modal .modal-dialog.modal-dialog-fullscreen .modal-body {
+  padding: 0;
 }
 #documents {
   padding-top: 78px;
@@ -2960,21 +2962,25 @@ form .select-style select:focus {
 .types .type__item:hover label {
   color: #e9d877;
 }
+.cart__info {
+  margin-top: 12px;
+  margin-top: 1.1vh;
+}
 .cart__info .info__item {
   border-top: 1px solid #efefef;
   border-bottom: 1px solid #bebebe;
   padding-top: 50px;
   padding-top: 4.63vh;
-  padding-bottom: 40px;
-  padding-bottom: 3.7vh;
+  padding-bottom: 53px;
+  padding-bottom: 4.9vh;
   font-size: 0;
 }
 .cart__info .info__item .item__title {
   color: #e9d877;
   font-size: 87.2px;
   font-size: 8.14vh;
-  margin-bottom: -10px;
-  margin-bottom: -1.1vh;
+  margin-bottom: -4px;
+  margin-bottom: -0.4vh;
 }
 .cart__info .info__item .item__desc {
   color: #4d4e53;
@@ -3083,8 +3089,8 @@ form .select-style select:focus {
   width: 42.594vh;
 }
 .modal-plan .plan-toolbar-wrapper {
-  padding-left: 95px;
-  padding-left: 5vw;
+  padding-left: 119px;
+  padding-left: 6.02vw;
 }
 .modal-plan .plan-toolbar {
   margin-top: 25px;
@@ -3096,8 +3102,8 @@ form .select-style select:focus {
 }
 .modal-plan .plan-toolbar .toolbar__item {
   font-size: 0;
-  margin-bottom: 40px;
-  margin-bottom: 4.2vh;
+  margin-bottom: 36px;
+  margin-bottom: 3vh;
 }
 .modal-plan .plan-toolbar .toolbar__item a {
   display: inline-block;
@@ -3122,6 +3128,12 @@ form .select-style select:focus {
   line-height: 25.3px;
   line-height: 1.35vw;
   font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
+}
+.modal-plan .plan-action .btn {
+  padding: 18px 56px;
+  padding: 1.65vh 2.6vw;
+  font-size: 19.7px;
+  font-size: 1.82vh;
 }
 .js-level_changer .level {
   display: block;
