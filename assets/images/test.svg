@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+	<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 33 33">
+		<defs>
+			<style>.cls-1,.cls-4{fill:none;}.cls-2{fill:red;}.cls-4{ stroke:red;stroke-miterlimit:10; }</style>
+			
+		</defs>
+
+		<title>legend-pattern</title>
+
+		<rect class="cls-3" x="0.5" y="0.5" width="32" height="32"/>
+		<rect class="cls-4" x="0.5" y="0.5" width="32" height="32"/>
+	</svg>
+	<svg id="Слой_21" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 33 33">
+
+		<title>legend-pattern2</title>
+
+		<circle cx="30" cy="50" r="30" fill="red" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle>
+	</svg>
+</svg>

@@ -2,14 +2,15 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Проектная документация</title>
+		<title>Квартиры</title>
 
 		<meta name="viewport" content="width=1024px, initial-scale=1.0, maximum-scale=1.0">
 
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="./assets/css/jquery.mCustomScrollbar.css">
+		<link rel="stylesheet" href="./assets/css/nouislider.min.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -17,9 +18,10 @@
 		<![endif]-->
 
 	</head>
-	<body class="page__inner">
+	<body class="page__inner fullscreen__page flatschange__page">
 
-		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+		<div class="fullscreen__header">
+					<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 		  
 		    <symbol id="if-3d" viewBox="0 0 512 512">
 		      <path d="m256 0c-142 0-256 114-256 256 0 142 114 256 256 256 142 0 256-114 256-256 0-142-114-256-256-256z m0 475c-120 0-219-99-219-219 0-120 99-219 219-219 120 0 219 99 219 219 0 120-99 219-219 219z m83-363c-6-2-12 0-14 4l-108 114c-2 2-2 4-2 4l-50 148c-2 6 0 14 8 16 6 2 12 0 14-4l108-114c2-2 2-2 2-4l52-148c0-6-4-14-10-16z m-61 150c-4 12-16 18-28 16-12-4-18-16-16-28 4-12 16-18 28-16 12 4 18 16 16 28z"/>
@@ -235,250 +237,323 @@
 				</div>
 			</div>
 		</section>
-
-		<section id="header-bg">
-
-			<div class="indexslider__wrapper">
-				<div class="bg-img">
-					<img src="./assets/images/pages/documents-bg.jpg" alt="" class="img-responsive-fw">
-				</div>
-				
-				<div class="slider__content page__title">Проектная документация</div>
-			</div>
-
-		</section>
-
-		<section id="documents" class="section">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-10 col-xs-offset-2">
-						<div class="documents">
-							<div class="document">
-								<div class="document__icon">
-									<img src="./assets/images/document-icon.png" alt="">
-								</div>
-
-								<div class="document__content">
-									<div class="document__title">
-										<a href="javascript:void(0);" title="Разрешение на ввод объекта в эксплуатацию № RU20301000-050">Разрешение на ввод объекта в эксплуатацию № RU20301000-050</a>
-									</div>
-									<div class="document__text">ЖК «ФЕНИКС» введен в эксплуатацию. Разрешение выдано Департаментом строительства и архитектуры Мэрии г. Грозного 02 апреля 2012 года.</div>
-								</div>
-							</div>
-							
-							<div class="document">
-								<div class="document__icon">
-									<img src="./assets/images/document-icon.png" alt="">
-								</div>
-
-								<div class="document__content">
-									<div class="document__title">
-										<a href="javascript:void(0);" title="Разрешение на ввод объекта в эксплуатацию № RU20301000-050">Разрешение на ввод объекта в эксплуатацию № RU20301000-050</a>
-									</div>
-									<div class="document__text">ЖК «ФЕНИКС» введен в эксплуатацию. Разрешение выдано Департаментом строительства и архитектуры Мэрии г. Грозного 02 апреля 2012 года.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<div class="to-top-wrapper">
-			<a href="javascript:void(0);" title="Наверх" class="to-top js-to-top"><svg class="if if-up-arrow"><use xlink:href="#if-up-arrow"></use></svg><br>Наверх</a>
 		</div>
 
-		<footer id="footer">
-			<div class="footer__menus">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-2 menu__item menu__item-1">
-							<h4 class="item__title">информация</h4>
-							<ul class="item__menu">
+		<div class="fullscreen__menu-close">
+			<a href="javascript:void(0);" title="Закрыть"><svg class="if if-cross"><use xlink:href="#if-cross"></use></svg></a>
+		</div>
+
+		<div class="fullscreen__menu">
+			<a href="javascript:void(0);" title="Меню">Меню <svg class="if if-menu-icon"><use xlink:href="#if-menu-icon"></use></svg></a>
+		</div>
+
+		<div class="fullscreen__menu-back">
+			<a href="javascript:void(0);" title="Назад"><span>Назад</span> <svg class="if if-back"><use xlink:href="#if-back"></use></svg></a>
+
+			<div class="content__menu">
+				<ul class="list-inline">
+					<li>
+						<a href="./selection-flats.html" title="Квартиры" class="active">Квартиры</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="./selection-premises.html" title="Коммерческие помещения">Коммерческие помещения</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<section id="area" class="fullscreen__content">
+
+			<div class="area__content">
+				<div class="row">
+					<div class="col-xs-5 col-xs-offset-1">
+						<div id="change__room">
+
+							<!-- <img src="./assets/images/plan-tmp.png" alt=""> -->
+							<svg id="change__room-plan" height="100%" width="100%" viewBox="0 0 753 753"></svg>
+
+							<!-- <div class="change__room-desc">
+								<div class="desc__wrapper">
+									<div class="desc__title"><span></span></div>
+									<div class="desc__content">
+										<div class="desc__room-properties">
+											<div class="property property__example">
+												<div class="property__title"></div>
+												<div class="property__value"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+
+						<div class="plan__legend">
+							<ul class="list-table">
 								<li>
-									<a href="./about-developer.html" title="О застройщике">О застройщике</a>
+									<a href="javascript:void(0);" title="Выбрать коммерческое помещение">
+										<svg class="if if-filter"><use xlink:href="#if-filter"></use></svg>Выбрать коммерческое помещение
+									</a>
 								</li>
 								<li>
-									<a href="./documents.html" title="Документация">Документация</a>
+									<i class="if if-malevich-square"></i> В продаже
 								</li>
 								<li>
-									<a href="./news.html" title="Новости">Новости</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="Акции">Акции</a>
-								</li>
-								<li>
-									<a href="./contacts.html" title="Контакты">Контакты</a>
+									<img src="./assets/images/icons/legend-pattern.svg" class="if if-legend" alt=""> Продано
 								</li>
 							</ul>
-						</div>
-						<div class="col-xs-3 menu__item menu__item-2">
-							<h4 class="item__title">о комплексе</h4>
-							<ul class="item__menu">
-								<li>
-									<a href="./about.html#about-desc" title="Описание">Описание</a>
-								</li>
-								<li>
-									<a href="./about.html#architecture" title="Архитектура">Архитектура</a>
-								</li>
-								<li>
-									<a href="./about.html#interiors" title="Интерьеры">Интерьеры</a>
-								</li>
-								<li>
-									<a href="./about.html#accomplishment" title="Благоустройство">Благоустройство</a>
-								</li>
-								<li>
-									<a href="./about.html#infrastructure" title="Инфраструктура">Инфраструктура</a>
-								</li>
-								<li>
-									<a href="./about.html#security" title="Инженерия и безопасность">Инженерия и безопасность</a>
-								</li>
-								<li>
-									<a href="./location.html#location-info" title="Расположение">Расположение</a>
-								</li>
-								<li>
-									<a href="./location.html#locat-radius" title="Ближайшее окружение комплекса">Ближайшее окружение комплекса</a>
-								</li>
-								<li>
-									<a href="./location.html#mosque" title="Мечеть">Мечеть</a>
-								</li>
-								<li>
-									<a href="./gallery.html" title="Галерея">Галерея</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-2 menu__item menu__item-3">
-							<h4 class="item__title">покупка</h4>
-							<ul class="item__menu">
-								<li>
-									<a href="./selection-flats.html" title="Выбрать квартиру">Выбрать квартиру</a>
-								</li>
-								<li>
-									<a href="./selection-premises.html" title="Коммерческое помещение">Коммерческое помещение</a>
-								</li>
-								<li>
-									<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="Ипотека">Ипотека</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="Рассрочка">Рассрочка</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-2 menu__item menu__item-4">
-							<h4 class="item__title">квартиры</h4>
-							<ul class="item__menu">
-								<li>
-									<a href="javascript:void(0);" title="2-комнатные">2-комнатные</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="4-комнатные">4-комнатные</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="2-уровневые">2-уровневые</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-3 menu__item menu__item-5">
-							<h4 class="item__title">коммерческие помещения</h4>
-							<div class="item__menu-sub">
-								<div class="item__menu-title">1 этаж</div>
-								<ul class="item__menu">
-									<li>
-										<a href="javascript:void(0);" title="Офисные помещения">Офисные помещения</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" title="Торговые помещения">Торговые помещения</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" title="Рестораны">Рестораны</a>
-									</li>
-								</ul>
-							</div>
-							<div class="item__menu-sub">
-								<div class="item__menu-title">2 этаж</div>
-								<ul class="item__menu">
-									<li>
-										<a href="javascript:void(0);" title="Офисные помещения">Офисные помещения</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);" title="Торговые помещения">Торговые помещения</a>
-									</li>
-								</ul>
-							</div>
 						</div>
 					</div>
-					<div class="text-center footer__loyalty">
-						<a href="javascript:void(0);" title="программа лояльности">программа лояльности</a>
+					<div class="col-xs-2">
+						<!-- <input type="text" id="range_floor" name="range_floor" value=""> -->
+						<div id="range_floor"></div>
+					</div>
+					<div class="col-xs-4">
+						<div id="change_floor"></div>
 					</div>
 				</div>
 			</div>
-
-			<div class="footer__info">
-				<div class="container">
-					
-					<div class="col-xs-2 footer__logo-wrapper">
-						<div class="footer__logo">
-							<a href="javascript:void(0);" title="">
-								<img src="./assets/images/footer-logo.svg" alt="">
-							</a>
-						</div>
-						<div class="footer__copyright">&copy; 2015 ЖК «Феникс» </div>
-					</div>
-
-					<div class="col-xs-3 info__item info__item-1">
-						<div class="info__item-phones">+7 (929) 899-89-89<br>+7 (8712) 29-53-24</div>
-						<div class="info__item-menu">
-							<ul>
-								<li>
-									<a href="./sitemap.html" data-target="#reservations" data-toggle="modal" title="Карта сайта">Карта сайта</a>
-								</li>
-								<li>
-									<a href="#callback" title="Заказать обратный звонок" data-target="#callback" data-toggle="modal" class="text-yellow">Заказать обратный звонок</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xs-2 info__item info__item-2">
-						<div class="info__item-phones">Пн-Пт: 9:00–19:00 <br>Сб: 10:00–15:00</div>
-						<div class="info__item-menu">
-							<ul>
-								<li>
-									<a href="mailto:info@fenix-zhk.ru" title="info@fenix-zhk.ru">info@fenix-zhk.ru</a>
-								</li>
-								<li>
-									<a href="#question" title="Обратная связь" data-target="#question" data-toggle="modal" class="text-yellow">Обратная связь</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xs-3 info__item info__item-3">
-						<div class="info__item-phones">Офис продаж<br>г. Грозный, ул. Димаева, 14</div>
-						<div class="info__item-menu">
-							<ul>
-								<li>
-									<a href="#contacts-form-map" title="Схема проезда">Схема проезда</a>
-								</li>
-								<li>
-									<a href="#reservationsOffice" title="Проектная документация" data-target="#reservationsOffice" data-toggle="modal">Проектная документация</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xs-2 info__item info__item-4 text-right">
-						<a href="javascript:void(0);" target="_blank" title="BY DESIGN CREATOR" class="logo-dev"></a>
-					</div>
-				</div>
-			</div>
-		</footer>
+		</section>
 
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="./assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="./assets/js/nouislider.min.js"></script>
+
+		<script type="text/javascript" src="./assets/js/raphael-min.js"></script>
+		<script type="text/javascript" src="./assets/js/raphael-group.js"></script>
+		<script type="text/javascript" src="./assets/js/raphael-svg-import.js"></script>
+		<script type="text/javascript" src="./assets/js/eve.min.js"></script>
+
+		<script type="text/javascript" src="./assets/js/snap.svg-min.js"></script>
+		<script type="text/javascript" src="./assets/js/change-room-snap.js"></script>
+		<script type="text/javascript" src="./assets/js/change-floor.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+
+		<script type="text/javascript">
+		    (function($){
+
+		    	var slider = document.getElementById('range_floor');
+		    	var sliderEl = jQuery(slider);
+		    	var sliderIntit = false;
+		        
+				noUiSlider.create(slider, {
+					start: [ 26 ], // Handle start position
+					step: 1, // Slider moves in increments of '10'
+					direction: 'rtl', // Put '0' at the bottom of the slider
+					orientation: 'vertical', // Orient the slider vertically
+					range: { // Slider can select '0' to '100'
+						'min': 1,
+						'max': 42
+					},
+					pips: { // Show a scale with the slider
+						mode: 'steps',
+						density: 2
+					},
+					format: {
+						to: function (value) {
+							return value;
+						},
+						from: function ( value ) {
+							return Math.round(value, 0);
+						}
+					},
+				});
+
+				slider.noUiSlider.on('update', function(values, handle){
+
+					if (!sliderIntit) {
+						var handleEl = sliderEl.find('.noUi-handle');
+						var floorInfoEl = jQuery(document.createElement('div'));
+						var floorInfoCurrentFoorEl = jQuery(document.createElement('div'));
+						var floorInfoToTopEl = jQuery(document.createElement('div'));
+						var floorInfoToBottomEl = jQuery(document.createElement('div'));
+
+						floorInfoEl.addClass('floor__info');
+						floorInfoCurrentFoorEl.addClass('floor__info-current_floor');
+						floorInfoToTopEl.addClass('floor__info-to-top');
+						floorInfoToBottomEl.addClass('floor__info-to-bottom');
+
+						floorInfoCurrentFoorEl.text(values[handle]);
+						floorInfoToTopEl.html('<a href="javascript:void(0);" title=""><svg class="if if-uparrow"><use xlink:href="#if-uparrow"></use></svg></a>');
+						floorInfoToBottomEl.html('<a href="javascript:void(0);" title=""><svg class="if if-downarrow"><use xlink:href="#if-downarrow"></use></svg></a>');
+
+						floorInfoEl.append(floorInfoToTopEl);
+						floorInfoEl.append(floorInfoCurrentFoorEl);
+						floorInfoEl.append(floorInfoToBottomEl);
+						handleEl.append(floorInfoEl);
+						sliderIntit = true;
+					} else {
+						sliderEl.find('.noUi-handle .floor__info-current_floor').text(values[handle]);
+					}
+				});
+
+				jQuery('body').on('click', '.noUi-handle .floor__info-to-top a', function(event) {
+					slider.noUiSlider.set(slider.noUiSlider.get() + 1);
+				});
+
+				jQuery('body').on('click', '.noUi-handle .floor__info-to-bottom a', function(event) {
+					slider.noUiSlider.set(slider.noUiSlider.get() - 1);
+				});
+
+		    })(jQuery);
+
+		    jQuery(document).ready(function($) {
+
+				ChangeFloor.init({
+					tower: './assets/images/tower.png',
+				});
+
+				ChangeRoom.init({
+					fill: '#008a64',
+					plan: './assets/images/plan.svg',
+					rooms: [{
+						points: '27.37 8.34 45.24 8.34 45.24 0 92.97 0 92.97 9.05 120.24 9.05 120.24 0 202.88 0 202.88 84.52 200.18 88.07 200.18 160.11 186.78 160.11 186.78 180.45 200.18 184.44 207.59 193.96 243.5 193.94 243.5 237.43 200.65 241.93 200.65 342.56 182.78 342.56 182.78 346.08 131.17 346.08 131.17 342.07 0 341.14 0.76 327.02 0.74 314.77 2.33 301 4.09 287.3 7.99 275.12 9.3 270.61 10.09 263.91 10.09 226.06 27.9 226.06 27.9 194.2 21.64 181.97 21.64 100.51 30.02 97.04 30.02 74.76 22.58 74.76 22.58 26.8 27.37 26.8 27.37 8.34',
+						position: {
+							top: 27,
+							left: 8,
+						},
+						description: {
+							title: 'Квартира №123',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '237 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '2',
+							},],
+						},
+					},{
+						points: '67.82 204.97 31.47 204.97 31.47 182.75 28.1 181.07 0 181.07 0 24.75 30.09 24.75 30.09 8.53 72.76 8.53 86.71 5.07 100.2 2.65 112.37 1.14 122.82 0.34 133.44 0 147.24 0.26 146.33 168.76 130.49 168.76 130.49 204.97 67.82 204.97',
+						position: {
+							top: 8.5,
+							left: 224,
+						},
+						description: {
+							title: 'Квартира №124',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '200 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '3',
+							},],
+						},
+					},{
+						points: '0 168.51 0 0.18 11.04 0 20.84 0.26 32.08 1.04 42.59 2.24 52.01 3.72 64.34 6.22 73.82 8.29 79.46 8.54 116.04 8.54 116.04 24.75 145.9 24.75 145.89 181.25 118.29 181.25 114.43 204.74 73.83 204.72 15.52 204.72 15.52 168.51 0 168.51',
+						position: {
+							top: 9,
+							left: 383.5,
+						},
+						description: {
+							title: 'Квартира №125',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '137 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '2',
+							},],
+						},
+					},{
+						points: '40.88 157.88 40.88 0.01 123.42 0 198.06 0 198.06 7.53 216.06 7.53 216.06 25.28 221.77 25.28 221.77 74.11 221.42 180.11 214.69 225.25 234.15 225.25 234.37 268.62 237.31 280.72 239.69 292.57 241.62 305.62 242.78 318.88 243.07 331.02 242.95 340.74 112.95 340.74 112.95 345.15 61.28 345.15 61.28 340.74 43.28 340.74 43.28 241.48 0 236.81 0 191.98 40.88 157.88',
+						description: {
+							title: 'Квартира №128',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '154 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '1',
+							},],
+						},
+						position: {
+							top: 28,
+							left: 502,
+						},
+					},{
+						points: '43.43 5.47 61.43 5.47 61.43 0 113.1 0 113.1 5.47 242.95 5.43 243.16 13.73 243.1 25.36 241.71 39.77 239.83 52.17 237.56 63.39 234.45 77.12 234.4 83.69 234.4 121.32 215.18 121.32 215.18 152.69 222.24 165.76 221.91 320.76 216.27 320.75 216.27 338.91 198.56 338.92 198.56 347.15 43.56 347.44 43.56 188.07 43.56 163.29 36.09 153.76 0 153.77 0 108.86 43.43 104.86 43.43 5.47',
+						description: {
+							title: 'Квартира №127',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '100 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '1',
+							},],
+						},
+						position: {
+							top: 378.5,
+							left: 501.5,
+						},
+					},{
+						points: '79.31 0.53 115.13 0.53 118.68 23.99 147.01 23.99 147.01 181.04 117.25 181.04 117.25 196.82 79.49 196.84 74.31 196.61 67.25 198.57 57.08 200.81 48.59 202.33 38.92 203.72 28.33 204.69 17.75 205.24 8.84 205.34 0 205.11 0.36 37.13 16.82 37.13 16.82 0 74.42 0 79.31 0.53',
+						description: {
+							title: 'Квартира №129',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '220 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '3',
+							},],
+						},
+						position: {
+							top: 539,
+							left: 382.5,
+						},
+					},{
+						points: '0 22.93 27.95 22.93 31.58 0 130.77 0 146.99 37.13 146.99 205.34 136.83 205.52 125.58 205.22 114.32 204.38 103.83 203.13 94.78 201.67 86.63 200.05 79.18 198.32 72.45 196.43 66.58 196.96 30.33 196.99 0 180.57 0 22.93',
+						id: '07',
+						description: {
+							titleSold: 'Квартира \nпродана',
+						},
+						soldSVG: '7.62 8.8 45.49 8.8 45.49 0.46 93.22 0.46 93.22 9.51 120.49 9.51 120.49 0.46 203.13 0.46 203.13 84.98 200.43 88.53 200.43 160.57 187.03 160.57 187.03 180.91 200.43 184.9 207.84 194.42 243.75 194.4 243.75 237.89 200.9 242.39 200.9 343.02 183.03 343.02 183.03 346.54 131.42 346.54 131.42 342.53 0.25 341.6 1.01 327.48 0.99 315.23 2.58 301.46 4.34 287.76 8.24 275.58 9.55 271.07 10.34 264.37 10.34 226.52 28.15 226.52 28.15 194.66 21.89 182.43 21.89 100.97 30.27 97.5 30.27 75.22 22.83 75.22 22.83 27.26 27.62 27.26 27.62 8.8',
+						position: {
+							top: 539,
+							left: 224,
+						},
+					},{
+						points: '200.29 3.51 182.42 3.51 182.42 0.01 130.81 0 130.81 4.7 0.37 4.7 0 12.43 0.17 22.18 0.77 31.68 1.86 41.81 3.44 51.88 5.46 61.73 9.03 75.03 9.2 82.64 9.2 120.14 28.07 120.14 28.07 152.24 21.81 164.58 21.81 245.7 29.13 249.69 29.13 271.44 27.01 271.26 27.01 337.74 45.09 346.43 202.4 345.85 202.4 186.44 206.92 152.34 243.39 152.34 243.43 108.31 200.29 103.11 200.29 3.51',
+						description: {
+							title: 'Квартира №130',
+							properies: [{
+								title: 'Тип:',
+								value: 'двухуровневая',
+							}, {
+								title: 'Площадь:',
+								value: '237 м^2',
+							}, {
+								title: 'Комнат:',
+								value: '2',
+							},],
+						},
+						position: {
+							top: 379,
+							left: 8.5,
+						},
+					},],
+				});
+		    });
+		</script>
 	</body>
 </html>

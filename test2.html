@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="
+    background: #AFAFAF;
+">
+	<svg id="svg" height="753px" width="813px"></svg>
+
+	<script type="text/javascript" src="./assets/js/snap.svg-min.js"></script>
+	<script type="text/javascript">
+		
+			// First lets create our drawing surface out of existing SVG element
+			// If you want to create new surface just provide dimensions
+			// like s = Snap(800, 600);
+			var s = Snap("#svg");
+			// Lets create big circle in the middle:
+			/*var bigCircle = s.path('M 27.62 8.8 45.49 8.8 45.49 0.46 93.22 0.46 93.22 9.51 120.49 9.51 120.49 0.46 203.13 0.46 203.13 84.98 200.43 88.53 200.43 160.57 187.03 160.57 187.03 180.91 200.43 184.9 207.84 194.42 243.75 194.4 243.75 237.89 200.9 242.39 200.9 343.02 183.03 343.02 183.03 346.54 131.42 346.54 131.42 342.53 0.25 341.6 1.01 327.48 0.99 315.23 2.58 301.46 4.34 287.76 8.24 275.58 9.55 271.07 10.34 264.37 10.34 226.52 28.15 226.52 28.15 194.66 21.89 182.43 21.89 100.97 30.27 97.5 30.27 75.22 22.83 75.22 22.83 27.26 27.62 27.26 27.62 8.8 z');
+			// By default its black, lets change its attributes
+			bigCircle.attr({
+			    fill: "#bada55"
+			});*/
+
+			var image = s.image('./assets/images/plan.svg', 0, 0, 753, 813);
+
+			var polygon = s.polygon('7.62 8.8 45.49 8.8 45.49 0.46 93.22 0.46 93.22 9.51 120.49 9.51 120.49 0.46 203.13 0.46 203.13 84.98 200.43 88.53 200.43 160.57 187.03 160.57 187.03 180.91 200.43 184.9 207.84 194.42 243.75 194.4 243.75 237.89 200.9 242.39 200.9 343.02 183.03 343.02 183.03 346.54 131.42 346.54 131.42 342.53 0.25 341.6 1.01 327.48 0.99 315.23 2.58 301.46 4.34 287.76 8.24 275.58 9.55 271.07 10.34 264.37 10.34 226.52 28.15 226.52 28.15 194.66 21.89 182.43 21.89 100.97 30.27 97.5 30.27 75.22 22.83 75.22 22.83 27.26 27.62 27.26 27.62 8.8');
+
+			polygon.attr({
+			    fill: "red",
+			}).transform('t7.5,25.5');
+
+			var polygon = s.polygon('68.2 204.99 31.85 204.99 31.85 182.76 28.48 181.09 0.38 181.09 0.38 24.77 30.47 24.77 30.47 8.55 73.14 8.55 87.09 5.08 100.58 2.66 112.75 1.15 123.2 0.35 133.82 0.01 147.62 0.28 146.71 168.78 130.87 168.78 130.87 204.99 68.2 204.99');
+
+			polygon.attr({
+			    fill: "red",
+			}).transform('t223,8');
+			
+			// s.polygon
+			var p = s.path("M10-5-10,15M15,0,0,15M0-5-20,15").attr({
+			        fill: "none",
+			        stroke: "green",
+			        strokeWidth: 2
+			    });
+			// To create pattern,
+			// just specify dimensions in pattern method:
+			p = p.pattern(0, 0, 10, 10);
+			// Then use it as a fill on big circle
+			polygon.attr({
+			    fill: p
+			});
+
+	</script>
+</body>
+</html>
