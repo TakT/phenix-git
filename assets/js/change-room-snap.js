@@ -53,6 +53,10 @@ var ChangeRoom = {
 		this.setElements(this.config.rooms);
 		this.createDescBlock();
 
+		Snap.load(this.config.planData, function(data) {
+			$this.paper.append(data);
+		});
+
 		/*$win.on('resize', this.resizePaper);
 		this.resizePaper();*/
 	},
