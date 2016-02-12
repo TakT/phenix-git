@@ -87,7 +87,7 @@ var ChangeRoom = {
 			var obj = elements[i];
 			var opacity = 0;
 			var fillOpacity = this.getFillOpacity(obj);
-			var link = obj.url ? obj.url : null;
+			var modalId = obj.modalId ? obj.modalId : null;
 			var soldSVG = obj.soldSVG ? obj.soldSVG : null;
 			var $this = this;
 
@@ -102,7 +102,7 @@ var ChangeRoom = {
 						opacity: opacity,
 						cursor: 'pointer',
 					})
-					.data('href', link)
+					.data('modalId', modalId)
 					.data('index', i)
 					.data('soldSVG', ((soldSVG != null) ? true : false))
 					.transform('t' + obj.position.left + ',' + obj.position.top);
@@ -171,7 +171,6 @@ var ChangeRoom = {
 							};
 						}
 					};
-
 					if (!this.data('soldSVG')) {
 						this.animate({
 							opacity: 1,
@@ -188,7 +187,6 @@ var ChangeRoom = {
 							});
 						}
 					}
-
 				}, function() {
 					if (!this.data('soldSVG')) {
 						this.animate({
@@ -196,6 +194,13 @@ var ChangeRoom = {
 						}, 200);
 					}
 					$this.hideDescription();
+				});
+
+				polygon.click(function() {
+					var modalId = this.data('modalId');
+					if (modalId != null && !this.data('soldSVG')) {
+						jQuery(modalId).modal('show');
+					}
 				});
 			}
 
