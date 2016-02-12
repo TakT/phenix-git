@@ -3315,6 +3315,10 @@ form .select-style select:focus {
 #area .area__content #change__room .change__room-desc.change__room-desc--soldout.active .desc__title {
   display: table-cell;
 }
+#area .area__content .plan__legend {
+  margin-left: 125px;
+  margin-left: 6.5104vw;
+}
 #area .area__content .plan__legend .if {
   width: 32px;
   width: 1.667vw;
@@ -3331,6 +3335,11 @@ form .select-style select:focus {
   font-size: 1.298vh;
   font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
   vertical-align: middle;
+  padding: 0 40px;
+  padding: 0 2.08335vw;
+}
+#area .area__content .plan__legend li:first-child {
+  padding-left: 0;
 }
 #area .area__content .plan__legend li a {
   color: #fff;
@@ -3338,10 +3347,10 @@ form .select-style select:focus {
 }
 #area .area__content .floor__info {
   position: absolute;
-  top: -80px;
-  top: -7.4vh;
-  left: -100px;
-  left: -5.2vw;
+  top: -110px;
+  top: -10.2vh;
+  left: -111px;
+  left: -5.78125vw;
   text-align: center;
 }
 #area .area__content .floor__info .floor__info-current_floor {
@@ -3366,6 +3375,26 @@ form .select-style select:focus {
   height: 32px;
   height: 1.667vw;
 }
+#area .area__content .change__room-wrapper {
+  margin-left: -64px;
+}
+#area .area__content .range-wrapper {
+  margin-top: -63px;
+}
+#area .area__content .range__icons {
+  text-align: center;
+  margin-right: 35px;
+}
+#area .area__content .range__icons .if {
+  fill: #fff;
+  width: 34px;
+  width: 1.7715vw;
+  height: 34px;
+  height: 1.7715vw;
+}
+#area .area__content .range__icons.range__icons-parking {
+  clear: both;
+}
 #area #showcase {
   margin: 0 20px;
   text-align: center;
@@ -3373,7 +3402,9 @@ form .select-style select:focus {
 #area #range_floor {
   height: 760px;
   height: 70.35vh;
-  margin: 0 auto;
+  margin: 30px auto;
+  margin-right: 185px;
+  float: right;
 }
 #area #value-span,
 #area #value-input {
