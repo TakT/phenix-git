@@ -44,21 +44,72 @@ var ChangeRoom = {
 
 	init: function(userConfig) {
 		var $this = this;
-		this.config = userConfig;
+		this.config = userConfig || this.config;
 
-		var $win = jQuery(window);
-		this.paper = Snap('#change__room-plan');
-		this.paper.image(this.config.plan, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
+		console.log(this.config);
 
-		this.setElements(this.config.rooms);
-		this.createDescBlock();
+		if (!this.activeConfig) {
+			this.activeConfig = this.setDefault();
+		}
 
-		Snap.load(this.config.planData, function(data) {
-			$this.paper.append(data);
-		});
+		if (this.activeConfig) {
+			var $win = jQuery(window);
+			this.paper = Snap('#change__room-plan');
+			// this.paper.image(this.config.plan, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
 
-		/*$win.on('resize', this.resizePaper);
-		this.resizePaper();*/
+			this.setElements(this.activeConfig.rooms);
+			this.createDescBlock();
+
+			Snap.load(this.activeConfig.plan, function(data) {
+				data.parent = function() {};
+				$this.paper.select('.change__room-desc').before(data);
+			});
+
+			Snap.load(this.activeConfig.planData, function(data) {
+				$this.paper.append(data);
+			});
+
+			this.paper.hover(function() {}, function() {
+				$this.unhoverActivatedDescription();
+			});
+
+			/*$win.on('resize', this.resizePaper);
+			this.resizePaper();*/
+		}
+
+	},
+
+	set: function(id) {
+		if (id > 0) {
+			var room = null;
+			for (var i = 0; i < this.config.length; i++) {
+				var room = this.config[i];
+				if (room.id == id) {
+					this.reinit(room);
+					break;
+				}
+			}
+		}
+	},
+
+	reinit: function(room) {
+		if (this.paper) {
+			this.paper.clear();
+			this.activeConfig = room;
+			this.init();
+		}
+	},
+
+	setDefault: function() {
+		var room = null;
+		for (var i = 0; i < this.config.length; i++) {
+			room = this.config[i];
+			if (room.isDefault) {
+				this.reinit(room);
+				break;
+			}
+		}
+		return room;
 	},
 
 	createDescBlock: function() {
@@ -69,12 +120,12 @@ var ChangeRoom = {
 
 		var descriptionInner = this.paper.rect(228, 282, 295, 185).attr({
 			fill: '#fff',
-			stroke: '#009e74',
+			stroke: this.activeConfig.fill,
 			'stroke-width': 2,
 		});
 
 		var titleLine = this.paper.rect(275, 345, 97, 2).attr({
-			fill: '#009e74',
+			fill: this.activeConfig.fill,
 		}).addClass('title__line');
 
 		this.elS.descTitle = this.paper.text(this.descTitlePostion.defaultPosition.x, this.descTitlePostion.defaultPosition.y, null).addClass('desc__title');
@@ -97,8 +148,8 @@ var ChangeRoom = {
 				polygon
 					.attr({
 						stroke: 'none',
-						fill: $this.config.fill,
-						'fill-opacity': fillOpacity,
+						fill: $this.activeConfig.fill,
+						// 'fill-opacity': fillOpacity,
 						opacity: opacity,
 						cursor: 'pointer',
 					})
@@ -112,6 +163,7 @@ var ChangeRoom = {
 					var p = $this.paper.path("M10-5-10,15M15,0,0,15M0-5-20,15").attr({
 						fill: "none",
 						stroke: "#fff",
+						opacity: 0.6,
 						strokeWidth: 2
 					});
 					p = p.pattern(0, 0, 10, 10);
@@ -125,10 +177,13 @@ var ChangeRoom = {
 				polygon.hover(function() {
 
 					var index = this.data('index');
-					var description = $this.config.rooms[index].description;
+					var description = $this.activeConfig.rooms[index].description;
 					var descTitle = $this.elS.descTitle;
 
+					$this.unhoverActivatedDescription();
 					$this.hideDescription();
+
+					this.addClass('active');
 
 					if (description != null && description != undefined) {
 
@@ -171,6 +226,7 @@ var ChangeRoom = {
 							};
 						}
 					};
+
 					if (!this.data('soldSVG')) {
 						this.animate({
 							opacity: 1,
@@ -188,12 +244,7 @@ var ChangeRoom = {
 						}
 					}
 				}, function() {
-					if (!this.data('soldSVG')) {
-						this.animate({
-							opacity: 0,
-						}, 200);
-					}
-					$this.hideDescription();
+					// $this.unhoverDescription(this);
 				});
 
 				polygon.click(function() {
@@ -208,6 +259,23 @@ var ChangeRoom = {
 				drawPath();
 			}
 		}
+	},
+
+	unhoverActivatedDescription: function() {
+		var activeEls = this.paper.select('.active');
+		if (activeEls != null) {
+			activeEls.removeClass('active');
+			this.unhoverDescription(activeEls);
+		}
+	},
+
+	unhoverDescription: function(hoverPolygon) {
+		if (!hoverPolygon.data('soldSVG')) {
+			hoverPolygon.animate({
+				opacity: 0,
+			}, 200);
+		}
+		this.hideDescription();
 	},
 
 	hideDescription: function() {

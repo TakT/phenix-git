@@ -3383,7 +3383,8 @@ form .select-style select:focus {
 }
 #area .area__content .range__icons {
   text-align: center;
-  margin-right: 35px;
+  margin-right: -112px;
+  margin-right: -5.83335vw;
 }
 #area .area__content .range__icons .if {
   fill: #fff;
@@ -3403,8 +3404,8 @@ form .select-style select:focus {
   height: 760px;
   height: 70.35vh;
   margin: 30px auto;
-  margin-right: 185px;
-  float: right;
+  margin-right: 33px;
+  margin-right: 1.71875vw;
 }
 #area #value-span,
 #area #value-input {
@@ -3413,6 +3414,13 @@ form .select-style select:focus {
   display: block;
   text-align: center;
   margin: 0;
+}
+#area #change_floor {
+  padding-right: 80px;
+  padding-right: 4.16665vw;
+  margin-top: -295px;
+  margin-top: -27.3148vh;
+  margin-top: -50%;
 }
 @media (min-width: 768px) {
   .modal-dialog {
