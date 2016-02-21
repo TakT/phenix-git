@@ -8,10 +8,7 @@ var ChangeFloor = {
 	elS: {
 		parent: jQuery('#change_floor'),
 		tourBg: jQuery('#change_floor').find('.tour3D__bg'),
-		soldSVGsEl: jQuery('#change_floor').find('.change__room_sold-svg'),
-		descriptionEl: jQuery('#change_floor').find('.change__room-desc'),
-		tourPoints: jQuery('#change_floor').find('.tour3D__points'),
-		descGroup: null,
+		floorInfo: jQuery('#floor__info'),
 	},
 	// размеры подложки
 	sizeCanvas: {
@@ -49,8 +46,10 @@ var ChangeFloor = {
 
 		this.setElements(this.config.floors);
 
-		this.paper.hover(function() {}, function() {
-			// $this.unhoverActivatedDescription();
+		this.paper.hover(function() {
+			$this.elS.floorInfo.show();
+		}, function() {
+			$this.elS.floorInfo.hide();
 		});
 
 		/*$win.on('resize', this.resizePaper);
@@ -81,29 +80,70 @@ var ChangeFloor = {
 						fill: obj.fill,
 						'fill-opacity': 0.4,
 						opacity: opacity,
-						cursor: 'pointer',
+						cursor: 'none',
 					})
 					.data('id', obj.id)
+					.data('rooms', obj.rooms)
 					.transform('t' + obj.position.left + ',' + obj.position.top);
 
 				var intervalId = null;
 
-				polygon.hover(function() {
+				var parentOffset = $this.elS.floorInfo.parent().position();
+				polygon.mousemove(function(e) {
+
+					var relX = e.pageX - parentOffset.left;
+					var relY = e.pageY - parentOffset.top;
+
+					// console.log(relX);
+
+					$this.elS.floorInfo.css({
+						left: relX,
+						top: relY
+					});
+				});
+
+				polygon.hover(function(e) {
 					var id = this.data('id');
+					var rooms = this.data('rooms');
+					var polygonObj = this;
+					var cursorDirection = 'center';
+
 					$this.offsetTop = parseInt($this.offsetTop);
 
 					this.animate({
 						opacity: 1,
 					}, 200);
 
+					var relX = e.pageX - parentOffset.left;
+					var relY = e.pageY - parentOffset.top;
+
+					if (relX < 295) {
+						$this.elS.floorInfo.removeClass('offset-left').addClass('offset-right');
+					} else {
+						$this.elS.floorInfo.removeClass('offset-right').addClass('offset-left');
+					}
+
+					$this.elS.floorInfo.find('.floor__info-floor').text(id);
+					$this.elS.floorInfo.find('.floor__info-rooms').text(rooms);
+
+					// console.log(event.pageX, event.pageY);
+
 					intervalId = setInterval(function() {
 
 						var offsetTmp = $this.offsetTop;
-						if (id > 0 && id < 21) {
+						if (id == 21) {
+							cursorDirection = 'center';
+						} else if (id > 0 && id < 21) {
 							$this.offsetTop -= 2;
+							cursorDirection = 'down';
 						} else if (id > 0 && id > 21) {
 							$this.offsetTop += 2;
+							cursorDirection = 'up';
 						}
+
+						polygonObj.attr({
+							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg), pointer',
+						});
 
 						if ($this.offsetTop < -30 && $this.offsetTop > -94) {
 							$this.elS.parent.animate({

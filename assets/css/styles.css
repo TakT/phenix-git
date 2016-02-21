@@ -3422,6 +3422,99 @@ form .select-style select:focus {
   margin-top: -27.3148vh;
   margin-top: -50%;
 }
+#area #floor__info {
+  display: none;
+  width: 192px;
+  height: 54px;
+  position: absolute;
+  background-color: #008a64;
+  border-radius: 27px;
+  color: #fff;
+  font-family: 'WarnockPro-Regular', Arial, Helvetica, Verdana, sans-serif;
+  padding-top: 11px;
+  padding-left: 15px;
+  margin-top: -10px;
+  top: 0;
+  left: 0;
+}
+#area #floor__info .floor__info-rooms,
+#area #floor__info .floor__info-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+#area #floor__info .floor__info-rooms {
+  font-size: 40px;
+  margin-right: 10px;
+}
+#area #floor__info .floor__info-title {
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
+  vertical-align: text-bottom;
+}
+#area #floor__info .floor__info-floor {
+  width: 54px;
+  height: 54px;
+  background-color: #eed87b;
+  border-radius: 50%;
+  color: #003c23;
+  font-size: 30px;
+  font-family: 'WarnockPro-Regular', Arial, Helvetica, Verdana, sans-serif;
+  text-align: center;
+  line-height: 61px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#area #floor__info .floor__info-floor:before {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -5.5px;
+  width: 0;
+  height: 0;
+  right: -9px;
+  border-style: solid;
+  border-width: 7px 0 7px 11px;
+  border-color: transparent transparent transparent #eed97b;
+}
+#area #floor__info .floor__info-floor:after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  margin-top: -5.5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 11px 7px 0;
+  border-color: transparent #eed97b transparent transparent;
+}
+#area #floor__info.offset-left {
+  margin-left: -205px;
+}
+#area #floor__info.offset-left .floor__info-floor:before {
+  display: block;
+}
+#area #floor__info.offset-left .floor__info-floor:after {
+  display: none;
+}
+#area #floor__info.offset-right {
+  margin-left: 35px;
+  padding-left: 63px;
+}
+#area #floor__info.offset-right .floor__info-floor {
+  left: 0;
+  right: auto;
+}
+#area #floor__info.offset-right .floor__info-floor:before {
+  display: none;
+}
+#area #floor__info.offset-right .floor__info-floor:after {
+  display: block;
+}
 @media (min-width: 768px) {
   .modal-dialog {
     width: 870px;
