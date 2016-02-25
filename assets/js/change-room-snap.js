@@ -46,8 +46,6 @@ var ChangeRoom = {
 		var $this = this;
 		this.config = userConfig || this.config;
 
-		console.log(this.config);
-
 		if (!this.activeConfig) {
 			this.activeConfig = this.setDefault();
 		}

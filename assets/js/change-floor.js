@@ -43,8 +43,6 @@ var ChangeFloor = {
 		this.offsetTop = -51;
 		this.currentFloor = this.config.defaultFloor;
 
-		console.log($this.elS.parent, this.offsetTop);
-
 		this.paper = Snap('#change_floor');
 		this.paper.image(this.config.tower, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
 
@@ -209,7 +207,6 @@ var ChangeFloor = {
 			for (var i = 0; i < els.length; i++) {
 				el = els[i];
 				elId = el.data('id');
-
 				if (id == elId) {
 					this.setFloor(el);
 				}
@@ -221,7 +218,6 @@ var ChangeFloor = {
 		var id = el.data('id');
 		var type = el.data('type');
 		this.currentFloor = id;
-		console.log(id, type);
 
 		var actives = el.parent().select('.active');
 		if (actives) {
@@ -231,6 +227,10 @@ var ChangeFloor = {
 		el.attr('class', 'active');
 		if (id > 0) {
 			ChangeRoom.set(id);
+		}
+
+		if (this.config.sliderEl != undefined) {
+			this.config.sliderEl.noUiSlider.set(id);
 		}
 
 		this.setTypeActive(type);

@@ -645,7 +645,6 @@
 		    	var sliderEl = jQuery(slider);
 		    	var sliderIntit = false;
 		    	var value = 21;
-		    	// var ChangeFloor.offsetTop = -51;
 		    	var prevFloor;
 		        
 				noUiSlider.create(slider, {
@@ -727,14 +726,10 @@
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-bottom a', function(event) {
 					slider.noUiSlider.set(slider.noUiSlider.get() - 1);
-					console.log(slider.noUiSlider.get(), ChangeFloor.currentFloor);
 					if (slider.noUiSlider.get() == 1) {
 						ChangeFloor.setById(ChangeFloor.currentFloor - 1);
 					}
 				});
-		    })(jQuery);
-
-		    jQuery(document).ready(function($) {
 
 				ChangeRoom.init([{
 					id: 1,
@@ -1057,6 +1052,7 @@
 
 				ChangeFloor.init({
 					defaultFloor: 21,
+					sliderEl: slider,
 					tower: './assets/images/tower.png',
 					ofssetTop: -27.3148,
 					floors: [{
@@ -1515,7 +1511,7 @@
 						},
 					},],
 				});
-		    });
+		    })(jQuery);
 		</script>
 	</body>
 </html>
