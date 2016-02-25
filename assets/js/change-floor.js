@@ -171,28 +171,47 @@ var ChangeFloor = {
 				});
 
 				polygon.click(function(event) {
-					var id = this.data('id');
-					var type = this.data('type');
-					console.log(id, type);
-
-					var actives = this.parent().select('.active');
-					if (actives) {
-						actives.attr('class', '');
-					}
-
-					this.attr('class', 'active');
-					if (id > 0) {
-						ChangeRoom.set(id);
-					}
-
-					$this.setTypeActive(type);
+					$this.setFloor(this);
 				});
+
+				if ($this.config.defaultFloor == obj.id) {
+					$this.setFloor(polygon);
+				}
 			}
 
 			if (parseInt(obj.count) !== 0) {
 				drawPath();
 			}
 		}
+	},
+
+	setById: function(id) {
+		if (id > 0) {
+			var floor = null;
+			var els = this.paper.select('path, polygon');
+			console.log(els);
+			els.each(function(index, el) {
+				console.log(el.this('id'));
+			});
+		}
+	},
+
+	setFloor: function(el) {
+		var id = el.data('id');
+		var type = el.data('type');
+		console.log(id, type);
+
+		var actives = el.parent().select('.active');
+		if (actives) {
+			actives.attr('class', '');
+		}
+
+		el.attr('class', 'active');
+		if (id > 0) {
+			ChangeRoom.set(id);
+		}
+
+		this.setTypeActive(type);
 	},
 
 	setTypeActive: function(type) {
