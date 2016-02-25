@@ -230,7 +230,7 @@ var ChangeFloor = {
 		}
 
 		if (this.config.sliderEl != undefined) {
-			this.config.sliderEl.noUiSlider.set(id);
+			// this.config.sliderEl.noUiSlider.set(id);
 		}
 
 		this.setTypeActive(type);
