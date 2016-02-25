@@ -31,6 +31,7 @@ var ChangeFloor = {
 		speedAnimOut: 150,
 		startOpacity: 0.7,
 	},
+	cursorDirectionClassList: ['direction__center', 'direction__up', 'direction__down'],
 
 	init: function(userConfig) {
 		var $this = this;
@@ -130,6 +131,7 @@ var ChangeFloor = {
 
 					// console.log(event.pageX, event.pageY);
 
+					var cursorDirectionClass = 'direction__center';
 					intervalId = setInterval(function() {
 
 						var offsetTmp = $this.offsetTop;
@@ -143,8 +145,13 @@ var ChangeFloor = {
 							cursorDirection = 'up';
 						}
 
+
+						$this.elS.floorInfo.removeClass($this.cursorDirectionClassList.join(' '));
+						cursorDirectionClass = 'direction__' + cursorDirection;
+						$this.elS.floorInfo.addClass(cursorDirectionClass);
+
 						polygonObj.attr({
-							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg), pointer',
+							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg) -15 -15, pointer',
 						});
 
 						if ($this.offsetTop < -30 && $this.offsetTop > -94) {

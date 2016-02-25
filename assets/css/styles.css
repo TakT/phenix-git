@@ -3519,6 +3519,15 @@ form .select-style select:focus {
 #area #floor__info.offset-right .floor__info-floor:after {
   display: block;
 }
+#area #floor__info.direction__up {
+  margin-top: -8px;
+}
+#area #floor__info.direction__center {
+  margin-top: -10px;
+}
+#area #floor__info.direction__down {
+  margin-top: -20px;
+}
 @media (min-width: 768px) {
   .modal-dialog {
     width: 870px;
