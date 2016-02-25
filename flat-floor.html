@@ -698,16 +698,12 @@
 					} else {
 						sliderEl.find('.noUi-handle .floor__info-current_floor').text(value);
 					}
-
-					console.log(value);
 					
 					var offsetTmp = ChangeFloor.offsetTop;
 
 					if (value > prevFloor) {
-						console.log('+');
 						ChangeFloor.offsetTop += 2;
 					} else if (value < prevFloor) {
-						console.log('-');
 						ChangeFloor.offsetTop -= 2;
 					}
 
@@ -724,10 +720,17 @@
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-top a', function(event) {
 					slider.noUiSlider.set(slider.noUiSlider.get() + 1);
+					if (slider.noUiSlider.get() == 42) {
+						ChangeFloor.setById(ChangeFloor.currentFloor + 1);
+					}
 				});
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-bottom a', function(event) {
 					slider.noUiSlider.set(slider.noUiSlider.get() - 1);
+					console.log(slider.noUiSlider.get(), ChangeFloor.currentFloor);
+					if (slider.noUiSlider.get() == 1) {
+						ChangeFloor.setById(ChangeFloor.currentFloor - 1);
+					}
 				});
 		    })(jQuery);
 

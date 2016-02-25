@@ -18,6 +18,7 @@ var ChangeFloor = {
 	},
 
 	offsetTop: 0,
+	currentFloor: 21,
 
 	visualStyles: {
 		colorDisabled: "#8ca7c8",
@@ -40,6 +41,7 @@ var ChangeFloor = {
 		var $win = jQuery(window);
 		// this.offsetTop = $this.elS.parent.css('margin-top');
 		this.offsetTop = -51;
+		this.currentFloor = this.config.defaultFloor;
 
 		console.log($this.elS.parent, this.offsetTop);
 
@@ -66,6 +68,7 @@ var ChangeFloor = {
 			var fillOpacity = this.getFillOpacity(obj);
 			var svgType = obj.svgType ? obj.svgType : null;
 			var $this = this;
+			var cursorDirection = 'center';
 
 			var drawPath = function drawPath() {
 
@@ -89,9 +92,21 @@ var ChangeFloor = {
 					.data('type', obj.type)
 					.transform('t' + obj.position.left + ',' + obj.position.top);
 
-				var intervalId = null;
+				if (obj.id == 21) {
+					cursorDirection = 'center';
+				} else if (obj.id > 0 && obj.id < 21) {
+					cursorDirection = 'down';
+				} else if (obj.id > 0 && obj.id > 21) {
+					cursorDirection = 'up';
+				}
 
+				polygon.attr({
+					cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg) 0 10, pointer',
+				});
+
+				var intervalId = null;
 				var parentOffset = $this.elS.floorInfo.parent().position();
+
 				polygon.mousemove(function(e) {
 
 					var relX = e.pageX - parentOffset.left;
@@ -109,7 +124,6 @@ var ChangeFloor = {
 					var id = this.data('id');
 					var rooms = this.data('rooms');
 					var polygonObj = this;
-					var cursorDirection = 'center';
 
 					$this.offsetTop = parseInt($this.offsetTop);
 
@@ -157,13 +171,13 @@ var ChangeFloor = {
 						if ($this.offsetTop < -30 && $this.offsetTop > -94) {
 							$this.elS.parent.animate({
 								'margin-top': $this.offsetTop + '%',
-							}, 20);
+							}, 50);
 						} else {
 							$this.offsetTop = offsetTmp;
 							clearInterval(intervalId);
 							return false;
 						}
-					}, 20);
+					}, 50);
 
 				}, function() {
 					$this.unhoverFloor(this);
@@ -171,6 +185,7 @@ var ChangeFloor = {
 				});
 
 				polygon.click(function(event) {
+					clearInterval(intervalId);
 					$this.setFloor(this);
 				});
 
@@ -188,17 +203,24 @@ var ChangeFloor = {
 	setById: function(id) {
 		if (id > 0) {
 			var floor = null;
-			var els = this.paper.select('path, polygon');
-			console.log(els);
-			els.each(function(index, el) {
-				console.log(el.this('id'));
-			});
+			var els = this.paper.selectAll('path, polygon');
+			var el, elId;
+
+			for (var i = 0; i < els.length; i++) {
+				el = els[i];
+				elId = el.data('id');
+
+				if (id == elId) {
+					this.setFloor(el);
+				}
+			}
 		}
 	},
 
 	setFloor: function(el) {
 		var id = el.data('id');
 		var type = el.data('type');
+		this.currentFloor = id;
 		console.log(id, type);
 
 		var actives = el.parent().select('.active');
