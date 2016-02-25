@@ -9,6 +9,7 @@ var ChangeFloor = {
 		parent: jQuery('#change_floor'),
 		tourBg: jQuery('#change_floor').find('.tour3D__bg'),
 		floorInfo: jQuery('#floor__info'),
+		typesMenu: jQuery('.content__menu'),
 	},
 	// размеры подложки
 	sizeCanvas: {
@@ -37,7 +38,7 @@ var ChangeFloor = {
 
 		var $win = jQuery(window);
 		// this.offsetTop = $this.elS.parent.css('margin-top');
-		this.offsetTop = -50;
+		this.offsetTop = -51;
 
 		console.log($this.elS.parent, this.offsetTop);
 
@@ -84,6 +85,7 @@ var ChangeFloor = {
 					})
 					.data('id', obj.id)
 					.data('rooms', obj.rooms)
+					.data('type', obj.type)
 					.transform('t' + obj.position.left + ',' + obj.position.top);
 
 				var intervalId = null;
@@ -163,16 +165,35 @@ var ChangeFloor = {
 
 				polygon.click(function(event) {
 					var id = this.data('id');
-					console.log(id);
+					var type = this.data('type');
+					console.log(id, type);
+
+					var actives = this.parent().select('.active');
+					if (actives) {
+						actives.attr('class', '');
+					}
+
+					this.attr('class', 'active');
 					if (id > 0) {
 						ChangeRoom.set(id);
 					}
+
+					$this.setTypeActive(type);
 				});
 			}
 
 			if (parseInt(obj.count) !== 0) {
 				drawPath();
 			}
+		}
+	},
+
+	setTypeActive: function(type) {
+		var typeEl = this.elS.typesMenu.find('a[data-type="' + type + '"]');
+
+		if (typeEl.length > 0) {
+			this.elS.typesMenu.find('a.active').removeClass('active');
+			typeEl.addClass('active');
 		}
 	},
 

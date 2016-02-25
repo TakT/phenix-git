@@ -3420,7 +3420,11 @@ form .select-style select:focus {
   padding-right: 4.16665vw;
   margin-top: -295px;
   margin-top: -27.3148vh;
-  margin-top: -50%;
+  margin-top: -51%;
+}
+#area #change_floor > polygon.active,
+#area #change_floor > path.active {
+  opacity: 1 !important;
 }
 #area #floor__info {
   display: none;
