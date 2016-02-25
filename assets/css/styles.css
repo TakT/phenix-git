@@ -3437,7 +3437,7 @@ form .select-style select:focus {
   font-family: 'WarnockPro-Regular', Arial, Helvetica, Verdana, sans-serif;
   padding-top: 11px;
   padding-left: 15px;
-  margin-top: -10px;
+  margin-top: -25px;
   top: 0;
   left: 0;
 }
@@ -3520,13 +3520,13 @@ form .select-style select:focus {
   display: block;
 }
 #area #floor__info.direction__up {
-  margin-top: -8px;
+  margin-top: -25px;
 }
 #area #floor__info.direction__center {
-  margin-top: -10px;
+  margin-top: -25px;
 }
 #area #floor__info.direction__down {
-  margin-top: -20px;
+  margin-top: -37px;
 }
 @media (min-width: 768px) {
   .modal-dialog {

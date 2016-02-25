@@ -640,9 +640,13 @@
 		<script type="text/javascript">
 		    (function($){
 
+	    		var changeFloorEl = jQuery('#change_floor');
 		    	var slider = document.getElementById('range_floor');
 		    	var sliderEl = jQuery(slider);
 		    	var sliderIntit = false;
+		    	var value = 21;
+		    	// var ChangeFloor.offsetTop = -51;
+		    	var prevFloor;
 		        
 				noUiSlider.create(slider, {
 					start: [ 21 ], // Handle start position
@@ -669,6 +673,7 @@
 
 				slider.noUiSlider.on('update', function(values, handle){
 
+					value = values[handle];
 					if (!sliderIntit) {
 						var handleEl = sliderEl.find('.noUi-handle');
 						var floorInfoEl = jQuery(document.createElement('div'));
@@ -681,7 +686,7 @@
 						floorInfoToTopEl.addClass('floor__info-to-top');
 						floorInfoToBottomEl.addClass('floor__info-to-bottom');
 
-						floorInfoCurrentFoorEl.text(values[handle]);
+						floorInfoCurrentFoorEl.text(value);
 						floorInfoToTopEl.html('<a href="javascript:void(0);" title=""><svg class="if if-uparrow"><use xlink:href="#if-uparrow"></use></svg></a>');
 						floorInfoToBottomEl.html('<a href="javascript:void(0);" title=""><svg class="if if-downarrow"><use xlink:href="#if-downarrow"></use></svg></a>');
 
@@ -691,8 +696,30 @@
 						handleEl.append(floorInfoEl);
 						sliderIntit = true;
 					} else {
-						sliderEl.find('.noUi-handle .floor__info-current_floor').text(values[handle]);
+						sliderEl.find('.noUi-handle .floor__info-current_floor').text(value);
 					}
+
+					console.log(value);
+					
+					var offsetTmp = ChangeFloor.offsetTop;
+
+					if (value > prevFloor) {
+						console.log('+');
+						ChangeFloor.offsetTop += 2;
+					} else if (value < prevFloor) {
+						console.log('-');
+						ChangeFloor.offsetTop -= 2;
+					}
+
+					if (ChangeFloor.offsetTop < -30 && ChangeFloor.offsetTop > -94) {
+						changeFloorEl.animate({
+							'margin-top': ChangeFloor.offsetTop + '%',
+						}, 20);
+					} else {
+						ChangeFloor.offsetTop = offsetTmp;
+					}
+
+					prevFloor = value;
 				});
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-top a', function(event) {

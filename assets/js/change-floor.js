@@ -151,7 +151,7 @@ var ChangeFloor = {
 						$this.elS.floorInfo.addClass(cursorDirectionClass);
 
 						polygonObj.attr({
-							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg) -15 -15, pointer',
+							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg) 0 10, pointer',
 						});
 
 						if ($this.offsetTop < -30 && $this.offsetTop > -94) {
