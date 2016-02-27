@@ -322,13 +322,6 @@ Array.prototype.prev = function() {
 
 Array.prototype.current = 0;
 
-jQuery.expr.filters.offscreen = function(el) {
-	var offset = jQuery(el).offset();
-	return (
-		(offset.top < 0)
-	);
-};
-
 /*
  * ScaleRaphael 0.8 by Zevan Rosser 2010
  * For use with Raphael library : www.raphaeljs.com

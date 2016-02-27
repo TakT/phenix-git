@@ -157,7 +157,6 @@ var ChangeFloor = {
 							cursorDirection = 'up';
 						}
 
-
 						$this.elS.floorInfo.removeClass($this.cursorDirectionClassList.join(' '));
 						cursorDirectionClass = 'direction__' + cursorDirection;
 						$this.elS.floorInfo.addClass(cursorDirectionClass);
@@ -166,15 +165,15 @@ var ChangeFloor = {
 							cursor: 'url(./assets/images/cursor-' + cursorDirection + '.svg) 0 10, pointer',
 						});
 
-						if ($this.offsetTop < -30 && $this.offsetTop > -94) {
-							$this.elS.parent.animate({
-								'margin-top': $this.offsetTop + '%',
-							}, 50);
-						} else {
+						if ((!$this.elS.parent.is(':off-top') && cursorDirection == 'up') || (!$this.elS.parent.is(':off-bottom') && cursorDirection == 'down')) {
 							$this.offsetTop = offsetTmp;
 							clearInterval(intervalId);
 							return false;
 						}
+
+						$this.elS.parent.animate({
+							'margin-top': $this.offsetTop + '%',
+						}, 50);
 					}, 50);
 
 				}, function() {
