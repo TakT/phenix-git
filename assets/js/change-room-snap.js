@@ -53,15 +53,15 @@ var ChangeRoom = {
 		if (this.activeConfig) {
 			var $win = jQuery(window);
 			this.paper = Snap('#change__room-plan');
-			// this.paper.image(this.config.plan, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
+			this.paper.image(this.activeConfig.plan, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
 
 			this.setElements(this.activeConfig.rooms);
 			this.createDescBlock();
 
-			Snap.load(this.activeConfig.plan, function(data) {
+			/*Snap.load(this.activeConfig.plan, function(data) {
 				data.parent = function() {};
 				$this.paper.select('.change__room-desc').before(data);
-			});
+			});*/
 
 			Snap.load(this.activeConfig.planData, function(data) {
 				$this.paper.append(data);
@@ -147,7 +147,7 @@ var ChangeRoom = {
 					.attr({
 						stroke: 'none',
 						fill: $this.activeConfig.fill,
-						// 'fill-opacity': fillOpacity,
+						'fill-opacity': fillOpacity,
 						opacity: opacity,
 						cursor: 'pointer',
 					})
