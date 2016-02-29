@@ -173,8 +173,8 @@ var ChangeFloor = {
 
 						$this.elS.parent.animate({
 							'margin-top': $this.offsetTop + '%',
-						}, 50);
-					}, 50);
+						}, 75);
+					}, 75);
 
 				}, function() {
 					$this.unhoverFloor(this);
@@ -229,7 +229,7 @@ var ChangeFloor = {
 		}
 
 		if (this.config.sliderEl != undefined) {
-			// this.config.sliderEl.noUiSlider.set(id);
+			this.config.sliderEl.noUiSlider.set(id);
 		}
 
 		this.setTypeActive(type);
