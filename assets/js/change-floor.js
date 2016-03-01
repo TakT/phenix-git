@@ -183,11 +183,11 @@ var ChangeFloor = {
 
 				polygon.click(function(event) {
 					clearInterval(intervalId);
-					$this.setFloor(this);
+					$this.setFloor(this, true);
 				});
 
 				if ($this.config.defaultFloor == obj.id) {
-					$this.setFloor(polygon);
+					$this.setFloor(polygon, true);
 				}
 			}
 
@@ -214,10 +214,10 @@ var ChangeFloor = {
 	},
 
 	setFloor: function(el, updateSlider) {
-		updateSlider = updateSlider || true;
+		console.log('-', updateSlider);
+		updateSlider = (updateSlider) ? updateSlider : false;
 		var id = el.data('id');
 		var type = el.data('type');
-		this.currentFloor = id;
 
 		var actives = el.parent().select('.active');
 		if (actives) {
@@ -225,17 +225,18 @@ var ChangeFloor = {
 		}
 
 		el.attr('class', 'active');
-		if (id > 0) {
+		if (id > 0 && id != this.currentFloor) {
 			ChangeRoom.set(id);
 		}
 
-		console.log(updateSlider);
-		if (this.config.sliderEl != undefined && !updateSlider) {
+		console.log(this.config.sliderEl != undefined, updateSlider, (this.config.sliderEl != undefined && updateSlider));
+		if (this.config.sliderEl != undefined && updateSlider) {
 			console.log('update');
 			this.config.sliderEl.noUiSlider.set(id);
 		}
 
 		this.setTypeActive(type);
+		this.currentFloor = id;
 	},
 
 	setTypeActive: function(type) {
