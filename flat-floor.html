@@ -1498,10 +1498,9 @@
 
 console.log(cursorDirection);
 					if ((!changeFloorEl.is(':off-top') && cursorDirection == 'up') || (!changeFloorEl.is(':off-bottom') && cursorDirection == 'down')) {
-					// if (!changeFloorEl.is(':off-top') || !changeFloorEl.is(':off-bottom')) {
 						console.log('false');
 						ChangeFloor.offsetTop = offsetTmp;
-						return false;
+						// return false;
 					}
 					
 					console.log(ChangeFloor.offsetTop);
