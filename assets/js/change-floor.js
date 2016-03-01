@@ -214,7 +214,7 @@ var ChangeFloor = {
 	},
 
 	setFloor: function(el, updateSlider) {
-		console.log('-', updateSlider);
+
 		updateSlider = (updateSlider) ? updateSlider : false;
 		var id = el.data('id');
 		var type = el.data('type');
@@ -229,9 +229,7 @@ var ChangeFloor = {
 			ChangeRoom.set(id);
 		}
 
-		console.log(this.config.sliderEl != undefined, updateSlider, (this.config.sliderEl != undefined && updateSlider));
 		if (this.config.sliderEl != undefined && updateSlider) {
-			console.log('update');
 			this.config.sliderEl.noUiSlider.set(id);
 		}
 
@@ -241,7 +239,6 @@ var ChangeFloor = {
 
 	setTypeActive: function(type) {
 		var typeEl = this.elS.typesMenu.find('a[data-type="' + type + '"]');
-
 		if (typeEl.length > 0) {
 			this.elS.typesMenu.find('a.active').removeClass('active');
 			typeEl.addClass('active');

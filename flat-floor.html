@@ -644,7 +644,8 @@
 		    	var slider = document.getElementById('range_floor');
 		    	var sliderEl = jQuery(slider);
 		    	var sliderIntit = false;
-		    	var value = 21;
+		    	var value = 21, 
+		    		floorHeight = Math.round(110/42, 2);
 		    	var prevFloor, cursorDirection = 'center';
 
 				noUiSlider.create(slider, {
@@ -1454,6 +1455,8 @@
 				slider.noUiSlider.on('update', function(values, handle){
 
 					value = values[handle];
+					ChangeFloor.setById(value, false);
+
 					if (!sliderIntit) {
 						var handleEl = sliderEl.find('.noUi-handle');
 						var floorInfoEl = jQuery(document.createElement('div'));
@@ -1482,38 +1485,40 @@
 					var offsetTmp = ChangeFloor.offsetTop;
 
 					if (value > prevFloor) {
-						ChangeFloor.offsetTop += 100/42;
+						ChangeFloor.offsetTop += floorHeight;
 						cursorDirection = 'up';
 					} else if (value < prevFloor) {
-						ChangeFloor.offsetTop -= 100/42;
+						ChangeFloor.offsetTop -= floorHeight;
 						cursorDirection = 'down';
 					}
-					
-					if (ChangeFloor.offsetTop < -30 && ChangeFloor.offsetTop > -94) {
-					} else {
-						ChangeFloor.offsetTop = offsetTmp;
+
+					if (value == 21) {
+						// ChangeFloor.offsetTop = -51;
 					}
 
-					changeFloorEl.animate({
+console.log(cursorDirection);
+					if ((!changeFloorEl.is(':off-top') && cursorDirection == 'up') || (!changeFloorEl.is(':off-bottom') && cursorDirection == 'down')) {
+					// if (!changeFloorEl.is(':off-top') || !changeFloorEl.is(':off-bottom')) {
+						console.log('false');
+						ChangeFloor.offsetTop = offsetTmp;
+						return false;
+					}
+					
+					console.log(ChangeFloor.offsetTop);
+
+					changeFloorEl.css({
 						'margin-top': ChangeFloor.offsetTop + '%',
-					}, 20);
+					});
 
 					prevFloor = value;
-					ChangeFloor.setById(value, false);
 				});
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-top a', function(event) {
 					slider.noUiSlider.set(slider.noUiSlider.get() + 1);
-					// if (slider.noUiSlider.get() == 42) {
-						ChangeFloor.setById(ChangeFloor.currentFloor + 1);
-					// }
 				});
 
 				jQuery('body').on('click', '.noUi-handle .floor__info-to-bottom a', function(event) {
 					slider.noUiSlider.set(slider.noUiSlider.get() - 1);
-					// if (slider.noUiSlider.get() == 1) {
-						ChangeFloor.setById(ChangeFloor.currentFloor - 1);
-					// }
 				});
 
 		    })(jQuery);
