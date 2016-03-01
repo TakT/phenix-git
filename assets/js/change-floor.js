@@ -197,7 +197,7 @@ var ChangeFloor = {
 		}
 	},
 
-	setById: function(id) {
+	setById: function(id, updateSlider) {
 		if (id > 0) {
 			var floor = null;
 			var els = this.paper.selectAll('path, polygon');
@@ -207,13 +207,14 @@ var ChangeFloor = {
 				el = els[i];
 				elId = el.data('id');
 				if (id == elId) {
-					this.setFloor(el);
+					this.setFloor(el, updateSlider);
 				}
 			}
 		}
 	},
 
-	setFloor: function(el) {
+	setFloor: function(el, updateSlider) {
+		updateSlider = updateSlider || true;
 		var id = el.data('id');
 		var type = el.data('type');
 		this.currentFloor = id;
@@ -228,7 +229,9 @@ var ChangeFloor = {
 			ChangeRoom.set(id);
 		}
 
-		if (this.config.sliderEl != undefined) {
+		console.log(updateSlider);
+		if (this.config.sliderEl != undefined && !updateSlider) {
+			console.log('update');
 			this.config.sliderEl.noUiSlider.set(id);
 		}
 
