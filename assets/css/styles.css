@@ -293,6 +293,10 @@ sup {
   padding-left: 0;
   padding-right: 0;
 }
+.col-p-n.col-p-n-2-levels {
+  margin-top: -60px;
+  margin-top: -5.55555vh;
+}
 .container {
   width: 1168px;
 }
@@ -3528,6 +3532,28 @@ form .select-style select:focus {
 #area #floor__info.direction__down {
   margin-top: -37px;
 }
+@media (max-width: 1366px) {
+  .fullscreen__page .content__menu {
+    margin-left: 2.59vw;
+  }
+  .fullscreen__page .content__menu ul li a {
+    font-size: 24px;
+  }
+  #area .area__content #change__room {
+    margin-bottom: 2.15vh;
+  }
+  #area .area__content .plan__legend {
+    margin-left: 4.5104vw;
+  }
+  #area .area__content .plan__legend li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #area .area__content .plan__legend li:last-child {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 768px) {
   .modal-dialog {
     width: 870px;
@@ -3630,6 +3656,12 @@ form .select-style select:focus {
   .mortgage .mortgage__title-sub {
     margin-bottom: 15px;
   }
+  .fullscreen__page .content__menu {
+    margin-top: 0;
+  }
+  .fullscreen__page .content__menu ul li a {
+    font-size: 18px;
+  }
 }
 @media (max-width: 1110px) {
   #about-desc .full__width {
@@ -3674,6 +3706,13 @@ form .select-style select:focus {
     width: 46.333333%;
   }
   .flatschange__page .types .type[class*="offset"] {
+    width: 41.66666667%;
+    margin-left: 50px;
+  }
+  .flatschange__page .modal .types .type {
+    width: 100%;
+  }
+  .flatschange__page .modal .types .type[class*="offset"] {
     width: 41.66666667%;
     margin-left: 50px;
   }

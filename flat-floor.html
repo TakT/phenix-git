@@ -474,7 +474,7 @@
 
 					<div class="modal-body">
 						<div class="row">
-							<div class="col-xs-2 col-p-n">
+							<div class="col-xs-2 col-p-n col-p-n-2-levels">
 								<div class="cart__info">
 
 									<div class="info__item info__item-level text-center">
@@ -1496,14 +1496,11 @@
 						// ChangeFloor.offsetTop = -51;
 					}
 
-console.log(cursorDirection);
 					if ((!changeFloorEl.is(':off-top') && cursorDirection == 'up') || (!changeFloorEl.is(':off-bottom') && cursorDirection == 'down')) {
 						console.log('false');
 						ChangeFloor.offsetTop = offsetTmp;
 						// return false;
 					}
-					
-					console.log(ChangeFloor.offsetTop);
 
 					changeFloorEl.css({
 						'margin-top': ChangeFloor.offsetTop + '%',
