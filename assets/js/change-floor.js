@@ -118,10 +118,13 @@ var ChangeFloor = {
 					});
 				});
 
+				var innerInterval = null,
+					tmpCurrentFloor = $this.currentFloor;
 				polygon.hover(function(e) {
 					var id = this.data('id');
 					var rooms = this.data('rooms');
 					var polygonObj = this;
+					var hoverFloorUpdateDirection = null;
 
 					$this.offsetTop = parseInt($this.offsetTop);
 
@@ -151,9 +154,11 @@ var ChangeFloor = {
 							cursorDirection = 'center';
 						} else if (id > 0 && id < 21) {
 							$this.offsetTop -= 2;
+							hoverFloorUpdateDirection = $this.currentFloor - 1;
 							cursorDirection = 'down';
 						} else if (id > 0 && id > 21) {
 							$this.offsetTop += 2;
+							hoverFloorUpdateDirection = $this.currentFloor + 1;
 							cursorDirection = 'up';
 						}
 
@@ -168,6 +173,7 @@ var ChangeFloor = {
 						if ((!$this.elS.parent.is(':off-top') && cursorDirection == 'up') || (!$this.elS.parent.is(':off-bottom') && cursorDirection == 'down')) {
 							$this.offsetTop = offsetTmp;
 							clearInterval(intervalId);
+							clearInterval(innerInterval);
 							return false;
 						}
 
@@ -176,9 +182,15 @@ var ChangeFloor = {
 						}, 75);
 					}, 75);
 
+					innerInterval = setInterval(function() {
+						console.log(hoverFloorUpdateDirection);
+						$this.setById(hoverFloorUpdateDirection);
+					}, 100);
+
 				}, function() {
 					$this.unhoverFloor(this);
 					clearInterval(intervalId);
+					clearInterval(innerInterval);
 				});
 
 				polygon.click(function(event) {
