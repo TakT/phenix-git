@@ -19,6 +19,8 @@ var ChangeFloor = {
 
 	offsetTop: 0,
 	currentFloor: 21,
+	isSrcollUp: false,
+	isSrcollDown: false,
 
 	visualStyles: {
 		colorDisabled: "#8ca7c8",
@@ -157,6 +159,12 @@ var ChangeFloor = {
 							cursorDirection = 'up';
 						}
 
+						if (cursorDirection == 'down' && id <= 10) {
+							$this.isSrcollUp = true;
+						} else if (cursorDirection == 'up' && (id <= 42 && id >= 32)) {
+							$this.isSrcollDown = true;
+						}
+
 						$this.elS.floorInfo.removeClass($this.cursorDirectionClassList.join(' '));
 						cursorDirectionClass = 'direction__' + cursorDirection;
 						$this.elS.floorInfo.addClass(cursorDirectionClass);
@@ -199,16 +207,19 @@ var ChangeFloor = {
 
 	setById: function(id, updateSlider) {
 		if (id > 0) {
-			var floor = null;
-			var els = this.paper.selectAll('path, polygon');
-			var el, elId;
+			this.setFloor(this.getFloorEl(id), updateSlider);
+		}
+	},
 
-			for (var i = 0; i < els.length; i++) {
-				el = els[i];
-				elId = el.data('id');
-				if (id == elId) {
-					this.setFloor(el, updateSlider);
-				}
+	getFloorEl: function(id) {
+		var els = this.paper.selectAll('path, polygon');
+		var el, elId;
+
+		for (var i = 0; i < els.length; i++) {
+			el = els[i];
+			elId = el.data('id');
+			if (id == elId) {
+				return el;
 			}
 		}
 	},
