@@ -3590,7 +3590,7 @@ form {
 		background-color: @yellow;
 		box-shadow: none;
 		border: none;
-		top: -1.6vh;
+		top: -1.7895vh;
 	}
 
 	&.noUi-vertical .noUi-handle {
@@ -3620,6 +3620,21 @@ form {
 		&.noUi-marker {
 			height: 2px;
 			background-color: #008b64;
+			
+			&:nth-child(1),
+			&:nth-last-child(4),
+			&:nth-child(3) {
+				background-color: @yellow;
+			}
+
+			&:nth-child(25),
+			&:nth-child(61),
+			&:nth-last-child(2) {
+				background-color: #fff;
+			}
+		}
+
+		> div {
 		}
 		
 		&.noUi-marker-large,

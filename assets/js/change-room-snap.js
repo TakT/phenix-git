@@ -72,11 +72,13 @@ var ChangeRoom = {
 
 				var plan = $this.paper.select('#plan');
 
-				plan.hover(function() {
-					console.log('hover');
-				}, function() {
-					console.log('unhover');
-				});
+				if (plan) {
+					plan.hover(function() {
+						console.log('hover');
+					}, function() {
+						console.log('unhover');
+					});
+				}
 			});
 
 			this.paper.hover(function() {}, function() {

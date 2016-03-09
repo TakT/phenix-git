@@ -3181,7 +3181,7 @@ form .select-style select:focus {
   background-color: #e9d877;
   box-shadow: none;
   border: none;
-  top: -1.6vh;
+  top: -1.7895vh;
 }
 .noUi-target.noUi-vertical .noUi-handle {
   left: -15px;
@@ -3204,6 +3204,16 @@ form .select-style select:focus {
 .noUi-pips .noUi-marker-vertical.noUi-marker {
   height: 2px;
   background-color: #008b64;
+}
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-child(1),
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-last-child(4),
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-child(3) {
+  background-color: #e9d877;
+}
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-child(25),
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-child(61),
+.noUi-pips .noUi-marker-vertical.noUi-marker:nth-last-child(2) {
+  background-color: #fff;
 }
 .noUi-pips .noUi-marker-vertical.noUi-marker-large,
 .noUi-pips .noUi-marker-vertical.noUi-marker-sub {

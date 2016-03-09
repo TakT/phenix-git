@@ -42,7 +42,7 @@ var ChangeFloor = {
 
 		var $win = jQuery(window);
 		// this.offsetTop = $this.elS.parent.css('margin-top');
-		this.offsetTop = -51;
+		this.offsetTop = this.config.ofssetTop;
 		this.currentFloor = this.config.defaultFloor;
 
 		this.paper = Snap('#change_floor');
