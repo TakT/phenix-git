@@ -179,7 +179,6 @@ var ChangeRoom = {
 
 					polygon.attr({
 						fill: p,
-						opacity: 1,
 					});
 				};
 
@@ -204,7 +203,6 @@ var ChangeRoom = {
 			var drawPath = function drawPath() {
 
 				var polygon = $this.paper.polygon(obj.points);
-
 				polygon
 					.attr({
 						stroke: 'none',
@@ -298,11 +296,11 @@ var ChangeRoom = {
 			}
 		};
 
-		if (!el.data('soldSVG')) {
-			el.animate({
-				opacity: 1,
-			}, 200);
-		} else {
+		el.animate({
+			opacity: 1,
+		}, 200);
+
+		if (el.data('soldSVG')) {
 			if ((description != null && description != undefined) && (description.titleSold != null && description.titleSold != undefined)) {
 
 				$this.elS.descGroup.addClass('change__room-desc--soldout');
@@ -318,6 +316,7 @@ var ChangeRoom = {
 
 	unhoverActivatedDescription: function() {
 		var activeEls = this.paper.select('.active');
+		console.log(activeEls);
 		if (activeEls != null) {
 			activeEls.removeClass('active');
 			this.unhoverDescription(activeEls);
@@ -325,11 +324,9 @@ var ChangeRoom = {
 	},
 
 	unhoverDescription: function(hoverPolygon) {
-		if (!hoverPolygon.data('soldSVG')) {
-			hoverPolygon.animate({
-				opacity: 0.7,
-			}, 200);
-		}
+		hoverPolygon.animate({
+			opacity: 0.7,
+		}, 200);
 		this.hideDescription();
 	},
 
