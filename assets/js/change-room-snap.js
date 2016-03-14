@@ -145,7 +145,7 @@ var ChangeRoom = {
 
 		for (var i = 0, l = elements.length; i < l; i++) {
 			var obj = elements[i];
-			var opacity = 0.7;
+			var opacity = 0.5;
 			var fillOpacity = this.getFillOpacity(obj);
 			var modalId = obj.modalId ? obj.modalId : null;
 			var soldSVG = obj.soldSVG ? obj.soldSVG : null;
@@ -257,7 +257,7 @@ var ChangeRoom = {
 		if (description != null && description != undefined) {
 
 			var property = null,
-				propertyOffset = 380;
+				propertyOffset = 370;
 
 			descTitle.attr({
 				x: $this.descTitlePostion.defaultPosition.x,
@@ -325,7 +325,7 @@ var ChangeRoom = {
 
 	unhoverDescription: function(hoverPolygon) {
 		hoverPolygon.animate({
-			opacity: 0.7,
+			opacity: 0.5,
 		}, 200);
 		this.hideDescription();
 	},

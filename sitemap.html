@@ -86,6 +86,11 @@
 				<title>parking</title>
 				<path class="path1" d="M959.548 0h-895.096c-35.596 0-64.452 28.856-64.452 64.452v895.096c0 35.596 28.856 64.452 64.452 64.452s64.452-28.856 64.452-64.452c0-35.596-28.856-64.452-64.452-64.452s-64.452 28.856-64.452 64.452c0 35.596 28.856 64.452 64.452 64.452h895.096c35.596 0 64.452-28.856 64.452-64.452 0 0 0 0 0 0v-895.096c0-35.596-28.856-64.452-64.452-64.452 0 0 0 0 0 0zM894.795 895.096h-765.591v-766.193h765.591v766.193zM441.525 588.198c11.282 1.542 24.321 2.423 37.565 2.423 0.982 0 1.962-0.005 2.942-0.014 4.613 0.337 10.171 0.528 15.773 0.528 58.576 0 112.271-20.903 154.030-55.657 29.297-29.746 47.634-71.077 47.634-116.691 0-2.383-0.050-4.754-0.149-7.113 0.024-0.409 0.032-1.289 0.032-2.17 0-47.396-21.594-89.749-55.481-117.757-35.194-27.915-86.996-42.070-159.58-42.070-4.218-0.066-9.197-0.104-14.184-0.104-51.223 0-101.517 3.98-150.589 11.648l5.45 513.407h116.856v-186.428zM441.525 342.739c12.832-2.931 27.567-4.611 42.694-4.611 2.144 0 4.28 0.034 6.407 0.101 59.924-0.008 91.849 30.11 91.849 76.491 0 53.308-38.551 85.233-101.496 85.233-1.805 0.065-3.926 0.101-6.055 0.101-11.811 0-23.357-1.133-34.536-3.296l1.137-153.718z"></path>
 			</symbol>
+
+			<symbol id="if-down-arrow" viewBox="0 0 1024 1024">
+				<title>down-arrow</title>
+				<path fill="#f2db7e" class="path1 fill-color1" d="M512 614.4l409.6-415.289 102.4 102.4-512 523.378-512-523.378 102.4-102.4 409.6 415.289z"></path>
+			</symbol>
 		</svg>
 
 		<div class="js-mobile__menu-toggle">
@@ -97,13 +102,14 @@
 			<div class="container">
 				<div class="row">
 					
-					<div class="col-xs-3 header__logo">
+					<div class="col-xs-12 col-md-3 header__logo">
 						<a href="./index.html" title="">
-							<img src="./assets/images/logo.svg" alt="">
+							<img src="./assets/images/logo.svg" alt="" class="hidden-xs hidden-sm">
+							<img src="./assets/images/logo-mobile.svg" alt="" class="visible-xs-inline visible-sm-inline">
 						</a>
 					</div>
 
-					<div class="col-xs-3 header__menu header__menu-pl">
+					<div class="col-xs-12 col-md-3 header__menu header__menu-pl">
 						<ul class="list-unstyled">
 							<li>
 								<a href="./about-developer.html" title="О застройщике">О застройщике</a>
@@ -120,7 +126,7 @@
 						</ul>
 					</div>
 
-					<div class="col-xs-3 header__menu">
+					<div class="col-xs-12 col-md-3 header__menu">
 						<ul class="list-unstyled">
 							<li>
 								<a href="./commercial.html" title="Коммерческие помещения">Коммерческие помещения</a>
@@ -138,7 +144,7 @@
 						</ul>
 					</div>
 
-					<div class="col-xs-3 header__info">
+					<div class="col-xs-12 col-md-3 header__info">
 						<div class="header__lang">
 							<a href="javascript:void(0);" title="RU" class="active">RU</a>
 							<span> / </span>
@@ -172,6 +178,12 @@
 						</li>
 						<li class="navigation__dropdown">
 							<a href="./about.html" title="О комплексе">О комплексе</a>
+							<div class="dropdown__icons">
+								<a href="javascript:void(0);" title="">
+									<svg class="if if-up-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-up-arrow"></use></svg>
+									<svg class="if if-down-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-down-arrow"></use></svg>
+								</a>
+							</div>
 							<div class="navigation__sub">
 								<ul class="list-inline">
 									<li>
@@ -197,6 +209,12 @@
 						</li>
 						<li class="navigation__dropdown">
 							<a href="./location.html" title="Местоположение">Местоположение</a>
+							<div class="dropdown__icons">
+								<a href="javascript:void(0);" title="">
+									<svg class="if if-up-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-up-arrow"></use></svg>
+									<svg class="if if-down-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-down-arrow"></use></svg>
+								</a>
+							</div>
 							<div class="navigation__sub">
 								<ul class="list-inline">
 									<li>
@@ -213,6 +231,12 @@
 						</li>
 						<li class="navigation__dropdown">
 							<a href="javascript:void(0);" title="Выбрать квартиру">Выбрать помещение</a>
+							<div class="dropdown__icons">
+								<a href="javascript:void(0);" title="">
+									<svg class="if if-up-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-up-arrow"></use></svg>
+									<svg class="if if-down-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-down-arrow"></use></svg>
+								</a>
+							</div>
 							<div class="navigation__sub">
 								<ul class="list-inline">
 									<li>
@@ -460,7 +484,7 @@
 			<div class="footer__menus">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-2 menu__item menu__item-1">
+						<div class="col-xs-2 col-md-2 menu__item menu__item-1">
 							<h4 class="item__title">информация</h4>
 							<ul class="item__menu">
 								<li>
@@ -480,7 +504,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-xs-3 menu__item menu__item-2">
+						<div class="col-xs-4 col-md-3 menu__item menu__item-2">
 							<h4 class="item__title">о комплексе</h4>
 							<ul class="item__menu">
 								<li>
@@ -515,41 +539,46 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-xs-2 menu__item menu__item-3">
-							<h4 class="item__title">покупка</h4>
-							<ul class="item__menu">
-								<li>
-									<a href="./selection-flats.html" title="Выбрать квартиру">Выбрать квартиру</a>
-								</li>
-								<li>
-									<a href="./selection-premises.html" title="Коммерческое помещение">Коммерческое помещение</a>
-								</li>
-								<li>
-									<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="Ипотека">Ипотека</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="Рассрочка">Рассрочка</a>
-								</li>
-							</ul>
+
+						<div class="col-xs-4 row">
+							<div class="col-xs-12 col-md-6 menu__item menu__item-3">
+								<h4 class="item__title">покупка</h4>
+								<ul class="item__menu">
+									<li>
+										<a href="./selection-flats.html" title="Выбрать квартиру">Выбрать квартиру</a>
+									</li>
+									<li>
+										<a href="./selection-premises.html" title="Коммерческое помещение">Коммерческое помещение</a>
+									</li>
+									<li>
+										<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Ипотека">Ипотека</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="Рассрочка">Рассрочка</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-xs-12 col-md-6 menu__item menu__item-4">
+								<h4 class="item__title">квартиры</h4>
+								<ul class="item__menu">
+									<li>
+										<a href="javascript:void(0);" title="2-комнатные">2-комнатные</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="4-комнатные">4-комнатные</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" title="2-уровневые">2-уровневые</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col-xs-2 menu__item menu__item-4">
-							<h4 class="item__title">квартиры</h4>
-							<ul class="item__menu">
-								<li>
-									<a href="javascript:void(0);" title="2-комнатные">2-комнатные</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="4-комнатные">4-комнатные</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" title="2-уровневые">2-уровневые</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-3 menu__item menu__item-5">
+
+
+						<div class="col-xs-3 col-md-3 menu__item menu__item-5">
 							<h4 class="item__title">коммерческие помещения</h4>
 							<div class="item__menu-sub">
 								<div class="item__menu-title">1 этаж</div>
@@ -587,7 +616,7 @@
 			<div class="footer__info">
 				<div class="container">
 					
-					<div class="col-xs-2 footer__logo-wrapper">
+					<div class="col-xs-2 col-sm-3 col-md-2 footer__logo-wrapper">
 						<div class="footer__logo">
 							<a href="javascript:void(0);" title="">
 								<img src="./assets/images/footer-logo.svg" alt="">
@@ -596,7 +625,7 @@
 						<div class="footer__copyright">&copy; 2015 ЖК «Феникс» </div>
 					</div>
 
-					<div class="col-xs-3 info__item info__item-1">
+					<div class="col-xs-4 col-md-3 info__item info__item-1">
 						<div class="info__item-phones">+7 (929) 899-89-89<br>+7 (8712) 29-53-24</div>
 						<div class="info__item-menu">
 							<ul>
@@ -610,7 +639,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-2 info__item info__item-2">
+					<div class="col-xs-2 col-sm-3 col-md-2 info__item info__item-2">
 						<div class="info__item-phones">Пн-Пт: 9:00–19:00 <br>Сб: 10:00–15:00</div>
 						<div class="info__item-menu">
 							<ul>
@@ -624,7 +653,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-3 info__item info__item-3">
+					<div class="col-xs-3 col-md-3 info__item info__item-3">
 						<div class="info__item-phones">Офис продаж<br>г. Грозный, ул. Димаева, 14</div>
 						<div class="info__item-menu">
 							<ul>
@@ -638,7 +667,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-2 info__item info__item-4 text-right">
+					<div class="col-xs-12 col-md-2 info__item info__item-4 text-right">
 						<a href="javascript:void(0);" target="_blank" title="BY DESIGN CREATOR" class="logo-dev"></a>
 					</div>
 				</div>
