@@ -3663,7 +3663,8 @@ form {
 		&.noUi-marker-large,
 		&.noUi-marker-sub {
 			width: 8px;
-			margin-top: -0.0926vh;
+			// margin-top: -0.0926vh;
+			margin-top: 0;
 		}
 	}
 
@@ -4448,7 +4449,7 @@ form {
 	}
 
 	.noUi-pips-vertical {
-		top: -3px;
+		top: -4px;
 	}
 
 	.noUi-target.noUi-vertical .noUi-handle {
@@ -4949,6 +4950,34 @@ form {
 							width: 80%;
 							padding-left: 20px;
 							display: inline-block;
+						}
+					}
+				}
+			}
+
+			.content__news-item {
+				width: 100%;
+				top: -20px;
+				.content__news-item-wrapper {
+					width: 100%;
+					padding: 150px 55px 83px 55px;
+
+					.js-close {
+						width: 58px;
+						height: 58px;
+						top: -80px;
+						right: -55px;
+						a {
+							display: inline-block;
+							padding: 17px;
+							-wbkit-box-sizing: content-box;
+							-moz-box-sizing: content-box;
+							-o-box-sizing: content-box;
+							box-sizing: content-box;
+							background-color: @green;
+						}
+						.if {
+							fill: @yellow;
 						}
 					}
 				}
