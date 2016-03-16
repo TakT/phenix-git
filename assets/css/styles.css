@@ -2359,7 +2359,7 @@ form .select-style select:focus {
   height: 54px;
 }
 .installment .installment__item .item__text {
-  font-size: 14xp;
+  font-size: 14px;
   font-family: 'ProximaNova-Regular', Arial, Helvetica, Verdana, sans-serif;
   line-height: 21px;
 }
@@ -2388,7 +2388,7 @@ form .select-style select:focus {
   width: 255px;
 }
 .mortgage .mortgage__image-desc {
-  font-size: 14xp;
+  font-size: 14px;
   font-family: 'ProximaNova-Regular', Arial, Helvetica, Verdana, sans-serif;
   line-height: 21px;
   text-align: center;
@@ -4068,6 +4068,10 @@ form .select-style select:focus {
   #header-bg .slider__content {
     background-color: transparent;
     text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 40px;
+    padding-bottom: 30px;
   }
   #about-developer {
     height: 78.65vw;
@@ -4254,6 +4258,107 @@ form .select-style select:focus {
   }
   #content .content__menu {
     text-align: center;
+  }
+  .installment .installment__item .item__title {
+    margin-bottom: 30px;
+  }
+  .statistic .statistic__item .statistic__title {
+    font-size: 30px;
+  }
+  .statistic .statistic__item .statistic__title span {
+    font-size: 50px;
+  }
+  #buyng-rules-mortgage .page__title {
+    text-align: center;
+  }
+  .mortgage .mortgage__actions {
+    margin-top: 45px;
+  }
+  .mortgage .mortgage__actions .btn {
+    padding: 13px 56px;
+    padding-top: 12px;
+  }
+  .mortgage .mortgage__title span {
+    font-size: 60px;
+  }
+  .mortgage .mortgage__title sup {
+    font-size: 75%;
+    top: -0.7em;
+  }
+  .mortgage .mortgage__image {
+    margin-bottom: 50px;
+  }
+  .mortgage .mortgage__image img {
+    width: auto;
+    max-width: 100%;
+  }
+  .mortgage .mortgage__title-sub {
+    margin-bottom: 70px;
+  }
+  .mortgage .mortgage__desc {
+    margin-bottom: 0;
+  }
+  .full__width .full__width-img,
+  .full__width .full__width-desc {
+    display: block;
+  }
+  .full__width .full__width-desc {
+    padding-top: 75px;
+    padding-bottom: 30px;
+  }
+  .full__width.full__width-1-3 .full__width-desc,
+  .full__width.full__width-1-3 .full__width-img {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .full__width.full__width-1-3 .full__width-desc .page__title,
+  .full__width.full__width-1-3 .full__width-img .page__title {
+    text-align: center;
+  }
+  .full__width.full__width-1-3 .full__width-img {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .commercials__page #statistic__info .info__item {
+    padding: 0;
+  }
+  .commercials__page #statistic__info .info__item .item__title {
+    font-size: 50px;
+  }
+  #comfort-info {
+    height: auto;
+    background-position: 100% 100%;
+  }
+  #comfort-info .page__title {
+    margin-bottom: 300px;
+  }
+  #comfort-info .comfort-info__title br {
+    display: none;
+  }
+  #comfort-info .comfort-info__desc p br {
+    display: none;
+  }
+  #contacts-form .page__title {
+    text-align: center;
+  }
+  #contacts-form .page__desc p br {
+    display: none;
+  }
+  #contacts-form .full__width .full__width-desc {
+    width: 100%;
+  }
+  #contacts-form .full__width .full__width-desc .page__title {
+    text-align: center;
+  }
+  .documents .document .document__icon {
+    width: 16%;
+  }
+  .documents .document .document__content {
+    width: 79%;
+  }
+  .documents .document .document__content .document__title a {
+    line-height: 25px;
   }
 }
 @media (min-width: 719px) and (max-width: 840px) {

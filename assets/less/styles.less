@@ -2643,7 +2643,7 @@ form {
 		}
 
 		.item__text {
-			font-size: 14xp;
+			font-size: 14px;
 			font-family: @fontPRegular;
 			line-height: 21px;
 		}
@@ -2681,7 +2681,7 @@ form {
 	}
 
 	.mortgage__image-desc {
-		font-size: 14xp;
+		font-size: 14px;
 		font-family: @fontPRegular;
 		line-height: 21px;
 		text-align: center;
@@ -4793,6 +4793,10 @@ form {
 		.slider__content {
 			background-color: transparent;
 			text-align: center;
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 40px;
+			padding-bottom: 30px;
 		}
 	}
 
@@ -5025,6 +5029,163 @@ form {
 	#content {
 		.content__menu {
 			text-align: center;
+		}
+	}
+
+	.installment {
+		.installment__item {
+			.item__title {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	.statistic {
+		.statistic__item {
+			.statistic__title {
+				font-size: 30px;
+				span {
+					font-size: 50px;
+				}
+			}
+		}
+	}
+
+	#buyng-rules-mortgage {
+		.page__title {
+			text-align: center;
+		}
+	}
+
+	.mortgage {
+
+		.mortgage__actions {
+			margin-top: 45px;
+			.btn {
+				padding: 13px 56px;
+				padding-top: 12px;
+			}
+		}
+
+		.mortgage__title {
+			span {
+				font-size: 60px;
+			}
+
+			sup {
+				font-size: 75%;
+				top: -.7em;
+			}
+		}
+
+		.mortgage__image {
+			margin-bottom: 50px;
+			img {
+				width: auto;
+				max-width: 100%;
+			}
+		}
+
+		.mortgage__title-sub {
+			margin-bottom: 70px;
+		}
+
+		.mortgage__desc {
+			margin-bottom: 0;
+		}
+	}
+
+	.full__width {
+		.full__width-img,
+		.full__width-desc {
+			display: block;
+		}
+		
+		.full__width-desc {
+			padding-top: 75px;
+			padding-bottom: 30px;
+		}
+
+		&.full__width-1-3 {
+			.full__width-desc,
+			.full__width-img {
+				display: block;
+				width: 100%;
+				text-align: center;
+
+				.page__title {
+					text-align: center;
+				}
+			}
+			
+			.full__width-img {
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+		}
+	}
+
+	.commercials__page {
+		#statistic__info {
+			.info__item {
+				padding: 0;
+				.item__title {
+					font-size: 50px;
+				}
+			}
+		}
+	}
+
+	#comfort-info {
+		height: auto;
+		background-position: 100% 100%;
+
+		.page__title {
+			margin-bottom: 300px;
+		}
+
+		.comfort-info__title {
+			.brNone();
+		}
+
+		.comfort-info__desc p {
+			.brNone();
+		}
+	}
+
+	#contacts-form {
+		.page__title {
+			text-align: center;
+		}
+
+		.page__desc p {
+			.brNone();
+		}
+
+		.full__width {
+
+			.full__width-desc {
+				width: 100%;
+
+				.page__title {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.documents {
+		.document {
+			.document__icon {
+				width: 16%;
+			}
+
+			.document__content {
+				width: 79%;
+				.document__title a {
+					line-height: 25px;
+				}
+			}
 		}
 	}
 }
