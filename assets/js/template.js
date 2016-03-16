@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
 	var windowWidth = jQuery(window).width(),
 		headerWidth = jQuery('#header .container').width(),
 		fullscreenPage = jQuery('.fullscreen__page'),
+		navigation = jQuery('#navigation'),
 		fullscreenMenuInit = false;
 
 	if (windowWidth >= 1024) {

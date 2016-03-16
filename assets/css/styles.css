@@ -3569,7 +3569,7 @@ form .select-style select:focus {
 .js-mobile__menu-toggle {
   display: none;
   position: fixed;
-  z-index: 1001;
+  z-index: 1002;
   top: 0;
   left: 0;
 }
@@ -3581,7 +3581,7 @@ form .select-style select:focus {
   background-color: rgba(0, 0, 0, 0.63);
 }
 .js-mobile__menu-toggle a.menu__close {
-  z-index: 1002;
+  z-index: 1003;
   display: none;
   background-color: transparent;
 }
