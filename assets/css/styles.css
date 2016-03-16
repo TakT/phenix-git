@@ -1932,6 +1932,7 @@ form .select-style select:focus {
   width: 867px;
   width: 61.5vw;
   height: 100%;
+  z-index: 602;
   padding-bottom: 35px;
   background-color: #fff;
   -webkit-box-sizing: content-box;
@@ -1949,19 +1950,24 @@ form .select-style select:focus {
   padding: 96px 0 83px 96px;
   position: relative;
   overflow-y: auto;
-  z-index: 602;
 }
 .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-wrapper-inner {
   position: relative;
 }
-.page__news #content .content__news-item .content__news-item-wrapper .js-close {
-  width: 24px;
-  height: 24px;
+.page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel {
   position: absolute;
   top: -33px;
   right: 10px;
+  font-size: 0;
 }
-.page__news #content .content__news-item .content__news-item-wrapper .js-close .if {
+.page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item,
+.page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .js-close {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item .if,
+.page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .js-close .if {
   fill: #133e28;
   width: 24px;
   height: 24px;
@@ -3562,7 +3568,8 @@ form .select-style select:focus {
 }
 .js-mobile__menu-toggle {
   display: none;
-  position: absolute;
+  position: fixed;
+  z-index: 1001;
   top: 0;
   left: 0;
 }
@@ -4208,23 +4215,39 @@ form .select-style select:focus {
     width: 100%;
     padding: 150px 55px 83px 55px;
   }
-  .page__news #content .content__news-item .content__news-item-wrapper .js-close {
-    width: 58px;
-    height: 58px;
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel {
     top: -80px;
     right: -55px;
   }
-  .page__news #content .content__news-item .content__news-item-wrapper .js-close a {
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item,
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .js-close {
+    width: 56px;
+    height: 56px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item a,
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .js-close a {
     display: inline-block;
     padding: 17px;
+    border: 1px solid #009d73;
     -wbkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     -o-box-sizing: content-box;
     box-sizing: content-box;
     background-color: #009d73;
   }
-  .page__news #content .content__news-item .content__news-item-wrapper .js-close .if {
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item .if,
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .js-close .if {
     fill: #e9d877;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item a {
+    border-color: #e5e5e5;
+    background-color: #fff;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item .if {
+    fill: #153e28;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel .panel_item + .panel_item a {
+    border-left: none;
   }
   .page__news #content .slick-slider .slick-arrow.slick-next {
     right: 0;

@@ -183,11 +183,40 @@ jQuery(window).on('load', function(event) {
 		indexslider = jQuery('#indexslider');
 	var toTop = jQuery('.to-top-wrapper');
 	var scrollTop = 0,
-		indexsliderInitHeight = indexslider.height();
+		indexsliderInitHeight = indexslider.height(),
+		newsContent = jQuery('#content').find('.js-content__news-item'),
+		newsPanel = newsContent.find('.content__news-item-panel'),
+		newsPanelInitPosition = 0,
+		newsPanelInitPositionInit = false,
+		newsPanelInitCssTop = newsPanel.css('top'),
+		newsPanelInitCssRight = newsPanel.css('right');
 
 	jQuery(window).on('scroll', function(event) {
-		if (jQuery(this).width() >= 1024) {
-			navFixed(jQuery(this).scrollTop());
+
+		scrollTop = jQuery(this).scrollTop();
+		if (newsContent.length && windowWidth < 1024) {
+			if (scrollTop > newsPanel.offset().top || (newsPanelInitPosition && scrollTop > newsPanelInitPosition)) {
+				if (!newsPanelInitPosition) {
+					newsPanelInitPosition = newsPanel.offset().top;
+				}
+				newsPanel.css({
+					position: 'fixed',
+					top: 0,
+					right: 0,
+				});
+			} else {
+				if (newsPanel.css('position') != 'relative') {
+					newsPanel.css({
+						position: 'absolute',
+						top: newsPanelInitCssTop,
+						right: newsPanelInitCssRight,
+					});
+				}
+			}
+		}
+
+		if (windowWidth >= 1024) {
+			navFixed(scrollTop);
 		}
 	});
 
