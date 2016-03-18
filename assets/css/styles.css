@@ -3989,11 +3989,15 @@ form .select-style select:focus {
     position: relative;
   }
   #indexslider .slider__wrapper .slider__bg {
+    overflow: hidden;
     position: relative;
   }
   #indexslider .slider__wrapper .slider__content {
     position: absolute;
     margin-top: 50px;
+  }
+  #indexslider .slider__wrapper .slider__content.error_page {
+    top: 50%;
   }
   #indexslider .slick-arrows {
     display: none;
@@ -4304,7 +4308,7 @@ form .select-style select:focus {
   }
   .full__width .full__width-desc {
     padding-top: 75px;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
   }
   .full__width.full__width-1-3 .full__width-desc,
   .full__width.full__width-1-3 .full__width-img {
@@ -4351,6 +4355,9 @@ form .select-style select:focus {
   #contacts-form .full__width .full__width-desc .page__title {
     text-align: center;
   }
+  #contacts-form-map .full__width-img {
+    padding-bottom: 30px;
+  }
   .documents .document .document__icon {
     width: 16%;
   }
@@ -4359,6 +4366,59 @@ form .select-style select:focus {
   }
   .documents .document .document__content .document__title a {
     line-height: 25px;
+  }
+  #locat-radius .page__title {
+    text-align: center;
+  }
+  #locat-features .grid__items .grid__line {
+    font-size: 0;
+  }
+  #locat-features .grid__items .grid__line .grid__item {
+    width: 20%;
+    text-align: center;
+  }
+  #locat-features .grid__items .grid__line .grid__item .item__title,
+  #locat-features .grid__items .grid__line .grid__item .item__img {
+    display: block;
+  }
+  #locat-features .grid__items .grid__line .grid__item .item__img {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  #locat-features .grid__items .grid__line .grid__item .item__title {
+    margin-left: 0;
+  }
+  #mosque-location-desc p br,
+  #mosque-location-desc .page__title-sub br {
+    display: none;
+  }
+  .parking__page #statistic__info .info__item {
+    margin-bottom: 50px;
+  }
+  #sitemap .sitemap__menu-loyalty .menu__vertical {
+    margin-top: 0;
+  }
+  #sitemap .sitemap__menu-secondline .menu__vertical {
+    margin-top: -135px;
+  }
+  #sitemap .sitemap__menu-wrapper {
+    margin-bottom: 0;
+  }
+  #sitemap .sitemap__menu-wrapper > div {
+    margin-bottom: 50px;
+  }
+  .error_page .error__code {
+    font-size: 160px;
+  }
+  .error_page .error__desc {
+    font-size: 35px;
+  }
+  .error_page .btn {
+    padding: 13px 56px;
+    padding-top: 13px;
+  }
+  .fullscreen__page .fullscreen__content {
+    overflow: visible;
   }
 }
 @media (min-width: 719px) and (max-width: 840px) {

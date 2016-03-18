@@ -275,7 +275,16 @@
 				<div class="slider__wrapper">
 					<div class="slider__item">
 						<div class="slider__item-inner">
-							<div class="slider__bg" style="background-image: url(./assets/images/slider/1.jpg);">
+							<div class="slider__bg hidden-xs hidden-sm" style="background-image: url(./assets/images/slider/1.jpg);">
+								<div class="container slider__content error_page">
+									<div class="error__code">404</div>
+									<div class="error__desc">страницы не существует</div>
+									<a href="javascript:void(0);" class="btn btn-light-green" title="Перейти на главную страницу">Перейти на главную страницу</a>
+								</div>
+							</div>
+
+							<div class="slider__bg visible-xs visible-sm">
+								<img src="./assets/images/slider/1-mob.jpg" alt="">
 								<div class="container slider__content error_page">
 									<div class="error__code">404</div>
 									<div class="error__desc">страницы не существует</div>
@@ -491,5 +500,6 @@
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+
 	</body>
 </html>
