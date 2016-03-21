@@ -4425,6 +4425,18 @@ form .select-style select:focus {
   .fullscreen__page .fullscreen__content {
     overflow: visible;
   }
+  #gallery {
+    margin-top: 0;
+  }
+  #gallery .indexslider__wrapper {
+    position: relative;
+  }
+  #gallery .indexslider__wrapper .slider__wrapper .slick-slide img {
+    position: relative;
+    left: -50%;
+    width: auto;
+    max-width: none;
+  }
 }
 @media (min-width: 719px) and (max-width: 840px) {
   #statistic .statistic__info {

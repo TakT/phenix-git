@@ -5298,6 +5298,20 @@ form {
 			overflow: visible;
 		}
 	}
+
+	#gallery {
+		margin-top: 0;
+		.indexslider__wrapper {
+			position: relative;
+
+			.slider__wrapper .slick-slide img {
+				position: relative;
+				left: -50%;
+				width: auto;
+				max-width: none;
+			}
+		}
+	}
 }
 
 @media (min-width: 719px) and (max-width: 840px) {

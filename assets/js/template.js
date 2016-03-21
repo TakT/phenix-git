@@ -334,6 +334,12 @@ function calFirstScreen(windowWidth) {
 		sliderItem.css({
 			height: heightScreen,
 		});
+
+		if (jQuery(window).width() < 1007) {
+			sliderItem.find('img').css({
+				// 'margin-left': '-50%',
+			});
+		}
 	};
 }
 
