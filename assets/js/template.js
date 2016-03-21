@@ -165,7 +165,8 @@ jQuery(window).on('resize', function(event) {
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
 
-	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1204) {
+	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
+		console.log('resize');
 		calcSubNavPosition(windowWidth);
 	}
 });
@@ -176,7 +177,8 @@ jQuery(window).on('load', function(event) {
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
 
-	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1204) {
+	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
+		console.log('load');
 		calcSubNavPosition(windowWidth);
 	}
 
