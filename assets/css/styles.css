@@ -3777,6 +3777,9 @@ form .select-style select:focus {
   #gallery .slider-nav {
     bottom: 8.5vw;
   }
+  #header .header__menu {
+    padding-right: 0;
+  }
 }
 @media (max-width: 1024px) {
   .fullscreen__page #premises .premises__content .params .param .param__title {
