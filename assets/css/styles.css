@@ -305,7 +305,7 @@ sup {
 }
 @media (max-width: 1168px) {
   .container {
-    width: 1024px;
+    width: 100%;
   }
 }
 .btn {
@@ -685,7 +685,6 @@ sup {
   right: 0;
   bottom: 123px;
   bottom: 6.5vw;
-  width: 1240px;
   margin: 0 auto;
   font-size: 0;
   line-height: 0;
@@ -3695,10 +3694,13 @@ form .select-style select:focus {
   .noUi-target.noUi-vertical .noUi-handle:after {
     width: 3.41vw;
   }
+  #gallery .slick-arrows .slick-arrow.slick-prev {
+    left: 25px;
+  }
 }
 @media (max-width: 1168px) {
   #navigation ul li a {
-    padding: 16px 11.7px;
+    padding: 16px 11.55px;
     padding-bottom: 13px;
   }
   #navigation ul li .navigation__sub {
@@ -3708,7 +3710,7 @@ form .select-style select:focus {
     height: 49px;
   }
   #navigation ul li .navigation__sub ul li a {
-    padding: 18px 24px;
+    padding: 18px 23.6px;
   }
   #header .header__info .info__phones .phone a {
     font-size: 26.62px;
@@ -3771,6 +3773,9 @@ form .select-style select:focus {
   #comfort-info .page__title {
     margin-bottom: 50px;
     margin-bottom: 4.75vw;
+  }
+  #gallery .slider-nav {
+    bottom: 8.5vw;
   }
 }
 @media (max-width: 1024px) {
