@@ -2840,6 +2840,23 @@ form .select-style select:focus {
 .fullscreen__page #premises .premises__content .table {
   margin-bottom: 0;
 }
+.fullscreen__page .iframe__fs-wrapper {
+  height: 100%;
+  position: relative;
+}
+.fullscreen__page .iframe__fs-wrapper .iframe__fs-legend {
+  position: absolute;
+  text-align: center;
+  bottom: 230px;
+  bottom: 21.2963vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.fullscreen__page .iframe__fs-wrapper .iframe__fs-legend .if {
+  width: 217px;
+  height: 100%;
+}
 .checkbox__custom {
   height: 17px;
   margin: 0 3px 0 0;

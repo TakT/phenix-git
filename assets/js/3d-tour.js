@@ -182,6 +182,7 @@ var Tour3D = {
 				.transform('t' + point.left + ',' + point.top).click(function(event) {
 					// Обработка перехода
 					console.log(this.data('href'));
+					window.location.href = this.data('href');
 				});
 
 			bMarkerHuman
@@ -195,6 +196,7 @@ var Tour3D = {
 				.transform('t' + point.left + ',' + point.top).click(function(event) {
 					// Обработка перехода
 					console.log(this.data('href'));
+					window.location.href = this.data('href');
 				});
 		};
 
