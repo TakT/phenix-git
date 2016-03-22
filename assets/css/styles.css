@@ -2592,6 +2592,7 @@ form .select-style select:focus {
 .fullscreen__page #tour3D .tour3D__bg img {
   width: 100%;
   height: 100%;
+  opacity: 0;
 }
 .fullscreen__page #tour3D .tour3D__turn {
   position: absolute;
