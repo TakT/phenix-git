@@ -162,7 +162,7 @@ var Tour3D = {
 		}
 	},
 
-	setPoints: function(points) {
+	setPoints: function(points, callback) {
 		// this.elS.tourPoints.children(points).show();
 
 		for (var i = 0; i < points.length; i++) {
@@ -204,37 +204,50 @@ var Tour3D = {
 	setView: function(view) {
 
 		$this = this;
+		console.log('afterFirstImg');
+		$this.paper.clear();
 		this.elS.tourBg.children('img').animate({
 			opacity: 0,
 		}, 400, function() {
-			$this.paper.clear();
+			console.log('beforeFirstImg');
 			// $this.elS.tourPoints.children('div').hide();
 			// $this.elS.tourPoints.html(null);
-			$this.elS.tourBg.children('img').attr('src', view.imgs.bgPath).animate({
-				opacity: 1,
-			}, 400, function() {});
-			$this.setPoints(view.points);
+			console.log('afterSecondImg');
+			$this.elS.tourBg.children('img').attr('src', view.imgs.bgPath).one('load', function() {
 
-			// внедряем в холст изображение плана
-			// this.paper.image(view.imgs.bgPath, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
+				$this.paper.clear();
 
-			// наносим маски
-			// this.paper.setStart();
+				console.log('loaded', $this.elS.tourBg.children('img').attr('src'));
 
-			$this.setElements(view.elements, view.scale, view.scaleBg);
-			$this.paper.setViewBox(view.viewBoxPosition.x, view.viewBoxPosition.y, $this.sizeCanvas.width, $this.sizeCanvas.height);
+				$this.elS.tourBg.children('img').animate({
+					opacity: 1,
+				}, 400, function() {
+					console.log('beforeSecondImg');
+					$this.setPoints(view.points);
+				});
+
+				// внедряем в холст изображение плана
+				// this.paper.image(view.imgs.bgPath, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
+
+				// наносим маски
+				// this.paper.setStart();
+
+				$this.setElements(view.elements, view.scale, view.scaleBg);
+				$this.paper.setViewBox(view.viewBoxPosition.x, view.viewBoxPosition.y, $this.sizeCanvas.width, $this.sizeCanvas.height);
+
+				$this.elS.tourCompas.children('img').animate({
+					opacity: 0,
+				}, 400, function() {
+					$this.elS.tourCompas.css({
+						'bottom': view.compassBottomOffset,
+						'left': view.compassLeftOffset,
+					}).children('img').attr('src', view.imgs.compasPath).animate({
+						opacity: 1,
+					}, 400);
+				})
+			});
 		});
 
-		this.elS.tourCompas.children('img').animate({
-			opacity: 0,
-		}, 400, function() {
-			$this.elS.tourCompas.css({
-				'bottom': view.compassBottomOffset,
-				'left': view.compassLeftOffset,
-			}).children('img').attr('src', view.imgs.compasPath).animate({
-				opacity: 1,
-			}, 400);
-		})
 	},
 
 	// метод анимации наведения курсора на маску
