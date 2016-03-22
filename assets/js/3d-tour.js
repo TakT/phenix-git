@@ -199,7 +199,6 @@ var Tour3D = {
 					window.location.href = this.data('href');
 				});
 		};
-
 	},
 
 	setView: function(view) {
@@ -241,7 +240,6 @@ var Tour3D = {
 	// метод анимации наведения курсора на маску
 	mouseEnterMask: function(mask) {
 		eve('buildings.highlightFilter_enter', mask);
-
 	},
 
 	// метод анимации затухания маски при удалении курсора
