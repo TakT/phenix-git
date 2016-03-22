@@ -204,25 +204,19 @@ var Tour3D = {
 	setView: function(view) {
 
 		$this = this;
-		console.log('afterFirstImg');
 		$this.paper.clear();
+
 		this.elS.tourBg.children('img').animate({
 			opacity: 0,
 		}, 400, function() {
-			console.log('beforeFirstImg');
 			// $this.elS.tourPoints.children('div').hide();
 			// $this.elS.tourPoints.html(null);
-			console.log('afterSecondImg');
 			$this.elS.tourBg.children('img').attr('src', view.imgs.bgPath).one('load', function() {
 
 				$this.paper.clear();
-
-				console.log('loaded', $this.elS.tourBg.children('img').attr('src'));
-
 				$this.elS.tourBg.children('img').animate({
 					opacity: 1,
 				}, 400, function() {
-					console.log('beforeSecondImg');
 					$this.setPoints(view.points);
 				});
 
