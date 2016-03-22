@@ -213,9 +213,8 @@ var Tour3D = {
 			// $this.elS.tourPoints.html(null);
 			$this.elS.tourBg.children('img').attr('src', view.imgs.bgPath).animate({
 				opacity: 1,
-			}, 400, function() {
-				$this.setPoints(view.points);
-			});
+			}, 400, function() {});
+			$this.setPoints(view.points);
 
 			// внедряем в холст изображение плана
 			// this.paper.image(view.imgs.bgPath, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
