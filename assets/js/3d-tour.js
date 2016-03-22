@@ -204,16 +204,21 @@ var Tour3D = {
 	setView: function(view) {
 
 		$this = this;
+		console.log('afterFirstImg');
 		this.elS.tourBg.children('img').animate({
 			opacity: 0,
 		}, 400, function() {
+			console.log('beforeFirstImg');
 			$this.paper.clear();
 			// $this.elS.tourPoints.children('div').hide();
 			// $this.elS.tourPoints.html(null);
+			console.log('afterSecondImg');
 			$this.elS.tourBg.children('img').attr('src', view.imgs.bgPath).animate({
 				opacity: 1,
-			}, 400, function() {});
-			$this.setPoints(view.points);
+			}, 400, function() {
+				console.log('beforeSecondImg');
+				$this.setPoints(view.points);
+			});
 
 			// внедряем в холст изображение плана
 			// this.paper.image(view.imgs.bgPath, 0, 0, this.sizeCanvas.width, this.sizeCanvas.height);
