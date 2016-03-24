@@ -65,21 +65,14 @@ var ChangeRoom = {
 				$this.paper.select('.change__room-desc').before(data);
 			});
 
-			Snap.load(this.activeConfig.planData, function(data) {
-
-				$this.paper.append(data);
+			if (this.activeConfig.planData) {
+				Snap.load(this.activeConfig.planData, function(data) {
+					$this.paper.append(data);
+					$this.setFakeElements($this.activeConfig.rooms);
+				});
+			} else {
 				$this.setFakeElements($this.activeConfig.rooms);
-
-				var plan = $this.paper.select('#plan');
-
-				if (plan) {
-					plan.hover(function() {
-						console.log('hover');
-					}, function() {
-						console.log('unhover');
-					});
-				}
-			});
+			}
 
 			this.paper.hover(function() {}, function() {
 				$this.unhoverActivatedDescription();
@@ -94,6 +87,7 @@ var ChangeRoom = {
 			for (var i = 0; i < this.config.length; i++) {
 				var room = this.config[i];
 				if (room.id == id) {
+					console.log(id);
 					this.reinit(room);
 					break;
 				}
@@ -265,7 +259,7 @@ var ChangeRoom = {
 			});
 
 			descTitle.node.textContent = description.title;
-			$this.elS.descGroup.addClass('active');
+			$this.elS.descGroup.addClass('change__room-active');
 
 			if (description.properies != null && description.properies != undefined) {
 
@@ -316,7 +310,6 @@ var ChangeRoom = {
 
 	unhoverActivatedDescription: function() {
 		var activeEls = this.paper.select('.active');
-		console.log(activeEls);
 		if (activeEls != null) {
 			activeEls.removeClass('active');
 			this.unhoverDescription(activeEls);
@@ -331,7 +324,7 @@ var ChangeRoom = {
 	},
 
 	hideDescription: function() {
-		this.elS.descGroup.removeClass('active change__room-desc--soldout');
+		this.elS.descGroup.removeClass('change__room-active change__room-desc--soldout');
 		var propertiesGroup = this.elS.descGroup.select('.desc__room-properties');
 		if (propertiesGroup != null) {
 			propertiesGroup.remove();
@@ -340,9 +333,7 @@ var ChangeRoom = {
 
 	getFillOpacity: function getFillOpacity(obj) {
 		obj = obj || {};
-
 		var opacity = obj.fillOpacity || this.visualStyles.fillOpacity;
-
 		return opacity;
 	},
 

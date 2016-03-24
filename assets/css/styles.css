@@ -3271,6 +3271,7 @@ form .select-style select:focus {
 }
 #area .area__content #change__room .change__room-desc {
   display: none;
+  opacity: 1 !important;
   /* position: absolute;
 				top: 50%;
 				left: 0px;
@@ -3342,13 +3343,13 @@ form .select-style select:focus {
 #area .area__content #change__room .change__room-desc .desc__room-properties .property.property__example {
   display: none;
 }
-#area .area__content #change__room .change__room-desc.active {
+#area .area__content #change__room .change__room-desc.change__room-active {
   display: block;
 }
-#area .area__content #change__room .change__room-desc.active .desc__title {
+#area .area__content #change__room .change__room-desc.change__room-active .desc__title {
   display: block;
 }
-#area .area__content #change__room .change__room-desc.active .title__line {
+#area .area__content #change__room .change__room-desc.change__room-active .title__line {
   display: block;
 }
 #area .area__content #change__room .change__room-desc.change__room-desc--soldout .desc__wrapper {
@@ -3367,7 +3368,7 @@ form .select-style select:focus {
 #area .area__content #change__room .change__room-desc.change__room-desc--soldout .title__line {
   display: none;
 }
-#area .area__content #change__room .change__room-desc.change__room-desc--soldout.active .desc__title {
+#area .area__content #change__room .change__room-desc.change__room-desc--soldout.change__room-active .desc__title {
   display: table-cell;
 }
 #area .area__content .plan__legend {
