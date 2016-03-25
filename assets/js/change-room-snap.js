@@ -98,6 +98,7 @@ var ChangeRoom = {
 	reinit: function(room) {
 		if (this.paper) {
 			this.paper.clear();
+			this.fakeHovers = [];
 			this.activeConfig = room;
 			this.init();
 		}
@@ -133,6 +134,7 @@ var ChangeRoom = {
 
 		this.elS.descTitle = this.paper.text(this.descTitlePostion.defaultPosition.x, this.descTitlePostion.defaultPosition.y, null).addClass('desc__title');
 		this.elS.descGroup = this.paper.g(description, descriptionInner, this.elS.descTitle, titleLine).addClass('change__room-desc');
+		console.log(this.elS.descGroup);
 	},
 
 	setElements: function(elements) {
@@ -290,6 +292,7 @@ var ChangeRoom = {
 			}
 		};
 
+		console.log(el);
 		el.animate({
 			opacity: 1,
 		}, 200);
@@ -310,6 +313,7 @@ var ChangeRoom = {
 
 	unhoverActivatedDescription: function() {
 		var activeEls = this.paper.select('.active');
+		console.log(activeEls);
 		if (activeEls != null) {
 			activeEls.removeClass('active');
 			this.unhoverDescription(activeEls);
@@ -324,6 +328,7 @@ var ChangeRoom = {
 	},
 
 	hideDescription: function() {
+		console.log(this.elS.descGroup);
 		this.elS.descGroup.removeClass('change__room-active change__room-desc--soldout');
 		var propertiesGroup = this.elS.descGroup.select('.desc__room-properties');
 		if (propertiesGroup != null) {
