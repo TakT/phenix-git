@@ -486,6 +486,13 @@ sup {
 #navigation .navigation__wrapper > li.active .navigation__sub {
   visibility: visible;
 }
+#navigation.navigation__hidden-loyality ul li a {
+  padding-left: 41px;
+  padding-right: 40px;
+}
+#navigation.navigation__hidden-loyality .loyality {
+  display: none;
+}
 #indexslider {
   z-index: 499;
   height: 877px;
