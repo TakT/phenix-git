@@ -505,6 +505,7 @@ sup {
   position: absolute;
   top: 0;
   min-height: 100%;
+  background-color: #000;
 }
 #indexslider .indexslider__wrapper:before {
   content: "";
@@ -2263,6 +2264,12 @@ form .select-style select:focus {
 .parking__page #statistic__info .btn:hover {
   text-decoration: underline;
 }
+.main__page #indexslider .slick-slider .slick-dots {
+  opacity: 0;
+}
+.main__page #indexslider .slider__wrapper .slider__content {
+  opacity: 0;
+}
 .commercials__page #statistic__info .info__item .item__title {
   font-size: 60px;
   line-height: 55px;
@@ -3626,6 +3633,76 @@ form .select-style select:focus {
 }
 .js-mobile__menu-toggle.active a.menu__close {
   display: inline-block;
+}
+@-webkit-keyframes pulse {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+@-webkit-keyframes pulseMin {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulseMin {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.pulseMin {
+  -webkit-animation-name: pulseMin;
+  animation-name: pulseMin;
 }
 @media (max-width: 1366px) {
   .fullscreen__page .content__menu {
