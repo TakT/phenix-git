@@ -345,8 +345,8 @@
 			</div>
 		</section>
 
-		<section class="section">
-			<img src="./assets/images/contacts-map-1.jpg" alt="" class="img-responsive-fw">
+		<section class="section" id="map">
+			<div class="map__wrapper"></div>
 		</section>
 
 		<section id="contacts-form-map" class="section">
@@ -565,5 +565,29 @@
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+
+		<script type="text/javascript">
+
+			function initMap() {
+				var myLatLng = {
+					lat: 43.31691,
+					lng: 45.6939739
+				};
+
+				var map = new google.maps.Map(jQuery('#map .map__wrapper').get(0), {
+					zoom: 18,
+					center: myLatLng,
+					scrollwheel: false,
+				});
+
+				/*var marker = new google.maps.Marker({
+					position: myLatLng,
+					map: map,
+					title: 'Hello World!'
+				});*/
+			}
+
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=true&callback=initMap"></script>
 	</body>
 </html>
