@@ -17,7 +17,7 @@
 		<![endif]-->
 
 	</head>
-	<body class="page__inner">
+	<body class="page__inner page__location">
 
 		<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 		  
@@ -98,7 +98,7 @@
 			<a href="javascript:void(0);" title="Закрыть меню" class="menu__close"><svg class="if if-cross"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-cross"></use></svg></a>
 		</div>
 
-		<header id="header">
+		<header id="header" class="wow fadeInDown" data-wow-delay="0.5s">
 			<div class="container">
 				<div class="row">
 					
@@ -168,7 +168,7 @@
 			</div>
 		</header>
 
-		<section id="navigation" class="navigation__hidden-loyality">
+		<section id="navigation" class="navigation__hidden-loyality wow fadeInDown" data-wow-delay="0.6s">
 			<div class="container">
 				<div class="row">
 					
@@ -306,8 +306,8 @@
 			</div>
 		</section>
 
-		<section class="section">
-			<img src="./assets/images/location-map.jpg" alt="" class="img-responsive-fw">
+		<section class="section" id="map">
+			<div class="map__wrapper"></div>
 		</section>
 
 		<section class="section section__twotitles section__twotitles-min-text">
@@ -607,5 +607,29 @@
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+
+		<script type="text/javascript">
+
+			function initMap() {
+				var myLatLng = {
+					lat: 43.31691,
+					lng: 45.6939739
+				};
+
+				var map = new google.maps.Map(jQuery('#map .map__wrapper').get(0), {
+					zoom: 18,
+					center: myLatLng,
+					scrollwheel: false,
+				});
+
+				/*var marker = new google.maps.Marker({
+					position: myLatLng,
+					map: map,
+					title: 'Hello World!'
+				});*/
+			}
+
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=true&callback=initMap"></script>
 	</body>
 </html>
