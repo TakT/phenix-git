@@ -3394,7 +3394,7 @@ form .select-style select:focus {
 }
 #area .area__content .plan__legend {
   margin-left: 125px;
-  margin-left: 6.5104vw;
+  margin-left: 8.5104vw;
 }
 #area .area__content .plan__legend .if {
   width: 32px;
@@ -3413,7 +3413,7 @@ form .select-style select:focus {
   font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
   vertical-align: middle;
   padding: 0 40px;
-  padding: 0 2.08335vw;
+  padding: 0 1.6vw;
 }
 #area .area__content .plan__legend li:first-child {
   padding-left: 0;
@@ -3496,8 +3496,8 @@ form .select-style select:focus {
   margin-top: -295px;
   margin-top: -27.3148vh;
   margin-top: -51%;
-  height: 1425px;
-  height: 131.945vh;
+  /* height: 1425px;
+		height: 131.945vh; */
 }
 #area #change_floor > polygon.active,
 #area #change_floor > path.active {
@@ -3734,7 +3734,7 @@ form .select-style select:focus {
     margin-bottom: 2.15vh;
   }
   #area .area__content .plan__legend {
-    margin-left: 4.5104vw;
+    margin-left: 9.7vw;
   }
   #area .area__content .plan__legend li {
     font-size: 14px;
@@ -3822,8 +3822,19 @@ form .select-style select:focus {
   #navigation ul li .navigation__sub ul li a {
     padding: 18px 23.6px;
   }
+  #navigation.navigation__hidden-loyality ul > li > a {
+    padding-left: 27.55px;
+    padding-right: 27.55px;
+  }
+  #navigation.navigation__hidden-loyality ul > li .navigation__sub ul li a {
+    padding-left: 18.6px;
+    padding-right: 18.6px;
+  }
   #header .header__info .info__phones .phone a {
     font-size: 26.62px;
+  }
+  #indexslider .slick-arrows .slick-arrow.slick-prev {
+    left: 30px;
   }
   #security .row__grid .grid__line .grid__item {
     height: 220px;
@@ -3943,6 +3954,9 @@ form .select-style select:focus {
   }
   .noUi-target.noUi-vertical .noUi-handle:after {
     margin-top: -1.5px;
+  }
+  #area .area__content .plan__legend {
+    margin-left: 4.9vw;
   }
 }
 @media (max-width: 1023px) {

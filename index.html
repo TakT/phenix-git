@@ -277,9 +277,9 @@
 				
 				<div class="slider__wrapper">
 					<div class="slider__item">
-						<div class="slider__item-inner wow fadeIn">
+						<div class="slider__item-inner">
 							<div class="slider__bg hidden-xs hidden-sm hidden-md" style="background-image: url(./assets/images/slider/1.jpg);">
-								<div class="container slider__content wow fadeIn" data-wow-delay="1.3s">ЖК «Феникс»<br>центр деловой жизни</div>
+								<div class="container slider__content" data-wow-delay="1.3s">ЖК «Феникс»<br>центр деловой жизни</div>
 							</div>
 							<div class="slider__bg visible-xs visible-sm visible-md">
 								<img src="./assets/images/slider/1.jpg" alt="">
@@ -1004,9 +1004,19 @@
 
 				slider.on('init', function(event, slick) {
 					setTimeout(function () {
+
+						var activeSlide = slick.$slides.filter('.slick-active');
+
+
 						slick.$dots.animateCss('fadeInUp', function () {
 							slick.$dots.css({
 								opacity: 1,
+							});
+							
+							activeSlide.find('.slider__content').animateCss('pulse', function () {
+								activeSlide.find('.slider__content').css({
+									opacity: 1,
+								});
 							});
 						});
 					}, 1000);
@@ -1033,6 +1043,7 @@
 					var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
 
 					activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
+						console.log('22');
 						activeSlide.find('.slider__content').css({
 							opacity: 1,
 						});
