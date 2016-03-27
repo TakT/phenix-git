@@ -60,9 +60,12 @@ var ChangeRoom = {
 			this.setElements(this.activeConfig.rooms);
 			this.createDescBlock();
 
+			var tmpPlan = this.activeConfig.plan;
 			Snap.load(this.activeConfig.plan, function(data) {
 				data.parent = function() {};
-				$this.paper.select('.change__room-desc').before(data);
+				if (tmpPlan == $this.activeConfig.plan) {
+					$this.paper.select('.change__room-desc').before(data);
+				}
 			});
 
 			if (this.activeConfig.planData) {
@@ -78,7 +81,6 @@ var ChangeRoom = {
 				$this.unhoverActivatedDescription();
 			});
 		}
-
 	},
 
 	set: function(id) {
