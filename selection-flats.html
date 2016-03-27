@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Квартиры</title>
 
-		<meta name="viewport" content="width=1024px, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
@@ -304,17 +304,35 @@
 						<div class="params">
 
 							<div class="row">
-								<div class="col-xs-11">
+								<div class="col-xs-12 col-lg-11">
 									<div class="param param__range first__range first__range-suffix">
-										<div class="param__title col-xs-2">Площадь</div>
-										<div class="param__content col-xs-10">
+										<div class="param__title col-xs-12 col-lg-2">Площадь</div>
+										<div class="param__content col-xs-12 col-lg-10">
+											<div class="param__content-title hidden-xs hidden-md">Площадь, м2</div>
+											<div class="param__content-inputs clearfix hidden-xs hidden-md">
+												<div class="col-xs-6">
+													<input type="text" class="range_area-min form-control">
+												</div>
+												<div class="col-xs-6 text-right">
+													<input type="text" class="form-control range_area-max">
+												</div>
+											</div>
 											<input type="text" id="range_area" name="range_area" value="">
 										</div>
 									</div>
 
 									<div class="param param__range">
-										<div class="param__title col-xs-2">Этаж</div>
-										<div class="param__content col-xs-10">
+										<div class="param__title col-xs-12 col-lg-2">Этаж</div>
+										<div class="param__content col-xs-12 col-lg-10">
+											<div class="param__content-title hidden-xs hidden-md">Площадь, м2</div>
+											<div class="param__content-inputs clearfix hidden-xs hidden-md">
+												<div class="col-xs-6">
+													<input type="text" class="range_area-min form-control">
+												</div>
+												<div class="col-xs-6 text-right">
+													<input type="text" class="form-control range_area-max">
+												</div>
+											</div>
 											<input type="text" id="range_floor" name="range_floor" value="">
 										</div>
 									</div>
@@ -322,8 +340,9 @@
 							</div>
 
 							<div class="param">
-								<div class="param__title col-xs-1">Комнат</div>
-								<div class="param__content col-xs-11">
+								<div class="param__title col-xs-12 col-lg-1">Комнат</div>
+								<div class="param__content col-xs-12 col-lg-11">
+									<div class="param__content-title hidden-xs hidden-md">Комнат</div>
 									<div class="param__items param__items-cheked">
 										<div class="param__item">
 											<a href="javascript:void(0);" title="2">2</a>
@@ -342,50 +361,53 @@
 						</div>
 
 						<div class="types">
-							<div class="type col-xs-4">
-								<div class="type__title">Выбрать вид из окна:</div>
+							<div class="types__title visible-xs visible-sm">Выбрать вид из окна:</div>
+							<div class="types__wrapepr">
+								<div class="type col-xs-12 col-lg-4">
+									<div class="type__title hidden-xs hidden-sm">Выбрать вид из окна:</div>
 
-								<div class="type__item">
-									<input type="checkbox" class="checkbox__custom" id="check_2-1">
-									<label for="check_2-1">Мечеть</label>
+									<div class="type__item">
+										<input type="checkbox" class="checkbox__custom" id="check_2-1">
+										<label for="check_2-1">Мечеть</label>
 
-									<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
-										<img src="./assets/images/icons/eye-icon.svg" alt="">
-										<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
-									</a>
+										<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
+											<img src="./assets/images/icons/eye-icon.svg" alt="">
+											<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
+										</a>
+									</div>
+
+									<div class="type__item">
+										<input type="checkbox" class="checkbox__custom" id="check_2-2">
+										<label for="check_2-2">Проспект Кадырова</label>
+
+										<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
+											<img src="./assets/images/icons/eye-icon.svg" alt="">
+											<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
+										</a>
+									</div>
 								</div>
+								<div class="type col-xs-12 col-lg-4 col-lg-offset-1">
+									<div class="type__title">&nbsp;</div>
 
-								<div class="type__item">
-									<input type="checkbox" class="checkbox__custom" id="check_2-2">
-									<label for="check_2-2">Проспект Кадырова</label>
+									<div class="type__item">
+										<input type="checkbox" class="checkbox__custom" id="check_2-3">
+										<label for="check_2-3">Внутриквартальный вид 1</label>
 
-									<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
-										<img src="./assets/images/icons/eye-icon.svg" alt="">
-										<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
-									</a>
-								</div>
-							</div>
-							<div class="type col-xs-4 col-xs-offset-1">
-								<div class="type__title">&nbsp;</div>
+										<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
+											<img src="./assets/images/icons/eye-icon.svg" alt="">
+											<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
+										</a>
+									</div>
 
-								<div class="type__item">
-									<input type="checkbox" class="checkbox__custom" id="check_2-3">
-									<label for="check_2-3">Внутриквартальный вид 1</label>
+									<div class="type__item">
+										<input type="checkbox" class="checkbox__custom" id="check_2-4">
+										<label for="check_2-4">Внутриквартальный вид 2</label>
 
-									<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
-										<img src="./assets/images/icons/eye-icon.svg" alt="">
-										<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
-									</a>
-								</div>
-
-								<div class="type__item">
-									<input type="checkbox" class="checkbox__custom" id="check_2-4">
-									<label for="check_2-4">Внутриквартальный вид 2</label>
-
-									<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
-										<img src="./assets/images/icons/eye-icon.svg" alt="">
-										<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
-									</a>
+										<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
+											<img src="./assets/images/icons/eye-icon.svg" alt="">
+											<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -672,15 +694,18 @@
 		<script type="text/javascript" src="./assets/js/template.js"></script>
 
 		<script type="text/javascript">
-		    (function($){
-		        $(window).load(function(){
-		            $(".customScrollBar").mCustomScrollbar({
-		            	theme: 'rounded',
-		            	scrollButtons: false,
-		            });
-		        });
+			(function($) {
 
-		        $("#range_area").ionRangeSlider({
+				if ($(window).width() >= 1024) {
+					$(window).load(function() {
+						$(".customScrollBar").mCustomScrollbar({
+							theme: 'rounded',
+							scrollButtons: false,
+						});
+					});
+				}
+
+				$("#range_area").ionRangeSlider({
 					type: 'double',
 					min: 50,
 					max: 300,
@@ -688,17 +713,28 @@
 					to: 270,
 					postfix: ' <span>м2</span>',
 					hide_min_max: true,
-		        });
+					onStart: sliderOnChange,
+					onChange: sliderOnChange,
+				});
 
-		        $("#range_floor").ionRangeSlider({
+				$("#range_floor").ionRangeSlider({
 					type: 'double',
 					min: 1,
 					max: 42,
 					from: 1,
 					to: 23,
 					hide_min_max: true,
-		        });
-		    })(jQuery);
+					onStart: sliderOnChange,
+					onChange: sliderOnChange,
+				});
+
+				function sliderOnChange(data) {
+					var wrappEl = data.slider.parents('.param__content').find('.param__content-inputs');
+					wrappEl.find('.range_area-min').val(data.from);
+					wrappEl.find('.range_area-max').val(data.to);
+				}
+
+			})(jQuery);
 		</script>
 	</body>
 </html>
