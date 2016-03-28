@@ -7,8 +7,8 @@ jQuery(document).ready(function($) {
 		fullscreenMenuInit = false;
 
 	if (windowWidth >= 1024) {
+		console.log(fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a'));
 		fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a').on('click', function(event) {
-
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
 				fullscreenPage.toggleClass('fullscreen__header-active');
 				if (!fullscreenMenuInit) {

@@ -162,9 +162,28 @@ var Tour3D = {
 		}
 	},
 
+	openLocation: function(href) {
+		// window.location.href = this.data('href');
+		$.fancybox.open({
+			href: href,
+			type: 'iframe',
+		}, {
+			padding: 0,
+			width: '100%',
+			onComplete: function() {
+				/*jQuery(".fancybox-wrap").css({
+					'top': '0',
+					'left': '0',
+					'bottom': 'auto'
+				});*/
+			}
+		});
+	},
+
 	setPoints: function(points, callback) {
 		// this.elS.tourPoints.children(points).show();
 
+		$this = this;
 		for (var i = 0; i < points.length; i++) {
 			var point = points[i];
 
@@ -182,7 +201,7 @@ var Tour3D = {
 				.transform('t' + point.left + ',' + point.top).click(function(event) {
 					// Обработка перехода
 					console.log(this.data('href'));
-					window.location.href = this.data('href');
+					$this.openLocation(this.data('href'));
 				});
 
 			bMarkerHuman
@@ -196,7 +215,7 @@ var Tour3D = {
 				.transform('t' + point.left + ',' + point.top).click(function(event) {
 					// Обработка перехода
 					console.log(this.data('href'));
-					window.location.href = this.data('href');
+					$this.openLocation(this.data('href'));
 				});
 		};
 	},
