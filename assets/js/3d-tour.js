@@ -169,7 +169,9 @@ var Tour3D = {
 			type: 'iframe',
 		}, {
 			padding: 0,
+			margin: 0,
 			width: '100%',
+			height: '100%',
 			onComplete: function() {
 				/*jQuery(".fancybox-wrap").css({
 					'top': '0',

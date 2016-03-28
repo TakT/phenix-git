@@ -1,13 +1,12 @@
 jQuery(document).ready(function($) {
 
-	var windowWidth = jQuery(window).width(),
+	var windowWidth = jQuery(window).get(0).outerWidth,
 		headerWidth = jQuery('#header .container').width(),
 		fullscreenPage = jQuery('.fullscreen__page'),
 		navigation = jQuery('#navigation'),
 		fullscreenMenuInit = false;
 
 	if (windowWidth >= 1024) {
-		console.log(fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a'));
 		fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a').on('click', function(event) {
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
 				fullscreenPage.toggleClass('fullscreen__header-active');
@@ -160,7 +159,7 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(window).on('resize', function(event) {
-	var windowWidth = jQuery(window).width();
+	var windowWidth = jQuery(window).get(0).outerWidth;
 
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
@@ -172,7 +171,7 @@ jQuery(window).on('resize', function(event) {
 });
 
 jQuery(window).on('load', function(event) {
-	var windowWidth = jQuery(window).width();
+	var windowWidth = jQuery(window).get(0).outerWidth;
 
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
