@@ -172,13 +172,7 @@ var Tour3D = {
 			margin: 0,
 			width: '100%',
 			height: '100%',
-			onComplete: function() {
-				/*jQuery(".fancybox-wrap").css({
-					'top': '0',
-					'left': '0',
-					'bottom': 'auto'
-				});*/
-			}
+			closeBtn: false,
 		});
 	},
 
