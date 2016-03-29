@@ -2615,6 +2615,24 @@ form .select-style select:focus {
   height: 100%;
   opacity: 0;
 }
+.fullscreen__page #tour3D svg path {
+  /* -webkit-transition: all 0.2s linear;
+				-moz-transition: all 0.2s linear;
+				-o-transition: all 0.2s linear;
+				transition: all 0.2s linear;
+				
+				&.tower {
+					-webkit-transition: all 0.1s linear;
+					-moz-transition: all 0.1s linear;
+					-o-transition: all 0.1s linear;
+					transition: all 0.1s linear;
+				} */
+}
+.fullscreen__page #tour3D svg path.descBg,
+.fullscreen__page #tour3D svg path.descTitle,
+.fullscreen__page #tour3D svg path.imgBg {
+  opacity: 0;
+}
 .fullscreen__page #tour3D .tour3D__turn {
   position: absolute;
   bottom: px;

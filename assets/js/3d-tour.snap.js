@@ -253,25 +253,16 @@ var Tour3D = {
 		var img = this.paper.select('.imgBg');
 
 		if (img != null) {
-			console.log('!null');
 			img.animate({
 				opacity: 0,
 			}, 400, mina.linear, function() {
 				$this.paper.clear();
-				img = $this.paper.image(view.imgs.bgPath, 0, 0, 1920, 1080).addClass('imgBg');
-				$this.setElements(view, view.elements, view.scale, view.scaleBg);
-				$this.setPoints(view.points);
+				$this._setEements(img, view);
 			});
 		} else {
-			img = $this.paper.image(view.imgs.bgPath, 0, 0, 1920, 1080).addClass('imgBg');
-			$this.setElements(view, view.elements, view.scale, view.scaleBg);
-			$this.setPoints(view.points);
+			this._setEements(img, view);
 		}
 
-		img.hover(function() {
-			$this.hideHover();
-			$this.hideHouse();
-		});
 
 		$this.elS.tourCompas.children('img').animate({
 			opacity: 0,
@@ -283,6 +274,27 @@ var Tour3D = {
 				opacity: 1,
 			}, 400);
 		})
+	},
+
+	_setEements: function(img, view) {
+		var _this = this;
+		img = $this.paper.image(view.imgs.bgPath, 0, 0, 1920, 1080).attr({
+			opacity: 0,
+		}).addClass('imgBg');
+
+		img.node.addEventListener('load', function() {
+			img.animate({
+				opacity: 1,
+			}, 400);
+			_this.setElements(view, view.elements, view.scale, view.scaleBg);
+			_this.setPoints(view.points);
+
+			img.hover(function() {
+				_this.hideHover();
+				_this.hideHouse();
+			});
+		}, true);
+
 	},
 
 	/**
