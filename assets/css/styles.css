@@ -3232,6 +3232,10 @@ form .select-style select:focus {
   box-shadow: none;
   border: none;
   top: -1.7895vh;
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
 }
 .noUi-target .noUi-handle.noUi-active {
   cursor: move;

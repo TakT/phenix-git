@@ -263,12 +263,12 @@ var ChangeRoom = {
 			descTitle.node.textContent = description.title;
 			$this.elS.descGroup.addClass('change__room-active');
 
-			if (description.properies != null && description.properies != undefined) {
+			if (description.properties != null && description.properties != undefined) {
 
 				var propertiesGroup = $this.elS.descGroup.g().addClass('desc__room-properties');
-				for (var i = 0; i < description.properies.length; i++) {
+				for (var i = 0; i < description.properties.length; i++) {
 
-					property = description.properies[i];
+					property = description.properties[i];
 
 					var propertyValues = property.value.split('^');
 					var propertyTitle = el.paper.text(275, propertyOffset, [property.title, propertyValues]).addClass('property__title');

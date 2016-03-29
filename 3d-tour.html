@@ -292,23 +292,18 @@
 			</div>
 
 			<div class="fullscreen__content-wrapper">
-				<div class="tour3D__bg">
-					<img src="./assets/images/3d-tour/side-a.jpg" alt="" width="1920" height="1080">
-				</div>
-
-				<div id="tour3D__content"></div>
+				<svg id="tour3D__content" height="100%" width="100%" viewBox="0 0 1920 1080"></svg>
 			</div>
 
 		</section>
 
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
-		<script type="text/javascript" src="./assets/js/raphael-min.js"></script>
-		<script type="text/javascript" src="./assets/js/eve.min.js"></script>
-		<script type="text/javascript" src="./assets/js/eve.js"></script>
+		<script type="text/javascript" src="./assets/js/snap.svg-min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
 		<script type="text/javascript" src="./assets/js/jquery.fancybox.pack.js?v=2.1.5"></script>
-		<script type="text/javascript" src="./assets/js/3d-tour.js"></script>
+		<!-- <script type="text/javascript" src="./assets/js/3d-tour.js"></script> -->
+		<script type="text/javascript" src="./assets/js/3d-tour.snap.js"></script>
 
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
@@ -316,38 +311,38 @@
 				Tour3D.init([{
 					isDefault: true,
 					points: [{
-						top: '-95',
-						left: '-795',
+						top: '80',
+						left: '364',
 						url: './panorams/0.html',
 						title: 'Point',
 					}, {
-						top: '37',
-						left: '-603',
+						top: '212',
+						left: '556',
 						url: './panorams/1.html',
 						title: 'Point',
 					}, {
-						top: '445',
-						left: '-305',
+						top: '620',
+						left: '854',
 						url: './panorams/2.html',
 						title: 'Point',
 					}, {
-						top: '600',
-						left: '-168',
+						top: '775',
+						left: '991',
 						url: './panorams/9.html',
 						title: 'Point',
 					}, {
-						top: '490',
-						left: '10',
+						top: '665',
+						left: '1169',
 						url: './panorams/8.html',
 						title: 'Point',
 					}, {
-						top: '355',
-						left: '230',
+						top: '530',
+						left: '1389',
 						url: './panorams/7.html',
 						title: 'Point',
 					}, {
-						top: '265',
-						left: '387',
+						top: '440',
+						left: '1543',
 						url: './panorams/6.html',
 						title: 'Point',
 					}],
@@ -362,23 +357,23 @@
 						title: '120',
 						desc: 'КВАРТИР \nВ ПРОДАЖЕ',
 						bgPosition: {
-							left: 35,
-							top: 160,
+							left: 855,
+							top: 300,
 						},
 						titlePosition: {
-							left: 115,
-							top: 265,
+							left: 1230,
+							top: 480,
 						},
 						descPosition: {
-							left: 115,
-							top: 310,
+							left: 1230,
+							top: 510,
 						},
 						titleSize: 46,
 						descSize: 14,
 					}],
-					viewBoxPosition: {
-						x: -1158,
-						y: -176,
+					elsOffset: {
+						left: 1159,
+						top: 175,
 					},
 					imgs: {
 						bgPath: './assets/images/3d-tour/side-a.jpg',
@@ -395,59 +390,59 @@
 						coords: 'M45,362l-7-20,13-11L2,107l6-5L2,74,0,73l2-4L0,61l8-6L7,47,21,37S13.8,17.08,34,4c0,0,11-7.87,20,4L65,0h7l64,35,1,6,13,7-1,2,4,36,11,6,30,222,15,9v6l1,15-14,13v12l-33,30-17,2-16,14-17-11-15,2L61,382l-8-15Z',
 						url: 'javascript:void(0);',
 						title: '120',
-						desc: 'квартир \nВ ПРОДАЖЕ',
+						desc: 'КВАРТИР \nВ ПРОДАЖЕ',
 						bgPosition: {
-							left: 40,
-							top: 150,
+							left: 427,
+							top: 332,
 						},
 						titlePosition: {
-							left: 110,
-							top: 220,
+							left: 547,
+							top: 455,
 						},
 						descPosition: {
-							left: 110,
-							top: 260,
+							left: 540,
+							top: 480,
 						},
 						titleSize: 33,
 						descSize: 13,
 					}],
-					viewBoxPosition: {
-						x: -463,
-						y: -218,
+					elsOffset: {
+						left: 462,
+						top: 217,
 					},
 					points: [{
-						top: '417',
-						left: '-213',
+						top: '634',
+						left: '249',
 						url: './panorams/6.html',
 						title: 'Point',
 					}, {
-						top: '515',
-						left: '-96',
+						top: '732',
+						left: '366',
 						url: './panorams/5.html',
 						title: 'Point',
 					}, {
-						top: '370',
-						left: '67',
+						top: '587',
+						left: '529',
 						url: './panorams/4.html',
 						title: 'Point',
 					}, {
-						top: '255',
-						left: '210',
+						top: '472',
+						left: '672',
 						url: './panorams/3.html',
 						title: 'Point',
 					}, {
-						top: '128',
-						left: '359',
+						top: '345',
+						left: '821',
 						url: './panorams/2.html',
 						title: 'Point',
 					}, {
-						top: '440',
-						left: '815',
+						top: '657',
+						left: '1277',
 						url: './panorams/1.html',
 						title: 'Point',
 					}, {
-						top: '570',
-						left: '1162',
+						top: '787',
+						left: '1624',
 						url: './panorams/0.html',
 						title: 'Point',
 					}],
