@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
 				fullscreenPage.toggleClass('fullscreen__header-active');
 				if (!fullscreenMenuInit) {
-					calcSubNavPosition(calcSubNavPosition(jQuery(window).width()););
+					calcSubNavPosition(calcSubNavPosition(jQuery(window).width()));
 					fullscreenMenuInit = true;
 				};
 			});
