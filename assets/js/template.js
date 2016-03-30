@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
 				fullscreenPage.toggleClass('fullscreen__header-active');
 				if (!fullscreenMenuInit) {
-					calcSubNavPosition(windowWidth);
+					calcSubNavPosition(calcSubNavPosition(jQuery(window).width()););
 					fullscreenMenuInit = true;
 				};
 			});
@@ -178,7 +178,7 @@ jQuery(window).on('load', function(event) {
 
 	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
 		console.log('load');
-		calcSubNavPosition(windowWidth);
+		calcSubNavPosition(jQuery(window).width());
 	}
 
 	var navigation = jQuery('#navigation'),
