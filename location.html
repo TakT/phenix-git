@@ -612,21 +612,85 @@
 
 			function initMap() {
 				var myLatLng = {
-					lat: 43.31691,
-					lng: 45.6939739
+					lat: 43.3154397,
+					lng: 45.6974827
 				};
 
 				var map = new google.maps.Map(jQuery('#map .map__wrapper').get(0), {
-					zoom: 18,
+					zoom: 17,
 					center: myLatLng,
 					scrollwheel: false,
 				});
 
-				/*var marker = new google.maps.Marker({
-					position: myLatLng,
-					map: map,
-					title: 'Hello World!'
-				});*/
+				var image = {
+						url: './assets/images/maps/contacts_logo.svg',
+						// This marker is 20 pixels wide by 32 pixels high.
+						scaledSize: new google.maps.Size(100, 100), // scaled size
+						// The origin for this image is (0, 0).
+						origin: new google.maps.Point(0, 0),
+						// The anchor for this image is the base of the flagpole at (0, 32).
+						anchor: new google.maps.Point(0, 32)
+				};
+
+				for (var i = 0; i < beaches.length; i++) {
+					var beach = beaches[i];
+					var marker = new google.maps.Marker({
+						position: {
+							lat: 43.3163,
+							lng: 45.697
+						},
+						map: map,
+						icon: image,
+					});
+				}
+
+				setMarkers(map);
+			}
+
+			var beaches = [
+				['3', 43.317573, 45.705442],
+				['1', 43.313148, 45.696824],
+				['1', 43.314500, 45.700694],
+				['4', 43.317007, 45.699711],
+				['5', 43.315189, 45.697573],
+				['6', 43.315754, 45.696851],
+				['7', 43.315754, 45.693693],
+				['8', 43.315826, 45.691447],
+				['9', 43.317854, 45.690933],
+			];
+
+			function setMarkers(map) {
+				// Adds markers to the map.
+				// Marker sizes are expressed as a Size of X,Y where the origin of the image
+				// (0,0) is located in the top left of the image.
+				// Origins, anchor positions and coordinates of the marker increase in the X
+				// direction to the right and in the Y direction down.
+				var image = {
+						// This marker is 20 pixels wide by 32 pixels high.
+						scaledSize: new google.maps.Size(100, 100), // scaled size
+						// The origin for this image is (0, 0).
+						origin: new google.maps.Point(0, 0),
+						// The anchor for this image is the base of the flagpole at (0, 32).
+						anchor: new google.maps.Point(0, 32)
+				};
+				// Shapes define the clickable region of the icon. The type defines an HTML
+				// <area> element 'poly' which traces out a polygon as a series of X,Y points.
+				// The final coordinate closes the poly by connecting to the first coordinate.
+
+				for (var i = 0; i < beaches.length; i++) {
+					var beach = beaches[i];
+					image.url = './assets/images/maps/' + (parseInt(beach[0])) + '.svg';
+					// image.url = './assets/images/maps/1.svg';
+					var marker = new google.maps.Marker({
+						position: {
+							lat: beach[1],
+							lng: beach[2]
+						},
+						map: map,
+						icon: image,
+						title: beach[0],
+					});
+				}
 			}
 
 		</script>
