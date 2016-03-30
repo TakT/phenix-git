@@ -616,11 +616,37 @@
 					lng: 45.6974827
 				};
 
+				var customMapType = new google.maps.StyledMapType({
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"hue": "#eeff00"
+					}, {
+						"color": "#ded277"
+					}]
+				});
+				var customMapType = new google.maps.StyledMapType([{
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [{
+						"hue": "#eeff00"
+					}, {
+						"color": "#ded277"
+					}]
+				}]);
+				var customMapTypeId = 'custom_style';
+
 				var map = new google.maps.Map(jQuery('#map .map__wrapper').get(0), {
 					zoom: 17,
 					center: myLatLng,
 					scrollwheel: false,
+					mapTypeControlOptions: {
+						mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+					}
 				});
+
+				map.mapTypes.set(customMapTypeId, customMapType);
+				map.setMapTypeId(customMapTypeId);
 
 				var image = {
 						url: './assets/images/maps/contacts_logo.svg',
