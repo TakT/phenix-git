@@ -9,7 +9,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="./assets/css/animate.min.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -285,7 +285,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-10 col-md-offset-2">
 						<div class="documents">
-							<div class="document">
+							<div class="document wow bounceInLeft" data-wow-delay="0.3s">
 								<div class="document__icon">
 									<img src="./assets/images/document-icon.svg" alt="">
 								</div>
@@ -298,7 +298,7 @@
 								</div>
 							</div>
 							
-							<div class="document">
+							<div class="document wow bounceInLeft" data-wow-delay="0.4s" data-wow-offset="100">
 								<div class="document__icon">
 									<img src="./assets/images/document-icon.svg" alt="">
 								</div>
@@ -517,5 +517,9 @@
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
 	</body>
 </html>

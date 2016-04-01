@@ -9,7 +9,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="./assets/css/animate.min.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -307,24 +307,24 @@
 			</div>
 
 			<div class="clearfix">
-				<div class="col-xs-12 col-md-4 info__item">
+				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300">
 					<div class="item__title">198</div>
 					<div class="item__desc">Машиномест в подземном паркинге</div>
 				</div>
 				
-				<div class="col-xs-12 col-md-4 info__item">
+				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300">
 					<div class="item__title">36</div>
 					<div class="item__desc">Машиномест наземный паркинг</div>
 				</div>
 				
-				<div class="col-xs-12 col-md-4 info__item">
+				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300">
 					<div class="item__title">от 550  тыс. руб. </div>
 					<div class="item__desc">Стоимость парковочного места</div>
 				</div>
 			</div>
 
 			<div class="text-center">
-				<a href="javascript:void(0);" title="Оформить заявку" class="btn btn-light-green">Оформить заявку</a>
+				<a href="javascript:void(0);" title="Оформить заявку" class="btn btn-light-green wow slideInDown" data-wow-offset="300">Оформить заявку</a>
 			</div>
 		</section>
 
@@ -529,5 +529,9 @@
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
 	</body>
 </html>

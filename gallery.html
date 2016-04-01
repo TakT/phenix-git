@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./assets/css/slick.css">
 		<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/> -->
-
+		<link rel="stylesheet" href="./assets/css/animate.min.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -348,10 +348,10 @@
 
 				<div class="container slick-arrows">
 					
-					<a href="javascript:void(0);" class="slick-prev slick-arrow" title="Назад">
+					<a href="javascript:void(0);" class="slick-prev slick-arrow wow pulse" data-wow-delay="1.4s" title="Назад">
 						<svg class="if if-arrow-left"><use xlink:href="#if-arrow-left"></use></svg>
 					</a>
-					<a href="javascript:void(0);" class="slick-next slick-arrow" title="Вперед">
+					<a href="javascript:void(0);" class="slick-next slick-arrow wow pulse" data-wow-delay="1.4s" title="Вперед">
 						<svg class="if if-arrow-right"><use xlink:href="#if-arrow-right"></use></svg>
 					</a>
 
@@ -637,8 +637,11 @@
 		<script type="text/javascript" src="./assets/js/slick.min.js"></script>
 
 		<script type="text/javascript" src="./assets/js/template.js"></script>
-
+		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
 		<script type="text/javascript">
+			
+			new WOW().init();
+
 			var gallery_slider = null, 
 				gallery_slider_nav = null;
 

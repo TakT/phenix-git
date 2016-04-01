@@ -9,7 +9,7 @@
 		<!-- Latest compiled and minified CSS -->
 				<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="./assets/css/animate.min.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -303,17 +303,17 @@
 
 		<section id="statistic__info" class="section statistic__info-oneline">
 			<div class="clearfix">
-				<div class="col-xs-3 col-md-4 info__item">
+				<div class="col-xs-3 col-md-4 info__item wow zoomIn" data-wow-offset="200">
 					<div class="item__title">4 м</div>
 					<div class="item__desc">Высота потолков</div>
 				</div>
 				
-				<div class="col-xs-4 info__item">
+				<div class="col-xs-4 info__item wow zoomIn" data-wow-delay="0.2s" data-wow-offset="200">
 					<div class="item__title">50-500 м<sup>2</sup></div>
 					<div class="item__desc">Площадь помещений</div>
 				</div>
 				
-				<div class="col-xs-5 col-md-4 info__item">
+				<div class="col-xs-5 col-md-4 info__item wow zoomIn" data-wow-delay="0.3s" data-wow-offset="200">
 					<div class="item__title">от 700 руб.</div>
 					<div class="item__desc">Стоимость аренды за 1 м<sup>2</sup></div>
 				</div>
@@ -322,10 +322,10 @@
 
 		<section id="comfort-info" class="section">
 			<div class="container">
-				<div class="page__title"><span>Престиж и комфорт</span></div>
+				<div class="page__title wow pulse" data-offset="300"><span>Престиж и комфорт</span></div>
 
-				<div class="comfort-info__title">Аренда или приобретение коммерческой <br>недвижимости в ЖК «Феникс» это удачные инвестиции <br>в будущее вашего бизнеса</div>
-				<div class="comfort-info__desc">
+				<div class="comfort-info__title wow pulse" data-offset="300">Аренда или приобретение коммерческой <br>недвижимости в ЖК «Феникс» это удачные инвестиции <br>в будущее вашего бизнеса</div>
+				<div class="comfort-info__desc wow pulse" data-offset="300">
 					<p>Престижное расположение в самом центре города Грозный на набережной реки Сунжа рядом с резиденцией главы <br>Чеченской Республики Рамзана Кадырова и мечетью «Сердце Чечни».</p>
 					<p>Прекрасная транспортная доступность, превосходное качество отделки, высокий уровень инженерные коммуникации, <br>высокоскоростной интернет, панорамные окна, современная система вентиляции и кондиционирования, охрана 24/7, <br>ультрасовременная система противопожарной защиты.  Для приема VIP-гостей или клиентов на крыше <br>здания есть вертолетная площадка.</p>
 				</div>
@@ -337,7 +337,7 @@
 				<p>Помещения можно как приобрести, так и арендовать. Стоимость аренды одного квадратного метра от 700 рублей. Менеджеры ЖК <br>«Феникс» подберут самые подходящие планировочные решения для вашего бизнеса. С более подробной информацией о способах <br>покупки коммерческой недвижимости можно ознакомиться в разделе «<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>».</p>
 
 				<div class="config__actions">
-					<a href="javascript:void(0);" class="btn btn-light-green btn-min-i" title="Выбрать коммерческое помещение"><svg class="if if-filter"><use xlink:href="#if-filter"></use></svg> Выбрать коммерческое помещение</a>
+					<a href="javascript:void(0);" class="btn btn-light-green btn-min-i wow slideInDown" data-wow-offset="300" title="Выбрать коммерческое помещение"><svg class="if if-filter"><use xlink:href="#if-filter"></use></svg> Выбрать коммерческое помещение</a>
 				</div>
 			</div>
 		</section>
@@ -543,5 +543,44 @@
 		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
+		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<script type="text/javascript">
+			
+			new WOW().init();
+
+			jQuery(document).ready(function($) {
+
+				var architectureEl = jQuery('#comfort-info');
+				var configEl = jQuery('#config');
+				var scrollTop = 0, prevScrollTop = 0, architectureMargin = 0, architectureEndScroll = 0, architectureHeight = architectureEl.height();
+
+				jQuery(window).on('scroll', function () {
+					scrollTop = jQuery(this).scrollTop();
+
+					if (!architectureEndScroll) {
+						architectureEndScroll = architectureEl.offset().top + architectureHeight;
+					}
+
+					if (scrollTop >= architectureEl.offset().top && scrollTop <= architectureEndScroll) {
+						// if (scrollTop > prevScrollTop && (architectureMargin * (-1)) < architectureHeight) {
+						if (scrollTop > prevScrollTop) {
+							// console.log('down');
+							architectureMargin -= 10;
+						}else if (scrollTop < prevScrollTop) {
+							// console.log('up');
+							architectureMargin += 10;
+						}
+
+						if (architectureMargin <= 0) {
+							configEl.css({
+								top: architectureMargin,
+								marginBottom: architectureMargin,
+							});
+						}
+					}
+					prevScrollTop = scrollTop;
+				});
+			});
+		</script>
 	</body>
 </html>

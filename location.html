@@ -750,6 +750,39 @@
 				}
 			}
 
+			jQuery(document).ready(function($) {
+				var architectureEl = jQuery('#mosque');
+				var configEl = jQuery('#mosque-location-desc');
+				var scrollTop = 0, prevScrollTop = 0, architectureMargin = 0, architectureEndScroll = 0, architectureHeight = architectureEl.height();
+
+				jQuery(window).on('scroll', function () {
+					scrollTop = jQuery(this).scrollTop();
+
+					if (!architectureEndScroll) {
+						architectureEndScroll = architectureEl.offset().top + architectureHeight;
+					}
+
+					if (scrollTop >= architectureEl.offset().top && scrollTop <= architectureEndScroll) {
+						// if (scrollTop > prevScrollTop && (architectureMargin * (-1)) < architectureHeight) {
+						if (scrollTop > prevScrollTop) {
+							// console.log('down');
+							architectureMargin -= 10;
+						}else if (scrollTop < prevScrollTop) {
+							// console.log('up');
+							architectureMargin += 10;
+						}
+
+						if (architectureMargin <= 0) {
+							configEl.css({
+								top: architectureMargin,
+								marginBottom: architectureMargin,
+							});
+						}
+					}
+					prevScrollTop = scrollTop;
+				});
+			});
+
 		</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=true&callback=initMap"></script>
 	</body>

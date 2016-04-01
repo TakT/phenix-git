@@ -338,7 +338,6 @@
 				</div>
 
 				<div class="container slick-arrows">
-					
 					<a href="javascript:void(0);" class="slick-prev slick-arrow wow pulse" data-wow-delay="1.4s" title="Назад">
 						<svg class="if if-arrow-left"><use xlink:href="#if-arrow-left"></use></svg>
 					</a>
@@ -681,7 +680,6 @@
 				</div>
 			</div>
 		</div>
-
 
 		<!-- Modal Reservations -->
 		<div class="modal fade" id="reservations" tabindex="-1" role="dialog" aria-labelledby="reservationsLabel">
@@ -1041,9 +1039,7 @@
 				slider.on('afterChange', function(event) {
 
 					var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
-
 					activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
-						console.log('22');
 						activeSlide.find('.slider__content').css({
 							opacity: 1,
 						});
