@@ -255,6 +255,12 @@ sup {
   font-size: 45%;
   top: -0.7em;
 }
+.transitionAnimation {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
 .list-inline,
 .list-unstyled {
   margin-bottom: 0;
@@ -311,6 +317,7 @@ sup {
 .btn {
   border: none;
   border-radius: 2px;
+  text-decoration: none;
 }
 .btn.btn-light-green-2,
 .btn.btn-light-green {
@@ -338,6 +345,10 @@ sup {
 .btn.btn-light-green.btn-light-green-2:active {
   text-decoration: none;
 }
+.btn.btn-light-green-2:hover,
+.btn.btn-light-green:hover {
+  background-color: #02c28e;
+}
 .btn.btn-yellow {
   color: #005f46;
   background-color: #e8d877;
@@ -346,10 +357,9 @@ sup {
   text-align: center;
   padmabing: 9px 0;
   padding-top: 11px;
-  text-decoration: none;
 }
 .btn.btn-yellow:hover {
-  text-decoration: underline;
+  background-color: #fdee99;
 }
 #header {
   position: relative;
@@ -836,6 +846,10 @@ sup {
   top: 0;
   position: absolute;
   display: inline-block;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .slick-arrows .slick-arrow .if {
   fill: #fff;
@@ -848,6 +862,9 @@ sup {
 }
 .slick-arrows .slick-arrow.slick-next {
   right: 0;
+}
+.slick-arrows .slick-arrow:hover {
+  transform: scale3d(1.2, 1.2, 1.2);
 }
 .slick-slider .slick-slide {
   outline: none;
@@ -2224,6 +2241,10 @@ form .select-style select:focus {
   text-align: center;
   text-decoration: none;
   padding-top: 65px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 #about-developer .items .item .item__wrapper .item_img {
   margin-bottom: 20px;
@@ -2236,8 +2257,11 @@ form .select-style select:focus {
 #about-developer .items .item .item__wrapper span {
   display: block;
 }
+#about-developer .items .item .item__wrapper:hover {
+  margin-top: -20px;
+}
 #about-developer .items .item .item__wrapper:hover .item__title {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .parking__page #statistic__info {
   padding-top: 80px;
@@ -2530,6 +2554,11 @@ form .select-style select:focus {
   width: 24px;
   margin-left: 15px;
 }
+.fullscreen__page .fullscreen__menu-close > a:hover,
+.fullscreen__page .fullscreen__menu-back > a:hover,
+.fullscreen__page .fullscreen__menu > a:hover {
+  background-color: #000000;
+}
 .fullscreen__page .fullscreen__menu-close {
   z-index: 901;
   top: 50px;
@@ -2638,6 +2667,12 @@ form .select-style select:focus {
 .fullscreen__page #tour3D svg path.descTitle,
 .fullscreen__page #tour3D svg path.imgBg {
   opacity: 0;
+}
+.fullscreen__page #tour3D svg .mapMarker {
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .fullscreen__page #tour3D .tour3D__turn {
   position: absolute;
@@ -2791,6 +2826,9 @@ form .select-style select:focus {
 }
 .fullscreen__page #premises .premises__content .params .param .param__content {
   padding: 0;
+}
+.fullscreen__page #premises .premises__content .params .param .param__content-inputs {
+  display: none;
 }
 .fullscreen__page #premises .premises__content .params .param .param__items {
   font-size: 0;

@@ -242,6 +242,17 @@ var Tour3D = {
 				.transform('t' + point.left + ',' + point.top).click(function(event) {
 					$this.openLocation(this.data('href'));
 				});
+
+			var propertyGroup = this.paper.g(bMarker, bMarkerHuman).addClass('mapMarker');
+
+			propertyGroup.hover(function() {
+				console.log(this);
+				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f - 10));
+				this.transform('t0,-10');
+			}, function() {
+				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f + 10));
+				this.transform('t0,0');
+			});
 		};
 	},
 
