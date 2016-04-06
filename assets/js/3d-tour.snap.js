@@ -249,7 +249,13 @@ var Tour3D = {
 				console.log(this);
 				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f - 10));
 				this.transform('t0,-10');
+				/*this.stop().animate({
+					'transform': 'matrix(1,0,0,1,0,-10)'
+				});*/
 			}, function() {
+				/*this.stop().animate({
+					'transform': 'matrix(1,0,0,1,0,0)'
+				});*/
 				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f + 10));
 				this.transform('t0,0');
 			});

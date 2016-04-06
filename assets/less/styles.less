@@ -591,6 +591,12 @@ sup {
 		}
 	}
 
+	.slick-arrows {
+		a {
+			opacity: 0;
+		}
+	}
+
 	.slick-slider .slick-dots {
 	 	bottom: 200px;
 		li {
@@ -1519,6 +1525,7 @@ sup {
 
 #architecture {
 	background: url(../images/pages/architecture-bg.jpg) no-repeat;
+	background-attachment: fixed;
 	background-size: cover;
 	height: 660px;
 	height: 48.7vw;
@@ -1970,6 +1977,15 @@ form {
 			}
 		}
 	}
+}
+
+#mosque {
+	background: url(../images/mosque-location.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 660px;
+	height: 50.521vw;
+	overflow-y: hidden;
 }
 
 #mosque-location-desc {
@@ -2792,7 +2808,8 @@ form {
 	height: 923px;
 	height: 48.08vw;
 	position: relative;
-	background: url(../images/commercials-rent.jpg) no-repeat;
+	background: url(../images/commercials-rent.jpg) no-repeat top center;
+	background-attachment: fixed;
 	background-size: cover;
 	padding-top: 45px;
 	padding-top: 3.29vw;
@@ -3008,7 +3025,7 @@ form {
 			}
 			
 			.mapMarker {
-				.transitionAnimation();
+				// .transitionAnimation();
 			}
 		}
 

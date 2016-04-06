@@ -625,6 +625,9 @@ sup {
 #indexslider .slider-nav .nav__item.slick-current:before {
   display: none;
 }
+#indexslider .slick-arrows a {
+  opacity: 0;
+}
 #indexslider .slick-slider .slick-dots {
   bottom: 200px;
 }
@@ -1424,6 +1427,7 @@ sup {
 }
 #architecture {
   background: url(../images/pages/architecture-bg.jpg) no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   height: 660px;
   height: 48.7vw;
@@ -1800,6 +1804,14 @@ form .select-style select:focus {
   font-family: 'ProximaNova-Regular', Arial, Helvetica, Verdana, sans-serif;
   line-height: 21px;
   margin-left: 10px;
+}
+#mosque {
+  background: url(../images/mosque-location.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 660px;
+  height: 50.521vw;
+  overflow-y: hidden;
 }
 #mosque-location-desc {
   background-color: #fff;
@@ -2475,7 +2487,8 @@ form .select-style select:focus {
   height: 923px;
   height: 48.08vw;
   position: relative;
-  background: url(../images/commercials-rent.jpg) no-repeat;
+  background: url(../images/commercials-rent.jpg) no-repeat top center;
+  background-attachment: fixed;
   background-size: cover;
   padding-top: 45px;
   padding-top: 3.29vw;
@@ -2667,12 +2680,6 @@ form .select-style select:focus {
 .fullscreen__page #tour3D svg path.descTitle,
 .fullscreen__page #tour3D svg path.imgBg {
   opacity: 0;
-}
-.fullscreen__page #tour3D svg .mapMarker {
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 }
 .fullscreen__page #tour3D .tour3D__turn {
   position: absolute;
