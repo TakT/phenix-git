@@ -701,8 +701,15 @@
 				setMarkers(map);
 			}
 
-			function addMarkerWithTimeout(markerItem, image, timeout) {
+			function addMarkerWithTimeout(markerItem, timeout) {
 				window.setTimeout(function() {
+					var image = {
+							// This marker is 20 pixels wide by 32 pixels high.
+							scaledSize: new google.maps.Size(65, 65), // scaled size
+							// The origin for this image is (0, 0).
+							origin: new google.maps.Point(0, 0),
+					};
+					image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
 					new google.maps.Marker({
 						position: {
 							lat: markerItem[1],
@@ -730,17 +737,10 @@
 			];
 
 			function setMarkers(map) {
-				var image = {
-						// This marker is 20 pixels wide by 32 pixels high.
-						scaledSize: new google.maps.Size(65, 65), // scaled size
-						// The origin for this image is (0, 0).
-						origin: new google.maps.Point(0, 0),
-				};
 
 				for (var i = 0; i < markers.length; i++) {
 					var markerItem = markers[i];
-					image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
-					addMarkerWithTimeout(markerItem, image, i * 200);
+					addMarkerWithTimeout(markerItem, i * 200);
 				}
 			}
 		</script>
