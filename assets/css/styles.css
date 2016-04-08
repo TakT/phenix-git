@@ -337,7 +337,6 @@ sup {
 .btn.btn-light-green-2.btn-light-green-2,
 .btn.btn-light-green.btn-light-green-2 {
   padding: 13px 32px;
-  text-decoration: underline;
 }
 .btn.btn-light-green-2.btn-light-green-2:hover,
 .btn.btn-light-green.btn-light-green-2:hover,
@@ -1459,8 +1458,8 @@ sup {
   margin: 0 7px;
 }
 #config .config__actions .btn.btn-min-i {
-  padding: 12px 0;
-  padding-bottom: 11px;
+  padding: 10px 0;
+  padding-bottom: 8px;
 }
 #config .config__actions .btn .if {
   fill: #e9d877;
@@ -2270,6 +2269,7 @@ form .select-style select:focus {
   display: block;
 }
 #about-developer .items .item .item__wrapper:hover {
+  background-color: #02c28e;
   margin-top: -20px;
 }
 #about-developer .items .item .item__wrapper:hover .item__title {
@@ -2302,9 +2302,6 @@ form .select-style select:focus {
   font-size: 18px;
   font-family: 'WarnockPro-Regular', Arial, Helvetica, Verdana, sans-serif;
   text-decoration: none;
-}
-.parking__page #statistic__info .btn:hover {
-  text-decoration: underline;
 }
 .main__page #indexslider .slick-slider .slick-dots {
   opacity: 0;
@@ -2583,6 +2580,9 @@ form .select-style select:focus {
 .fullscreen__page .fullscreen__menu-close > a {
   padding: 0;
   margin: 0;
+  background-color: transparent;
+}
+.fullscreen__page .fullscreen__menu-close > a:hover {
   background-color: transparent;
 }
 .fullscreen__page .fullscreen__menu-close > a .if {
