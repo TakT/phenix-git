@@ -217,6 +217,7 @@ var Tour3D = {
 			var point = points[i];
 
 			var bMarker = this.paper.path('M36.44,0C16.1,0.21-.21,16.55,0,36.49A36.34,36.34,0,0,0,30.76,71.73L38.23,79l8.47-8.28C66.19,65,77.27,44.89,71.45,25.78A36.74,36.74,0,0,0,36.44,0Z');
+			var bMarker2 = this.paper.path('M36.44,0C16.1,0.21-.21,16.55,0,36.49A36.34,36.34,0,0,0,30.76,71.73L38.23,79l8.47-8.28C66.19,65,77.27,44.89,71.45,25.78A36.74,36.74,0,0,0,36.44,0Z');
 			var bMarkerHuman = this.paper.path('M41,44.74l0.52-5.41H42A2.4,2.4,0,0,0,44.53,37a2.32,2.32,0,0,0,0-.46l-1.58-9.77a4.76,4.76,0,0,0-4.75-4H34.83a4.77,4.77,0,0,0-4.75,4l-1.69,9.77a2.38,2.38,0,0,0,2,2.71,2.46,2.46,0,0,0,.39,0h0.46l0.6,5.41c-5.76.58-10.66,2.26-10.66,5.16,0,3.7,7.9,5.41,15.26,5.41s15.29-1.68,15.29-5.38C51.73,47,46.8,45.3,41,44.74Zm-9.32-7.66H30.84l-0.15-.14,1.58-9.77a2.48,2.48,0,0,1,2.49-2.08h3.34a2.48,2.48,0,0,1,2.49,2.08l1.62,9.77-0.12.14H41.16a1.82,1.82,0,0,0-1.82,1.63l-0.6,5.87-0.22,2.26-0.22,2.26H34.55l-0.22-2.26-0.22-2.26-0.55-5.86A1.81,1.81,0,0,0,31.73,37.07Zm4.72,16c-8.56,0-13-2.26-13-3.15S26.36,47.55,32,47l0.24,2.55a2,2,0,0,0,2.06,1.84h4.2a2,2,0,0,0,2.06-1.84L40.84,47c5.66,0.58,8.58,2.16,8.58,2.92S45,53,36.44,53Zm0-31.84A4.38,4.38,0,1,0,32,16.82s0,0,0,0a4.42,4.42,0,0,0,4.45,4.34v0Zm0-6.53a2.12,2.12,0,1,1-2.15,2.13h0A2.14,2.14,0,0,1,36.44,14.67Z');
 
 			bMarker
@@ -243,23 +244,85 @@ var Tour3D = {
 					$this.openLocation(this.data('href'));
 				});
 
-			var propertyGroup = this.paper.g(bMarker, bMarkerHuman).addClass('mapMarker');
+			bMarker2
+				.attr({
+					fill: 'red',
+					opacity: 0,
+					cursor: 'pointer',
+				})
+				.data('href', point.url)
+				.transform('t' + point.left + ',' + point.top).click(function(event) {
+					$this.openLocation(this.data('href'));
+				});
 
-			propertyGroup.hover(function() {
-				console.log(this);
-				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f - 10));
-				this.transform('t0,-10');
-				/*this.stop().animate({
-					'transform': 'matrix(1,0,0,1,0,-10)'
-				});*/
+			var propertyGroup = this.paper.g(bMarker).addClass('mapMarker');
+			var propertyGroupHidden = this.paper.g(bMarker2).addClass('mapMarker-hidden');
+
+			$this.markerHovers.push(propertyGroup)
+
+			propertyGroupHidden.data('groupMarkerId', i);
+			propertyGroupHidden.hover(function() {
+				$this.hoverMarker(this);
 			}, function() {
-				/*this.stop().animate({
-					'transform': 'matrix(1,0,0,1,0,0)'
-				});*/
-				// this.transform('t' + this.matrix.e + ',' + (this.matrix.f + 10));
-				this.transform('t0,0');
+				$this.unHoverMarker(this);
 			});
 		};
+	},
+
+	markerHovers: [],
+	intervalUnhoverId: null,
+	animateUnHoverValue: -10,
+	intervalHoverId: null,
+	animateHoverValue: 0,
+
+	hoverFakeMarker: function(el) {
+		var _this = this;
+		_this.intervalHoverId = setInterval(function() {
+			if (_this.animateHoverValue >= -10) {
+				el.transform('t0,' + (_this.animateHoverValue--));
+			} else {
+				clearInterval(_this.intervalHoverId);
+				_this.animateHoverValue = 0;
+				_this.intervalHoverId = null;
+			}
+		}, 40);
+	},
+	unHoverFakeMarker: function(el) {
+		var _this = this;
+		_this.intervalUnhoverId = setInterval(function() {
+			if (_this.animateUnHoverValue <= 0) {
+				el.transform('t0,' + (_this.animateUnHoverValue++));
+			} else {
+				clearInterval(_this.intervalUnhoverId);
+				_this.animateUnHoverValue = -10;
+				_this.intervalUnhoverId = null;
+			}
+		}, 40)
+	},
+
+	hoverMarker: function(el) {
+
+		var _this = this,
+			groupMarkerId = el.data('groupMarkerId');
+		el = $this.markerHovers[groupMarkerId]
+		el.data('groupMarkerId', groupMarkerId);
+
+		clearInterval(_this.intervalHoverId);
+		// this.unHoverMarker(el);
+		_this.hoverFakeMarker(el);
+	},
+
+	unHoverMarker: function(el) {
+
+		var _this = this,
+			groupMarkerId = el.data('groupMarkerId');
+
+		el = $this.markerHovers[groupMarkerId];
+		el.data('groupMarkerId', groupMarkerId);
+
+		clearInterval(_this.intervalUnhoverId);
+		// this.hoverMarker(el);
+		_this.unHoverFakeMarker(el);
 	},
 
 	setView: function(view) {
