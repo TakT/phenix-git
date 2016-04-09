@@ -213,6 +213,8 @@ var Tour3D = {
 		// this.elS.tourPoints.children(points).show();
 
 		$this = this;
+		$this.markerHovers = [];
+
 		for (var i = 0; i < points.length; i++) {
 			var point = points[i];
 
@@ -247,7 +249,7 @@ var Tour3D = {
 			bMarker2
 				.attr({
 					fill: 'red',
-					opacity: 0,
+					opacity: 0.5,
 					cursor: 'pointer',
 				})
 				.data('href', point.url)
@@ -255,7 +257,7 @@ var Tour3D = {
 					$this.openLocation(this.data('href'));
 				});
 
-			var propertyGroup = this.paper.g(bMarker).addClass('mapMarker');
+			var propertyGroup = this.paper.g(bMarker, bMarkerHuman).addClass('mapMarker');
 			var propertyGroupHidden = this.paper.g(bMarker2).addClass('mapMarker-hidden');
 
 			$this.markerHovers.push(propertyGroup)
@@ -270,31 +272,29 @@ var Tour3D = {
 	},
 
 	markerHovers: [],
-	intervalUnhoverId: null,
-	animateUnHoverValue: -10,
-	intervalHoverId: null,
-	animateHoverValue: 0,
+	intervalUnhoverIds: [],
+	intervalHoverIds: [],
+	animateMarkerValue: 0,
 
 	hoverFakeMarker: function(el) {
 		var _this = this;
 		_this.intervalHoverId = setInterval(function() {
-			if (_this.animateHoverValue >= -10) {
-				el.transform('t0,' + (_this.animateHoverValue--));
+			if (_this.animateMarkerValue >= -10) {
+				el.transform('t0,' + (_this.animateMarkerValue--));
 			} else {
 				clearInterval(_this.intervalHoverId);
-				_this.animateHoverValue = 0;
 				_this.intervalHoverId = null;
 			}
 		}, 40);
 	},
+
 	unHoverFakeMarker: function(el) {
 		var _this = this;
 		_this.intervalUnhoverId = setInterval(function() {
-			if (_this.animateUnHoverValue <= 0) {
-				el.transform('t0,' + (_this.animateUnHoverValue++));
+			if (_this.animateMarkerValue <= 0) {
+				el.transform('t0,' + (_this.animateMarkerValue++));
 			} else {
 				clearInterval(_this.intervalUnhoverId);
-				_this.animateUnHoverValue = -10;
 				_this.intervalUnhoverId = null;
 			}
 		}, 40)
@@ -307,8 +307,7 @@ var Tour3D = {
 		el = $this.markerHovers[groupMarkerId]
 		el.data('groupMarkerId', groupMarkerId);
 
-		clearInterval(_this.intervalHoverId);
-		// this.unHoverMarker(el);
+		clearInterval(_this.intervalUnhoverId);
 		_this.hoverFakeMarker(el);
 	},
 
@@ -320,8 +319,7 @@ var Tour3D = {
 		el = $this.markerHovers[groupMarkerId];
 		el.data('groupMarkerId', groupMarkerId);
 
-		clearInterval(_this.intervalUnhoverId);
-		// this.hoverMarker(el);
+		clearInterval(_this.intervalHoverId);
 		_this.unHoverFakeMarker(el);
 	},
 
