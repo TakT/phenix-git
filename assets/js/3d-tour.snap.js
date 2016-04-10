@@ -249,7 +249,7 @@ var Tour3D = {
 			bMarker2
 				.attr({
 					fill: 'red',
-					opacity: 0.5,
+					opacity: 0,
 					cursor: 'pointer',
 				})
 				.data('href', point.url)
