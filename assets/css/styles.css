@@ -1835,6 +1835,11 @@ form .select-style select:focus {
   position: relative;
   overflow: hidden;
   margin-top: -195px;
+  margin-top: 0;
+  top: -195px;
+}
+#header-bg + section {
+  margin-top: -195px;
 }
 #header-bg:before {
   content: "";
