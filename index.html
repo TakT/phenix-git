@@ -993,12 +993,75 @@
 
 		<script type="text/javascript">
 
-			new WOW().init();
+			
 
 			$(function() {
 
+				var sliderBgImgIndex = true;
+				var slider = jQuery('#indexslider .slider__wrapper');
+
 				jQuery('.slider__bg, .img__house, #features .item__img img').hide();
 				jQuery('.slider__bg, .img__house, #features .item__img img').preload(function() {
+					if (sliderBgImgIndex && $(this).hasClass('slider__bg')) {
+						sliderBgImgIndex = false;
+
+						new WOW().init();
+
+						slider.on('init', function(event, slick) {
+							setTimeout(function () {
+
+								var activeSlide = slick.$slides.filter('.slick-active');
+								var arrowsEls = jQuery('#indexslider .slick-arrows a');
+
+								slick.$dots.animateCss('fadeInUp', function () {
+									slick.$dots.css({
+										opacity: 1,
+									});
+									
+									activeSlide.find('.slider__content').animateCss('pulse', function () {
+										activeSlide.find('.slider__content').css({
+											opacity: 1,
+										});
+									});
+
+									setTimeout(function () {
+										arrowsEls.animateCss('pulse', function () {
+											arrowsEls.css({
+												opacity: 1,
+											});
+										});
+									}, 750);
+								});
+							}, 1000);
+						});
+
+						slider.slick({
+							arrows: false,
+							dots: true,
+							autoplay: true,
+							speed: 750,
+							autoplaySpeed: 5000,
+							fade: true,
+							pauseOnHover: false,
+						});
+
+						jQuery('#indexslider .slick-prev').on('click', function(event) {
+							slider.slick('slickPrev');
+						});
+						jQuery('#indexslider .slick-next').on('click', function(event) {
+							slider.slick('slickNext');
+						});
+
+						slider.on('afterChange', function(event) {
+
+							var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
+							activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
+								activeSlide.find('.slider__content').css({
+									opacity: 1,
+								});
+							});
+						});
+					}
 					$(this).show();
 				});
 
@@ -1006,62 +1069,9 @@
 
 			jQuery(document).ready(function($) {
 
-				var slider = jQuery('#indexslider .slider__wrapper');
+				
 
-				slider.on('init', function(event, slick) {
-					setTimeout(function () {
 
-						var activeSlide = slick.$slides.filter('.slick-active');
-						var arrowsEls = jQuery('#indexslider .slick-arrows a');
-
-						slick.$dots.animateCss('fadeInUp', function () {
-							slick.$dots.css({
-								opacity: 1,
-							});
-							
-							activeSlide.find('.slider__content').animateCss('pulse', function () {
-								activeSlide.find('.slider__content').css({
-									opacity: 1,
-								});
-							});
-
-							setTimeout(function () {
-								arrowsEls.animateCss('pulse', function () {
-									arrowsEls.css({
-										opacity: 1,
-									});
-								});
-							}, 750);
-						});
-					}, 1000);
-				});
-
-				slider.slick({
-					arrows: false,
-					dots: true,
-					autoplay: true,
-					speed: 750,
-					autoplaySpeed: 5000,
-					fade: true,
-					pauseOnHover: false,
-				});
-
-				jQuery('#indexslider .slick-prev').on('click', function(event) {
-					slider.slick('slickPrev');
-				});
-				jQuery('#indexslider .slick-next').on('click', function(event) {
-					slider.slick('slickNext');
-				});
-
-				slider.on('afterChange', function(event) {
-
-					var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
-					activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
-						activeSlide.find('.slider__content').css({
-							opacity: 1,
-						});
-					});
-				});
 			});
 		</script>
 	</body>
