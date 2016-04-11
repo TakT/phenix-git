@@ -1837,6 +1837,9 @@ form .select-style select:focus {
   margin-top: -195px;
   margin-top: 0;
   top: -195px;
+  height: 636px;
+  height: 66.6vh;
+  background-color: #000;
 }
 #header-bg + section {
   margin-top: -195px;
