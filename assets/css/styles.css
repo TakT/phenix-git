@@ -2314,6 +2314,11 @@ form .select-style select:focus {
 .main__page #indexslider .slider__wrapper .slider__content {
   opacity: 0;
 }
+.main__page #navigation,
+.main__page .slider__desc,
+.main__page #header {
+  visibility: hidden;
+}
 .commercials__page #statistic__info .info__item .item__title {
   font-size: 60px;
   line-height: 55px;
