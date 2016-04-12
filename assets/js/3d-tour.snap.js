@@ -260,6 +260,10 @@ var Tour3D = {
 			var propertyGroup = this.paper.g(bMarker, bMarkerHuman).addClass('mapMarker');
 			var propertyGroupHidden = this.paper.g(bMarker2).addClass('mapMarker-hidden');
 
+			propertyGroup.attr({
+				opacity: 0,
+			});
+
 			$this.markerHovers.push(propertyGroup)
 
 			propertyGroupHidden.data('groupMarkerId', i);
@@ -268,34 +272,57 @@ var Tour3D = {
 			}, function() {
 				$this.unHoverMarker(this);
 			});
+
+			$this.addMarkerWithTimeout(propertyGroup, i, i * 100);
 		};
+	},
+
+	addMarkerWithTimeout: function(propertyGroup, index, timeout) {
+		var _this = this;
+		window.setTimeout(function() {
+			_this.unHoverFakeMarker(propertyGroup, index);
+			propertyGroup.animate({
+				opacity: 1,
+			}, 200);
+		}, timeout);
 	},
 
 	markerHovers: [],
 	intervalUnhoverIds: [],
 	intervalHoverIds: [],
-	animateMarkerValue: 0,
+	animateMarkerValues: [-11, -11, -11, -11, -11, -11, -11, -11, -11, -11, ],
 
-	hoverFakeMarker: function(el) {
+	hoverFakeMarker: function(el, groupMarkerId) {
 		var _this = this;
-		_this.intervalHoverId = setInterval(function() {
-			if (_this.animateMarkerValue >= -10) {
-				el.transform('t0,' + (_this.animateMarkerValue--));
+
+		if (_this.animateMarkerValues[groupMarkerId] == undefined) {
+			_this.animateMarkerValues[groupMarkerId] = 0;
+		}
+
+		_this.intervalHoverIds[groupMarkerId] = setInterval(function() {
+			if (_this.animateMarkerValues[groupMarkerId] >= -10) {
+				el.transform('t0,' + (_this.animateMarkerValues[groupMarkerId]--));
 			} else {
-				clearInterval(_this.intervalHoverId);
-				_this.intervalHoverId = null;
+				clearInterval(_this.intervalHoverIds[groupMarkerId]);
+				_this.intervalHoverIds[groupMarkerId] = null;
 			}
 		}, 40);
 	},
 
-	unHoverFakeMarker: function(el) {
+	unHoverFakeMarker: function(el, groupMarkerId) {
 		var _this = this;
-		_this.intervalUnhoverId = setInterval(function() {
-			if (_this.animateMarkerValue <= 0) {
-				el.transform('t0,' + (_this.animateMarkerValue++));
+
+		if (_this.animateMarkerValues[groupMarkerId] == undefined) {
+			_this.animateMarkerValues[groupMarkerId] = 0;
+		}
+
+
+		_this.intervalUnhoverIds[groupMarkerId] = setInterval(function() {
+			if (_this.animateMarkerValues[groupMarkerId] <= 0) {
+				el.transform('t0,' + (_this.animateMarkerValues[groupMarkerId]++));
 			} else {
-				clearInterval(_this.intervalUnhoverId);
-				_this.intervalUnhoverId = null;
+				clearInterval(_this.intervalUnhoverIds[groupMarkerId]);
+				_this.intervalUnhoverIds[groupMarkerId] = null;
 			}
 		}, 40)
 	},
@@ -307,8 +334,8 @@ var Tour3D = {
 		el = $this.markerHovers[groupMarkerId]
 		el.data('groupMarkerId', groupMarkerId);
 
-		clearInterval(_this.intervalUnhoverId);
-		_this.hoverFakeMarker(el);
+		clearInterval(_this.intervalUnhoverIds[groupMarkerId]);
+		_this.hoverFakeMarker(el, groupMarkerId);
 	},
 
 	unHoverMarker: function(el) {
@@ -319,8 +346,12 @@ var Tour3D = {
 		el = $this.markerHovers[groupMarkerId];
 		el.data('groupMarkerId', groupMarkerId);
 
-		clearInterval(_this.intervalHoverId);
-		_this.unHoverFakeMarker(el);
+		if (_this.intervalHoverIds[groupMarkerId] == undefined) {
+			_this.intervalHoverIds[groupMarkerId] = null;
+		}
+
+		clearInterval(_this.intervalHoverIds[groupMarkerId]);
+		_this.unHoverFakeMarker(el, groupMarkerId);
 	},
 
 	setView: function(view) {

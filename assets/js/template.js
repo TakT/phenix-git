@@ -6,12 +6,13 @@ jQuery(document).ready(function($) {
 		navigation = jQuery('#navigation'),
 		fullscreenMenuInit = false;
 
+	navigation.hide();
 	if (windowWidth >= 1024) {
 		fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a').on('click', function(event) {
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
 				fullscreenPage.toggleClass('fullscreen__header-active');
 				if (!fullscreenMenuInit) {
-					calcSubNavPosition(calcSubNavPosition(jQuery(window).width()));
+					calcSubNavPosition(jQuery(window).width());
 					fullscreenMenuInit = true;
 				};
 			});
@@ -165,7 +166,6 @@ jQuery(window).on('resize', function(event) {
 	calFirstScreen(windowWidth);
 
 	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
-		console.log('resize');
 		calcSubNavPosition(windowWidth);
 	}
 });
@@ -177,7 +177,6 @@ jQuery(window).on('load', function(event) {
 	calFirstScreen(windowWidth);
 
 	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
-		console.log('load');
 		calcSubNavPosition(jQuery(window).width());
 	}
 
@@ -283,12 +282,14 @@ function calcInnerPageBg(windowHeight) {
 }
 
 function calcSubNavPosition(windowWidth) {
-	jQuery('#navigation ul li .navigation__sub').each(function(index, el) {
+	var navigation = jQuery('#navigation');
+	navigation.find('ul li .navigation__sub').each(function(index, el) {
 		var $this = jQuery(el);
 		$this.css('width', 'auto');
 		$this.width(windowWidth - $this.offset().left);
 		$this.css('left', $this.parents('li').find('> a').get(0).offsetLeft);
 	});
+	navigation.show();
 }
 
 function gcd(a, b) {

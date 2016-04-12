@@ -426,6 +426,7 @@ sup {
   top: 0;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.25);
+  display: none;
 }
 #navigation ul {
   font-size: 0;
