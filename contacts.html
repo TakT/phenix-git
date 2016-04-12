@@ -635,8 +635,6 @@
 					}
 				});
 
-				console.log(google.maps.Animation);
-
 				map.mapTypes.set(customMapTypeId, customMapType);
 				map.setMapTypeId(customMapTypeId);
 
@@ -645,14 +643,25 @@
 					scaledSize: new google.maps.Size(90, 90), // scaled size
 					origin: new google.maps.Point(0, 0),
 				};
-				var marker = new google.maps.Marker({
-					position: {
-						lat: 43.316087,
-						lng: 45.697924
-					},
-					map: map,
-					icon: image,
-					animation: google.maps.Animation.DROP,
+
+				var mapEl = jQuery('#map'), 
+					winHeight = jQuery(window).height();
+				var initMapMarkers = false;
+
+				jQuery(window).on('scroll', function(event) {
+					scrollTop = jQuery(this).scrollTop();
+					if (!initMapMarkers && (scrollTop > mapEl.offset().top - (winHeight / 2))){
+						initMapMarkers = true;
+						new google.maps.Marker({
+							position: {
+								lat: 43.316087,
+								lng: 45.697924
+							},
+							map: map,
+							icon: image,
+							animation: google.maps.Animation.DROP,
+						});
+					}
 				});
 			}
 

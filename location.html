@@ -682,23 +682,7 @@
 				map.mapTypes.set(customMapTypeId, customMapType);
 				map.setMapTypeId(customMapTypeId);
 
-				var image = {
-					url: './assets/images/maps/location_logo.svg',
-				};
-
-				window.setTimeout(function() {
-					new google.maps.Marker({
-						position: {
-							lat: 43.31575,
-							lng: 45.6977
-						},
-						map: map,
-						icon: image,
-						animation: google.maps.Animation.DROP,
-					});
-				}, 200);
-
-				setMarkers(map);
+				// setMarkers(map);
 			}
 
 			function addMarkerWithTimeout(markerItem, timeout) {
@@ -706,9 +690,11 @@
 					var image = {
 							// This marker is 20 pixels wide by 32 pixels high.
 							scaledSize: new google.maps.Size(65, 65), // scaled size
+							size:new google.maps.Size(65, 65)
 							// The origin for this image is (0, 0).
-							origin: new google.maps.Point(0, 0),
+							// origin: new google.maps.Point(0, 0),
 					};
+					// image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
 					image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
 					new google.maps.Marker({
 						position: {
@@ -717,23 +703,23 @@
 						},
 						map: map,
 						icon: image,
-						title: markerItem[0],
+						title: markerItem[3],
 						animation: google.maps.Animation.DROP
 					});
 				}, timeout);
 			}
 
 			var markers = [
-				['10', 43.317090, 45.704588],
-				['1', 43.313148, 45.696824],
-				['10', 43.314030, 45.700935],
-				['7', 43.316918, 45.699637],
-				['4', 43.315242, 45.697242],
-				['4', 43.315562, 45.696442],
-				['7', 43.315613, 45.693760],
-				['8', 43.315516, 45.692855],
-				['2', 43.317250, 45.691363],
-				['1', 43.312, 45.70275],
+				[10, 43.317090, 45.704588, 'Администрация'],
+				[1, 43.313148, 45.696824, 'Образование'],
+				[10, 43.314030, 45.700935, 'Администрация'],
+				[7, 43.316918, 45.699637, 'Рестораны'],
+				[4, 43.315242, 45.697242, 'Банки'],
+				[4, 43.315562, 45.696442, 'Банки'],
+				[7, 43.315613, 45.693760, 'Рестораны'],
+				[8, 43.315516, 45.692855, 'Досуг'],
+				[2, 43.317250, 45.691363, 'Магазины и ТЦ'],
+				[1, 43.312, 45.70275, 'Образование'],
 			];
 
 			function setMarkers(map) {
@@ -743,7 +729,36 @@
 					addMarkerWithTimeout(markerItem, i * 200);
 				}
 			}
+
+			var mapEl = jQuery('#map'), 
+				winHeight = jQuery(window).height();
+			var initMapMarkers = false;
+
+			jQuery(window).on('scroll', function(event) {
+				scrollTop = jQuery(this).scrollTop();
+				if (!initMapMarkers && (scrollTop > mapEl.offset().top - (winHeight / 2))){
+					initMapMarkers = true;
+
+					var image = {
+						url: './assets/images/maps/location_logo.svg',
+					};
+
+					window.setTimeout(function() {
+						new google.maps.Marker({
+							position: {
+								lat: 43.31575,
+								lng: 45.6977
+							},
+							map: map,
+							icon: image,
+							animation: google.maps.Animation.DROP,
+						});
+					}, 200);
+
+					setMarkers(map);
+				}
+			});
 		</script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=false&callback=initMap"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=false&sensor=false&callback=initMap"></script>
 	</body>
 </html>
