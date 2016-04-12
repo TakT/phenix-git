@@ -6,7 +6,6 @@ jQuery(document).ready(function($) {
 		navigation = jQuery('#navigation'),
 		fullscreenMenuInit = false;
 
-	navigation.hide();
 	if (windowWidth >= 1024) {
 		fullscreenPage.find('.fullscreen__menu a, .fullscreen__menu-close a').on('click', function(event) {
 			fullscreenPage.find('.fullscreen__header').slideToggle(400, function() {
@@ -289,7 +288,6 @@ function calcSubNavPosition(windowWidth) {
 		$this.width(windowWidth - $this.offset().left);
 		$this.css('left', $this.parents('li').find('> a').get(0).offsetLeft);
 	});
-	navigation.show();
 }
 
 function gcd(a, b) {
