@@ -283,14 +283,14 @@ var Tour3D = {
 			_this.unHoverFakeMarker(propertyGroup, index);
 			propertyGroup.animate({
 				opacity: 1,
-			}, 200);
+			}, 600);
 		}, timeout);
 	},
 
 	markerHovers: [],
 	intervalUnhoverIds: [],
 	intervalHoverIds: [],
-	animateMarkerValues: [-11, -11, -11, -11, -11, -11, -11, -11, -11, -11, ],
+	animateMarkerValues: [-31, -31, -31, -31, -31, -31, -31, -31, -31, -31, ],
 
 	hoverFakeMarker: function(el, groupMarkerId) {
 		var _this = this;
