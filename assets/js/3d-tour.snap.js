@@ -214,6 +214,7 @@ var Tour3D = {
 
 		$this = this;
 		$this.markerHovers = [];
+		$this.animateMarkerValues = [-330, -330, -330, -330, -330, -330, -330, -330, -330, -330, ];
 
 		for (var i = 0; i < points.length; i++) {
 			var point = points[i];
@@ -280,17 +281,18 @@ var Tour3D = {
 	addMarkerWithTimeout: function(propertyGroup, index, timeout) {
 		var _this = this;
 		window.setTimeout(function() {
-			_this.unHoverFakeMarker(propertyGroup, index);
+			_this.unHoverFakeMarker(propertyGroup, index, 10, 1);
 			propertyGroup.animate({
 				opacity: 1,
-			}, 600);
+			}, 300);
+			// _this.animateMarkerValues[index] = -1;
 		}, timeout);
 	},
 
 	markerHovers: [],
 	intervalUnhoverIds: [],
 	intervalHoverIds: [],
-	animateMarkerValues: [-31, -31, -31, -31, -31, -31, -31, -31, -31, -31, ],
+	animateMarkerValues: [-330, -330, -330, -330, -330, -330, -330, -330, -330, -330, ],
 
 	hoverFakeMarker: function(el, groupMarkerId) {
 		var _this = this;
@@ -306,11 +308,13 @@ var Tour3D = {
 				clearInterval(_this.intervalHoverIds[groupMarkerId]);
 				_this.intervalHoverIds[groupMarkerId] = null;
 			}
-		}, 40);
+		}, 1);
 	},
 
-	unHoverFakeMarker: function(el, groupMarkerId) {
+	unHoverFakeMarker: function(el, groupMarkerId, customValue, customInterval) {
 		var _this = this;
+		customValue = customValue || 1;
+		customInterval = customInterval || 10;
 
 		if (_this.animateMarkerValues[groupMarkerId] == undefined) {
 			_this.animateMarkerValues[groupMarkerId] = 0;
@@ -318,13 +322,14 @@ var Tour3D = {
 
 
 		_this.intervalUnhoverIds[groupMarkerId] = setInterval(function() {
+			_this.animateMarkerValues[groupMarkerId] += customValue;
 			if (_this.animateMarkerValues[groupMarkerId] <= 0) {
-				el.transform('t0,' + (_this.animateMarkerValues[groupMarkerId]++));
+				el.transform('t0,' + (_this.animateMarkerValues[groupMarkerId]));
 			} else {
 				clearInterval(_this.intervalUnhoverIds[groupMarkerId]);
 				_this.intervalUnhoverIds[groupMarkerId] = null;
 			}
-		}, 40)
+		}, customInterval);
 	},
 
 	hoverMarker: function(el) {
