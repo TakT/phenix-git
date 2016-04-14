@@ -3585,8 +3585,8 @@ form .select-style select:focus {
   margin-top: -295px;
   margin-top: -27.3148vh;
   margin-top: -51%;
-  /* height: 1425px;
-		height: 131.945vh; */
+  height: 1425px;
+  height: 131.945vh;
 }
 #area #change_floor > polygon.active,
 #area #change_floor > path.active {
