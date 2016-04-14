@@ -275,7 +275,7 @@ sup {
 #header {
 	position: relative;
 	width: 100%;
-	z-index: 999;
+	z-index: 9999;
 	top: 0;
 	margin-top: 14px;
 	margin-bottom: 20px;
@@ -347,7 +347,7 @@ sup {
 	width: 100%;
 	top: 0;
 	// top: 141px;
-	z-index: 999;
+	z-index: 9999;
 	background-color: rgba(0, 0, 0, 0.25);
 	height: 48px;
 	// visibility: hidden;
@@ -812,6 +812,7 @@ sup {
 	bottom: 15px;
 	left: 0;
 	right: 0;
+	z-index: 999;
 
 	.slider__actions {
 		text-align: center;
@@ -2613,7 +2614,40 @@ form {
 	#header {
 		visibility: hidden;
 	}
+}
 
+.lte9,
+.ie9 {
+
+	#indexslider {
+
+		.slick-arrows {
+			z-index: 9999;
+			.slick-arrow {
+				opacity: 1;
+			}
+		}
+		.slick-slider .slick-dots {
+			opacity: 1;
+			z-index: 9999;
+		}
+
+		.slider__wrapper .slider__content {
+			opacity: 1;
+		}
+
+		.slider__desc {
+			z-index: 9999;
+		}
+	}
+
+	.main__page {
+		#navigation,
+		.slider__desc,
+		#header {
+			visibility: visible;
+		}
+	}
 }
 
 .commercials__page {
@@ -4101,7 +4135,7 @@ form {
 		margin-top: -27.3148vh;
 		margin-top: -51%;
 
-		 height: 1425px;
+		height: 1425px;
 		height: 131.945vh; 
 
 		> polygon.active, > path.active {

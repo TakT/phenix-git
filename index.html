@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html><!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<title>Главная</title>
@@ -9,7 +15,9 @@
 		<!-- Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="./assets/css/animate.min.css">
+		<!--[if gt IE 9]>
+			<link rel="stylesheet" href="./assets/css/animate.min.css">
+		<![endif]-->
 		<link rel="stylesheet" href="./assets/css/slick.css">
 		<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/> -->
 
@@ -988,49 +996,69 @@
 
 		<script type="text/javascript" src="./assets/js/bootstrap.modal.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
-		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<!--[if gt IE 9]>
+			<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<![endif]-->
+
 		<script type="text/javascript" src="./assets/js/jquery.preload.min.js"></script>
 
 		<script type="text/javascript">
 			$(function() {
 
+				// Detecting IE
+				var oldIE = false;
+				if (jQuery('html').is('.lt-ie7, .lt-ie8, .lt-ie9, .ie9, .lte9')) {
+					oldIE = true;
+				}
+
+				console.log('oldIE', oldIE);
+
 				var sliderBgImgIndex = true;
 				var slider = jQuery('#indexslider .slider__wrapper');
+
+				if (!oldIE) {
+					var wow = new WOW();
+				}
 
 				jQuery('.slider__bg, .img__house, #features .item__img img').hide();
 				jQuery('.slider__bg, .img__house, #features .item__img img').preload(function() {
 					if (sliderBgImgIndex && $(this).hasClass('slider__bg')) {
 						sliderBgImgIndex = false;
 
-						new WOW().init();
+						if (!oldIE) {
+							wow.init();
+						}
 
-						slider.on('init', function(event, slick) {
-							setTimeout(function () {
+						if (!oldIE) {
+							slider.on('init', function(event, slick) {
+								setTimeout(function () {
 
-								var activeSlide = slick.$slides.filter('.slick-active');
-								var arrowsEls = jQuery('#indexslider .slick-arrows a');
+									var activeSlide = slick.$slides.filter('.slick-active');
+									var arrowsEls = jQuery('#indexslider .slick-arrows a');
 
-								slick.$dots.animateCss('fadeInUp', function () {
-									slick.$dots.css({
-										opacity: 1,
-									});
-									
-									activeSlide.find('.slider__content').animateCss('pulse', function () {
-										activeSlide.find('.slider__content').css({
+									slick.$dots.animateCss('fadeInUp', function () {
+										slick.$dots.css({
 											opacity: 1,
 										});
-									});
-
-									setTimeout(function () {
-										arrowsEls.animateCss('pulse', function () {
-											arrowsEls.css({
+										
+										activeSlide.find('.slider__content').animateCss('pulse', function () {
+											activeSlide.find('.slider__content').css({
 												opacity: 1,
 											});
 										});
-									}, 750);
-								});
-							}, 1000);
-						});
+
+										setTimeout(function () {
+											arrowsEls.animateCss('pulse', function () {
+												arrowsEls.css({
+													opacity: 1,
+												});
+											});
+										}, 750);
+									});
+									// wow.sync();
+								}, 1000);
+							});
+						}
 
 						slider.slick({
 							arrows: false,
@@ -1049,19 +1077,21 @@
 							slider.slick('slickNext');
 						});
 
-						slider.on('afterChange', function(event) {
 
-							var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
-							activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
-								activeSlide.find('.slider__content').css({
-									opacity: 1,
+						if (!oldIE) {
+							console.log('sds');
+							slider.on('afterChange', function(event) {
+								var activeSlide = slider.get(0).slick.$slides.filter('.slick-active');
+								activeSlide.find('.slider__content').delay(750).animateCss('pulse', function () {
+									activeSlide.find('.slider__content').css({
+										opacity: 1,
+									});
 								});
 							});
-						});
+						}
 					}
 					$(this).show();
 				});
-
 			});
 		</script>
 	</body>
