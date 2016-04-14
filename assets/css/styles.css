@@ -2709,6 +2709,7 @@ form .select-style select:focus {
 }
 .fullscreen__page #tour3D .tour3D__turn a img {
   width: 60px;
+  height: 100%;
   display: inline-block;
   margin-bottom: 15px;
 }
@@ -2729,6 +2730,7 @@ form .select-style select:focus {
 }
 .fullscreen__page #tour3D .tour3D__compass img {
   width: 100px;
+  height: 100%;
 }
 .fullscreen__page #tour3D .tour3D__points {
   position: absolute;
