@@ -527,6 +527,7 @@ Snap.plugin(function(Snap, Element, Paper, glob) {
 		tspans.push(tspan);
 		var text = document.createTextNode(words[0]);
 		tspan.appendChild(text);
+		el.textContent = null;
 		el.appendChild(tspan);
 
 		var longest = 0;
