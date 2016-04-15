@@ -1303,6 +1303,7 @@ sup {
   width: 100%;
   display: table;
   background-color: #f4f4f4;
+  min-height: 400px;
 }
 .full__width .full__width-img,
 .full__width .full__width-desc {
@@ -3786,6 +3787,9 @@ form .select-style select:focus {
 }
 .js-mobile__menu-toggle.active a.menu__close {
   display: inline-block;
+}
+.page__loaded .full__width {
+  min-height: 0px;
 }
 @-webkit-keyframes pulse {
   from {

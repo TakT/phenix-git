@@ -614,8 +614,14 @@
 
 			$(function() {
 
+				var sliderBgImgIndex = true;
+
 				jQuery('.full__width-img img, .full__width-desc img, #header-bg img').hide();
 				jQuery('.full__width-img img, .full__width-desc img, #header-bg img, #mosque').preload(function() {
+					if (sliderBgImgIndex && (jQuery(this).parents('.full__width-img') || jQuery(this).parents('.full__width-desc'))) {
+						sliderBgImgIndex = false;
+						jQuery('body').addClass('page__loaded');
+					}
 					jQuery(this).show();
 				});
 			});
