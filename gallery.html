@@ -651,6 +651,7 @@
 			<script type="text/javascript" src="./assets/js/wow.min.js"></script>
 		<![endif]-->
 		<!--[if !IE]><!--><script type="text/javascript" src="./assets/js/wow.min.js"></script><!--<![endif]-->
+		<script type="text/javascript" src="./assets/js/jquery.preload.min.js"></script>
 		<script type="text/javascript">
 
 			var gallery_slider = null, 
@@ -673,7 +674,9 @@
 					arrows: false,
 				};
 
-			jQuery(document).ready(function($) {
+			$(function() {
+
+				var sliderBgImgIndex = true;
 
 				// Detecting IE
 				var oldIE = false;
@@ -687,18 +690,27 @@
 					new WOW().init();
 				}
 
-				gallery_slider = jQuery('#gallery .slider__wrapper').slick(gallery_sliderOptions);
-				gallery_slider_nav = jQuery('#gallery .slider-nav').slick(gallery_slider_navOptions);
+				jQuery('.slider__item img').hide();
+				jQuery('.slider__item img').preload(function() {
 
-				jQuery('#gallery .slick-prev').on('click', function(event) {
-					gallery_slider.slick('slickPrev');
+					if (sliderBgImgIndex) {
+						sliderBgImgIndex = false;
+
+						gallery_slider = jQuery('#gallery .slider__wrapper').slick(gallery_sliderOptions);
+						gallery_slider_nav = jQuery('#gallery .slider-nav').slick(gallery_slider_navOptions);
+
+						jQuery('#gallery .slick-prev').on('click', function(event) {
+							gallery_slider.slick('slickPrev');
+						});
+						jQuery('#gallery .slick-next').on('click', function(event) {
+							gallery_slider.slick('slickNext');
+						});
+
+						jQuery('.slider-categories li:first-child a').click();
+					}
+
+					jQuery(this).show();
 				});
-				jQuery('#gallery .slick-next').on('click', function(event) {
-					gallery_slider.slick('slickNext');
-				});
-
-				jQuery('.slider-categories li:first-child a').click();
-
 			});
 		</script>
 	</body>
