@@ -2324,6 +2324,22 @@ form .select-style select:focus {
 .main__page #header {
   visibility: hidden;
 }
+.gallery__page #gallery .slick-slider .slick-dots {
+  opacity: 0;
+}
+.gallery__page #gallery .slider__wrapper .slider__content {
+  opacity: 0;
+}
+.gallery__page #gallery .slider-nav,
+.gallery__page #gallery .slider-categories,
+.gallery__page #gallery .slick-arrows a {
+  opacity: 0;
+}
+.gallery__page #navigation,
+.gallery__page .slider__desc,
+.gallery__page #header {
+  visibility: hidden;
+}
 .lte9 #gallery .slick-arrows,
 .ie9 #gallery .slick-arrows,
 .lte9 #indexslider .slick-arrows,
