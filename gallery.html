@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html><!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<title>Главная</title>
@@ -11,7 +16,12 @@
 		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./assets/css/slick.css">
 		<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/> -->
-		<link rel="stylesheet" href="./assets/css/animate.min.css">
+		<!--[if gt IE 9]>
+			<link rel="stylesheet" href="./assets/css/animate.min.css">
+		<![endif]-->
+		<!--[if !IE]><!-->
+			<link rel="stylesheet" href="./assets/css/animate.min.css">
+		<!--<![endif]-->
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -637,10 +647,11 @@
 		<script type="text/javascript" src="./assets/js/slick.min.js"></script>
 
 		<script type="text/javascript" src="./assets/js/template.js"></script>
-		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<!--[if gt IE 9]>
+			<script type="text/javascript" src="./assets/js/wow.min.js"></script>
+		<![endif]-->
+		<!--[if !IE]><!--><script type="text/javascript" src="./assets/js/wow.min.js"></script><!--<![endif]-->
 		<script type="text/javascript">
-			
-			new WOW().init();
 
 			var gallery_slider = null, 
 				gallery_slider_nav = null;
@@ -663,6 +674,19 @@
 				};
 
 			jQuery(document).ready(function($) {
+
+				// Detecting IE
+				var oldIE = false;
+				if (jQuery('html').is('.lt-ie7, .lt-ie8, .lt-ie9, .ie9, .lte9')) {
+					oldIE = true;
+				}
+
+				console.log('oldIE', oldIE);
+
+				if(!oldIE) {
+					new WOW().init();
+				}
+
 				gallery_slider = jQuery('#gallery .slider__wrapper').slick(gallery_sliderOptions);
 				gallery_slider_nav = jQuery('#gallery .slider-nav').slick(gallery_slider_navOptions);
 

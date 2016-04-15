@@ -2324,23 +2324,33 @@ form .select-style select:focus {
 .main__page #header {
   visibility: hidden;
 }
+.lte9 #gallery .slick-arrows,
+.ie9 #gallery .slick-arrows,
 .lte9 #indexslider .slick-arrows,
 .ie9 #indexslider .slick-arrows {
   z-index: 9999;
 }
+.lte9 #gallery .slick-arrows .slick-arrow,
+.ie9 #gallery .slick-arrows .slick-arrow,
 .lte9 #indexslider .slick-arrows .slick-arrow,
 .ie9 #indexslider .slick-arrows .slick-arrow {
   opacity: 1;
 }
+.lte9 #gallery .slick-slider .slick-dots,
+.ie9 #gallery .slick-slider .slick-dots,
 .lte9 #indexslider .slick-slider .slick-dots,
 .ie9 #indexslider .slick-slider .slick-dots {
   opacity: 1;
   z-index: 9999;
 }
+.lte9 #gallery .slider__wrapper .slider__content,
+.ie9 #gallery .slider__wrapper .slider__content,
 .lte9 #indexslider .slider__wrapper .slider__content,
 .ie9 #indexslider .slider__wrapper .slider__content {
   opacity: 1;
 }
+.lte9 #gallery .slider__desc,
+.ie9 #gallery .slider__desc,
 .lte9 #indexslider .slider__desc,
 .ie9 #indexslider .slider__desc {
   z-index: 9999;
@@ -2352,6 +2362,12 @@ form .select-style select:focus {
 .lte9 .main__page #header,
 .ie9 .main__page #header {
   visibility: visible;
+}
+.lte9 #gallery .slider-nav,
+.ie9 #gallery .slider-nav,
+.lte9 #gallery .slider-categories,
+.ie9 #gallery .slider-categories {
+  z-index: 999;
 }
 .commercials__page #statistic__info .info__item .item__title {
   font-size: 60px;
