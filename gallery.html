@@ -684,9 +684,6 @@
 
 				console.log('oldIE', oldIE);
 
-				if(!oldIE) {
-					new WOW().init();
-				}
 
 				gallery_slider = jQuery('#gallery .slider__wrapper');
 
@@ -695,6 +692,9 @@
 
 					if (sliderBgImgIndex) {
 						sliderBgImgIndex = false;
+						if(!oldIE) {
+							new WOW().init();
+						}
 
 						gallery_slider.on('init', function(event, slick) {
 							setTimeout(function () {
