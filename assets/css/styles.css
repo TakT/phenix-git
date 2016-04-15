@@ -1883,12 +1883,14 @@ form .select-style select:focus {
 }
 .page__news {
   background-color: #133e28;
-}
-.page__news #header .header__menu ul li a.active,
-.page__news #header .header__menu ul li a:hover {
-  color: #e9d877;
-  font-family: 'GothamPro-Medium', Arial, Helvetica, Verdana, sans-serif;
-  text-decoration: none;
+  /* #header .header__menu ul li {
+		a.active,
+		a:hover {
+			color: #e9d877;
+			font-family: @fontGMedium;
+			text-decoration: none;
+		}
+	} */
 }
 .page__news #navigation {
   z-index: 601;

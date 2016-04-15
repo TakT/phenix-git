@@ -712,15 +712,30 @@
 		<script type="text/javascript" src="./assets/js/slick.min.js"></script>
 		<script type="text/javascript" src="./assets/js/wow.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
-		<script type="text/javascript">
-			
-			new WOW().init();
+		<script type="text/javascript" src="./assets/js/jquery.preload.min.js"></script>
 
-			jQuery(document).ready(function($) {
-				jQuery('.section__slider').slick({
-					dots: true,
-					prevArrow: '<a href="javascript:void(0);" class="slick-prev slick-arrow wow pulse" data-wow-offset="200" data-wow-delay="0.3s" title="Назад"><svg class="if if-arrow-left"><use xlink:href="#if-arrow-left"></use></svg></a>',
-					nextArrow: '<a href="javascript:void(0);" class="slick-next slick-arrow wow pulse" data-wow-offset="200" data-wow-delay="0.3s" title="Вперед"><svg class="if if-arrow-right"><use xlink:href="#if-arrow-right"></use></svg></a>',
+		<script type="text/javascript">
+
+
+			$(function() {
+
+				var sliderBgImgIndex = true;
+
+				jQuery('.full__width-img img, .full__width-desc img, #header-bg img, .slider__item img').hide();
+				jQuery('.full__width-img img, .full__width-desc img, #header-bg img, #architecture, #infrastructure, .slider__item img').preload(function() {
+
+					if (sliderBgImgIndex) {
+						sliderBgImgIndex = false;
+
+						new WOW().init();
+
+						jQuery('.section__slider').slick({
+							dots: true,
+							prevArrow: '<a href="javascript:void(0);" class="slick-prev slick-arrow wow pulse" data-wow-offset="200" data-wow-delay="0.3s" title="Назад"><svg class="if if-arrow-left"><use xlink:href="#if-arrow-left"></use></svg></a>',
+							nextArrow: '<a href="javascript:void(0);" class="slick-next slick-arrow wow pulse" data-wow-offset="200" data-wow-delay="0.3s" title="Вперед"><svg class="if if-arrow-right"><use xlink:href="#if-arrow-right"></use></svg></a>',
+						});
+					}
+					$(this).show();
 				});
 			});
 		</script>
