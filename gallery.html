@@ -692,11 +692,11 @@
 
 					if (sliderBgImgIndex) {
 						sliderBgImgIndex = false;
-						if(!oldIE) {
-							new WOW().init();
-						}
 
 						gallery_slider.on('init', function(event, slick) {
+							if(!oldIE) {
+								new WOW().init();
+							}
 							setTimeout(function () {
 
 								var activeSlide = slick.$slides.filter('.slick-active');
@@ -728,9 +728,9 @@
 											opacity: 1,
 										});
 									});
-								}, 750);
+								}, 500);
 								// wow.sync();
-							}, 1000);
+							}, 0);
 						});
 
 						gallery_slider.slick(gallery_sliderOptions);
