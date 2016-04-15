@@ -327,7 +327,7 @@ function calFirstScreen(windowWidth) {
 		var sliderItem = gallery.find('.indexslider__wrapper .slider__wrapper .slider__item');
 
 		sliderItem.find('img').css({
-			height: heightScreen,
+			// height: heightScreen,
 		});
 		sliderItem.css({
 			height: heightScreen,
