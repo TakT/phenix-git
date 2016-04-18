@@ -3029,6 +3029,13 @@ form .select-style select:focus {
   width: 217px;
   height: 100%;
 }
+.fullscreen__page .iframe__fs-wrapper .iframe__fs-legend .sphere-360 {
+  top: 0;
+  position: absolute;
+}
+.fullscreen__page .iframe__fs-wrapper .iframe__fs-legend .yellow-360 {
+  transform-origin: 133px 166px 0;
+}
 .checkbox__custom {
   height: 17px;
   margin: 0 3px 0 0;
