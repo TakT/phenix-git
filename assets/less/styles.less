@@ -275,7 +275,7 @@ sup {
 #header {
 	position: relative;
 	width: 100%;
-	z-index: 9999;
+	z-index: 5000;
 	top: 0;
 	margin-top: 14px;
 	margin-bottom: 20px;
@@ -347,7 +347,7 @@ sup {
 	width: 100%;
 	top: 0;
 	// top: 141px;
-	z-index: 9999;
+	z-index: 5000;
 	background-color: rgba(0, 0, 0, 0.25);
 	height: 48px;
 	// visibility: hidden;
@@ -1353,6 +1353,12 @@ sup {
 			&:hover {
 				background-position: 0 -54px;
 			}
+		}
+	}
+
+	&.navigation__hidden-loyality {
+		.footer__menus .footer__loyalty {
+			display: none;
 		}
 	}
 }
@@ -2711,6 +2717,12 @@ form {
 
 	.sitemap__menu-loyalty .menu__vertical {
 		margin-top: -32px;
+	}
+
+	&.navigation__hidden-loyality {
+		.sitemap__menu-loyalty .menu__vertical {
+			display: none;
+		}
 	}
 }
 
@@ -4305,7 +4317,7 @@ form {
 .js-mobile__menu-toggle {
 	display: none;
 	position: fixed;
-	z-index: 1002;
+	z-index: 5002;
 	top: 0;
 	left: 0;
 	
@@ -4933,7 +4945,7 @@ form {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: 1001;
+		z-index: 5001;
 		background-color: #1c422d;
 		padding-top: 95px;
 
@@ -4956,7 +4968,7 @@ form {
 					padding: 18px 20px;
 					padding-bottom: 14px;
 					position: relative;
-					z-index: 1003;
+					z-index: 5003;
 
 					&.text-lgreen {
 						text-align: center;
@@ -4999,7 +5011,7 @@ form {
 						width: 18px;
 						height: 11px;
 						top: 24px;
-						z-index: 1002;
+						z-index: 5002;
 						cursor: pointer;
 						background: url(../images/icons/arrow-bottom.png) no-repeat;
 					}

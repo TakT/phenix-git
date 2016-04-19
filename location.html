@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Местоположение</title>
-
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=Edge"> -->
 		<meta name="viewport" content="width=1024px, initial-scale=1.0, maximum-scale=1.0">
 
 		<!-- Latest compiled and minified CSS -->
@@ -411,7 +411,7 @@
 			<a href="javascript:void(0);" title="Наверх" class="to-top js-to-top"><svg class="if if-up-arrow"><use xlink:href="#if-up-arrow"></use></svg><br>Наверх</a>
 		</div>
 
-		<footer id="footer">
+		<footer id="footer" class="navigation__hidden-loyality">
 			<div class="footer__menus">
 				<div class="container">
 					<div class="row">
@@ -707,13 +707,13 @@
 				window.setTimeout(function() {
 					var image = {
 							// This marker is 20 pixels wide by 32 pixels high.
-							scaledSize: new google.maps.Size(65, 65), // scaled size
-							size:new google.maps.Size(65, 65)
+							scaledSize: new google.maps.Size(50, 50), // scaled size
+							size:new google.maps.Size(50, 50)
 							// The origin for this image is (0, 0).
 							// origin: new google.maps.Point(0, 0),
 					};
 					// image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
-					image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.svg';
+					image.url = './assets/images/maps/' + (parseInt(markerItem[0])) + '.png';
 					new google.maps.Marker({
 						position: {
 							lat: markerItem[1],
@@ -758,7 +758,7 @@
 					initMapMarkers = true;
 
 					var image = {
-						url: './assets/images/maps/location_logo.svg',
+						url: './assets/images/maps/location_logo.png',
 					};
 
 					window.setTimeout(function() {
@@ -777,6 +777,6 @@
 				}
 			});
 		</script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=false&sensor=false&callback=initMap"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA3vXMYwL3xATn_KpA1ZHr0rf9RtvjlCU&signed_in=false&callback=initMap"></script>
 	</body>
 </html>
