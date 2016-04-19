@@ -3042,6 +3042,39 @@ form .select-style select:focus {
 .fullscreen__page .iframe__fs-wrapper .iframe__fs-legend .yellow-360 {
   transform-origin: 133px 166px 0;
 }
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend {
+  position: absolute;
+  text-align: center;
+  bottom: 230px;
+  bottom: 21.2963vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 300px;
+}
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend .yellow-360 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform-origin: 54px 70px 0;
+}
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend .legend__arrow {
+  width: 17px;
+  display: inline-block;
+  margin-top: 15px;
+}
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend .legend__arrow.legend__arrow-left {
+  margin-right: 20px;
+}
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend .legend__arrow.legend__arrow-right {
+  margin-left: 5px;
+}
+.fullscreen__page .iframe__fs-wrapper #iframe__fs-legend .legend__wrapper {
+  width: 125px;
+  display: inline-block;
+  position: relative;
+}
 .checkbox__custom {
   height: 17px;
   margin: 0 3px 0 0;

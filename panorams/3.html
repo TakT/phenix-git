@@ -294,16 +294,44 @@
 
 		<section class="fullscreen__content">
 			<div class="iframe__fs-wrapper">
-				<iframe src="../assets/images/tours/Pan 0003/Pan_0003.html" frameborder="0" width="100%" height="100%"></iframe>
-				<div class="iframe__fs-legend">
-					<svg class="if if-view360"><use xlink:href="#if-view360"></use></svg>
+				<iframe src="../assets/images/tours/Pan 0003/Pan_0003.html" id="iframeSphere" frameborder="0" width="100%" height="100%"></iframe>
+				<div id="iframe__fs-legend">
+					<img src="../assets/images/left_arrow.svg" alt="" class="legend__arrow legend__arrow-left">
+					<div class="legend__wrapper">
+						<img src="../assets/images/360_view_icon.svg" alt="" class="sphere-360">
+						<img src="../assets/images/360_view_icon-yellow.svg" alt="" class="yellow-360" id="iframe__fs-legend-yellow-360">
+					</div>
+					<img src="../assets/images/right_arrow.svg" alt="" class="legend__arrow legend__arrow-right">
 				</div>
 			</div>
 		</section>
 
-
-		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
 		<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="../assets/js/template.js"></script>
+		<script type="text/javascript">
+			var iframe = document.getElementById('iframeSphere');
+
+			iframe.onload = function () {
+				var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+				var legendEl = document.getElementById('iframe__fs-legend-yellow-360');
+				var krpano = innerDoc.getElementById("krpano");
+				var hlookat = 0;
+
+				setInterval(function () {
+					hlookat = Number(krpano.get("view.hlookat"));
+					legendEl.style.transform = "rotate(" + hlookat.toFixed(2) + "deg)";
+				}, 1000.0 / 30.0);
+
+				// disable text selection to avoid cursor flickering
+				innerDoc.onload = function() {
+					innerDoc.onselectstart = function() {
+						return false;
+					} // ie
+					innerDoc.onmousedown = function() {
+						return false;
+					} // mozilla
+				}
+			}
+		</script>
 	</body>
 </html>
