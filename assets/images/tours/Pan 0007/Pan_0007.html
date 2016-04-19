@@ -71,26 +71,6 @@
 			passQueryParameters: true
 		});
 
-
-		var isDragging = true;
-		var lookat_interval = null;
-		var pano = document.getElementById('pano');
-
-		pano.addEventListener('mousedown', function () {
-			isDragging = false;
-			console.log('mousedown');
-		});
-		pano.addEventListener('mousemove', function () {
-			if (!isDragging) {
-				getlookat();
-			}
-			// isDragging = true;
-		});
-		pano.addEventListener('mouseup', function () {
-			var wasDragging = isDragging;
-			isDragging = true;
-		});
-
 		function getlookat() {
 			var krpano = document.getElementById("krpano");
 
@@ -101,23 +81,14 @@
 		}
 
 		var legendEl = document.getElementById('iframe__fs-legend-yellow-360');
-		function showmouseinfo() {
-			var krpano = document.getElementById("krpano");
+		var krpano = document.getElementById("krpano");
+		var hlookat = 0;
 
-			var mouse_at_x = krpano.get("mouse.x");
-			var mouse_at_y = krpano.get("mouse.y");
-			var mouse_at_h = krpano.get("mouseath");
-			var mouse_at_v = krpano.get("mouseatv");
+		setInterval(function () {
+			hlookat = Number(krpano.get("view.hlookat"));
+			legendEl.style.transform = "rotate(" + hlookat.toFixed(2) + "deg)";
+		}, 1000.0 / 30.0);
 
-			/*console.log(mouse_at_h.toFixed(2) + "°");
-			console.log(mouse_at_v.toFixed(2) + "°");*/
-			// console.log("rotate(" + mouse_at_h.toFixed(2) + "deg)");
-			legendEl.style.transform = "rotate(" + mouse_at_h.toFixed(2) + "deg)";
-		}
-		// update mouse info 30 times per second
-		// var lookat_interval = setInterval('getlookat()', 1000.0 / 30.0);
-		// var lookat_interval = setInterval('getlookat()', 1000.0);
-		// getlookat()
 
 
 		// disable text selection to avoid cursor flickering
