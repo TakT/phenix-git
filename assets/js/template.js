@@ -159,7 +159,7 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(window).on('resize', function(event) {
-	var windowWidth = jQuery(window).get(0).outerWidth;
+	var windowWidth = jQuery(this).width();
 
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
@@ -170,13 +170,13 @@ jQuery(window).on('resize', function(event) {
 });
 
 jQuery(window).on('load', function(event) {
-	var windowWidth = jQuery(window).get(0).outerWidth;
+	var windowWidth = jQuery(document).width();
 
 	calcInnerPageBg(jQuery(window).height());
 	calFirstScreen(windowWidth);
 
 	if (jQuery('.fullscreen__page').length == 0 && windowWidth >= 1024) {
-		calcSubNavPosition(jQuery(window).width());
+		calcSubNavPosition(jQuery(document).width());
 	}
 
 	var navigation = jQuery('#navigation'),
@@ -190,6 +190,10 @@ jQuery(window).on('load', function(event) {
 		newsPanelInitPositionInit = false,
 		newsPanelInitCssTop = newsPanel.css('top'),
 		newsPanelInitCssRight = newsPanel.css('right');
+
+	jQuery(window).on('resize', function(event) {
+		indexsliderInitHeight = indexslider.height();
+	});
 
 	jQuery(window).on('scroll', function(event) {
 
@@ -245,6 +249,10 @@ jQuery(window).on('load', function(event) {
 	}
 });
 
+function calcNavFixed(windowHeight) {
+
+}
+
 function calcInnerPageBg(windowHeight) {
 	var height = windowHeight - (windowHeight / 3);
 	var headerBg = jQuery('#header-bg');
@@ -285,6 +293,7 @@ function calcSubNavPosition(windowWidth) {
 	navigation.find('ul li .navigation__sub').each(function(index, el) {
 		var $this = jQuery(el);
 		$this.css('width', 'auto');
+		$this.css('left', 'auto');
 		$this.width(windowWidth - $this.offset().left);
 		$this.css('left', $this.parents('li').find('> a').get(0).offsetLeft);
 	});
