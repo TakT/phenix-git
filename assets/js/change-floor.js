@@ -126,8 +126,7 @@ var ChangeFloor = {
 					var polygonObj = this;
 
 					$this.offsetTop = parseInt($this.offsetTop);
-
-					this.animate({
+					this.stop(true, true).animate({
 						opacity: 1,
 					}, 200);
 
@@ -258,7 +257,7 @@ var ChangeFloor = {
 
 	unhoverFloor: function(hoverPolygon) {
 		if (!hoverPolygon.data('soldSVG')) {
-			hoverPolygon.animate({
+			hoverPolygon.stop(true, true).animate({
 				opacity: 0,
 			}, 200);
 		}
