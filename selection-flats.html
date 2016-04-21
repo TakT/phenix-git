@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="./assets/css/jquery.mCustomScrollbar.css">
 		<link rel="stylesheet" href="./assets/css/ion.rangeSlider.css">
 		<link rel="stylesheet" href="./assets/css/ion.rangeSlider.skinHTML5.css">
+		<link rel="stylesheet" href="./assets/css/magnific-popup.css">
 		<link rel="stylesheet" href="./assets/css/styles.css">
 
 		<!--[if IE]>
@@ -370,7 +371,7 @@
 										<input type="checkbox" class="checkbox__custom" id="check_2-1">
 										<label for="check_2-1">Мечеть</label>
 
-										<a href="javascript:void(0);" title="Посмотреть" class="type__item-view3d">
+										<a href="http://farm9.staticflickr.com/8379/8588290361_ecf8c27021_b.jpg" title="Название букашки" class="type__item-view3d js-image">
 											<img src="./assets/images/icons/eye-icon.svg" alt="">
 											<img src="./assets/images/icons/eye-icon-active.svg" alt="" class="view-3d-active">
 										</a>
@@ -691,6 +692,7 @@
 		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="./assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script type="text/javascript" src="./assets/js/ion.rangeSlider.min.js"></script>
+		<script type="text/javascript" src="./assets/js/jquery.magnific-popup.min.js"></script>
 		<script type="text/javascript" src="./assets/js/template.js"></script>
 
 		<script type="text/javascript">
@@ -733,6 +735,31 @@
 					wrappEl.find('.range_area-min').val(data.from);
 					wrappEl.find('.range_area-max').val(data.to);
 				}
+
+				jQuery('.js-image').magnificPopup({
+					type: 'image',
+					closeOnContentClick: true,
+					// closeBtnInside: false,
+					fixedContentPos: true,
+					mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+					closeBtnInside: true,
+					closeMarkup: '<button title="%title%" type="button" class="mfp-close"><svg class="if if-cross"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-cross"></use></svg></button>',
+					image: {
+						verticalFit: true,
+						markup: '<div class="mfp-figure">' +
+							'<div class="mfp-close"></div>' +
+							'<div class="mfp-img"></div>' +
+							'<div class="mfp-bottom-bar">' +
+							'<div class="mfp-title"></div>' +
+							'<div class="mfp-counter"></div>' +
+							'</div>' +
+							'</div>',
+					},
+					zoom: {
+						enabled: true,
+						duration: 300 // don't foget to change the duration also in CSS
+					}
+				});
 
 			})(jQuery);
 		</script>

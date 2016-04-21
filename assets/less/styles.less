@@ -4514,6 +4514,90 @@ form {
 	animation-name: fadeInLeftMin;
 }
 
+/* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+	padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+	top: 0;
+	bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+	padding: 0;
+}
+
+.mfp-content {
+	.mfp-img {
+		border-radius: 3px;
+	}
+
+	.mfp-bottom-bar {
+		top: auto;
+		bottom: 0;
+		padding: 35px 20px;
+		background-color: rgba(0, 0, 0, 0.4);
+		font-family: @fontWarnRegular;
+		font-size: 24px;
+		color: #fff;
+	}
+
+	.mfp-close {
+		top: 0;
+		right: 0;
+		height: 67px;
+		width: 67px;
+		border-top-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+		background-color: rgba(0, 0, 0, 0.4);
+		cursor: pointer;
+		text-align: center;
+		vertical-align: middle;
+		padding: 0;
+		margin: 0;
+
+		.if {
+			fill: #fff;
+			width: 29px;
+			margin: 0 auto;
+		}
+	}
+}
+
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+	cursor: pointer;
+}
+
+
+/* 
+
+for zoom animation 
+uncomment this part if you haven't added this code anywhere else
+
+*/
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+	opacity: 0;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: all 0.3s ease-out; 
+	-moz-transition: all 0.3s ease-out; 
+	-o-transition: all 0.3s ease-out; 
+	transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+		opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+		opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
 @media (max-width: 1366px) {
 	#gallery {
 		// margin-top: -130px;
