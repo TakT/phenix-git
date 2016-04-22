@@ -121,7 +121,33 @@ jQuery(document).ready(function($) {
 			scrollTop: 0
 		}, 400);
 		return false;
-	})
+	});
+
+	if (jQuery.magnificPopup) {
+		jQuery('.js-image').magnificPopup({
+			type: 'image',
+			closeOnContentClick: true,
+			fixedContentPos: true,
+			mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+			closeBtnInside: true,
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"><svg class="if if-cross"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#if-cross"></use></svg></button>',
+			image: {
+				verticalFit: true,
+				markup: '<div class="mfp-figure">' +
+					'<div class="mfp-close"></div>' +
+					'<div class="mfp-img"></div>' +
+					'<div class="mfp-bottom-bar">' +
+					'<div class="mfp-title"></div>' +
+					'<div class="mfp-counter"></div>' +
+					'</div>' +
+					'</div>',
+			},
+			zoom: {
+				enabled: true,
+				duration: 300 // don't foget to change the duration also in CSS
+			}
+		});
+	}
 
 	function toggleNews(newsItem) {
 		var content = newsItem.parents('#content'),
