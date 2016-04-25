@@ -371,6 +371,9 @@ sup {
 #header .header__logo {
   padding-left: 0;
 }
+#header .header__logo img {
+  height: 100%;
+}
 #header .header__menu {
   margin-top: 10px;
   padding-left: 45px;
@@ -4284,6 +4287,7 @@ uncomment this part if you haven't added this code anywhere else
     margin-bottom: 135px;
   }
   #header .header__logo img {
+    height: auto;
     width: 150px;
   }
   #header .header__info {
