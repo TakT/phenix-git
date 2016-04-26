@@ -2388,15 +2388,18 @@ form .select-style select:focus {
 .ie9 .main__page #header {
   visibility: visible;
 }
+.lte9 .main__page #navigation,
+.ie9 .main__page #navigation {
+  overflow: hidden;
+}
 .lte9 #gallery .slider-nav,
 .ie9 #gallery .slider-nav,
 .lte9 #gallery .slider-categories,
 .ie9 #gallery .slider-categories {
   z-index: 999;
 }
-.lte9 #news .news__wrapper .news__item .item__date,
-.ie9 #news .news__wrapper .news__item .item__date {
-  padding-top: 50px;
+.ie #news .news__wrapper .news__item .item__date {
+  padding-top: 60px;
 }
 .commercials__page #statistic__info .info__item .item__title {
   font-size: 60px;
