@@ -2394,6 +2394,10 @@ form .select-style select:focus {
 .ie9 #gallery .slider-categories {
   z-index: 999;
 }
+.lte9 #news .news__wrapper .news__item .item__date,
+.ie9 #news .news__wrapper .news__item .item__date {
+  padding-top: 50px;
+}
 .commercials__page #statistic__info .info__item .item__title {
   font-size: 60px;
   line-height: 55px;
