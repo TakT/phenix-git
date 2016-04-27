@@ -4476,6 +4476,7 @@ uncomment this part if you haven't added this code anywhere else
   }
   #footer .footer__menus .menu__item.menu__item-5 {
     padding-left: 0;
+    margin-left: -30px;
   }
   #footer .footer__menus .footer__loyalty {
     margin-top: 20px;
@@ -4898,6 +4899,21 @@ uncomment this part if you haven't added this code anywhere else
     font-size: 14px;
     padding: 7px 32px;
   }
+  .fullscreen__page #premises .param__dropdown__icons {
+    float: right;
+  }
+  .fullscreen__page #premises .param__dropdown__icons .if {
+    fill: #e9d877;
+  }
+  .fullscreen__page #premises .param__dropdown__icons .if-up-arrow {
+    display: none;
+  }
+  .fullscreen__page #premises .types.active .param__dropdown__icons .if-down-arrow {
+    display: none;
+  }
+  .fullscreen__page #premises .types.active .param__dropdown__icons .if-up-arrow {
+    display: inline-block;
+  }
   .fullscreen__page #premises .premises__content {
     position: relative;
     top: 0;
@@ -4906,12 +4922,16 @@ uncomment this part if you haven't added this code anywhere else
     margin-right: auto;
     margin-left: auto;
   }
+  .fullscreen__page #premises .premises__content .params {
+    margin-bottom: 10px;
+  }
   .fullscreen__page #premises .premises__content .params > .row > [class*="col-xs"] {
     padding: 0;
   }
   .fullscreen__page #premises .premises__content .params .param {
     margin-right: -15px;
     margin-left: -15px;
+    margin-bottom: 10px;
   }
   .fullscreen__page #premises .premises__content .params .param .param__title {
     width: 100%;
@@ -4931,6 +4951,7 @@ uncomment this part if you haven't added this code anywhere else
     margin-bottom: 15px;
   }
   .fullscreen__page #premises .premises__content .params .param .param__content .param__content-inputs {
+    display: block;
     margin-bottom: 15px;
   }
   .fullscreen__page #premises .premises__content .params .param .param__content .param__content-inputs > div {
@@ -4943,6 +4964,65 @@ uncomment this part if you haven't added this code anywhere else
     font-size: 19.69px;
     font-family: 'GothamPro-Medium', Arial, Helvetica, Verdana, sans-serif;
     text-align: center;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav {
+    margin: 0;
+    padding: 0;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li {
+    list-style: none;
+    margin-bottom: 34px;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li a {
+    color: #fff;
+    font-size: 14px;
+    font-family: 'GothamPro', Arial, Helvetica, Verdana, sans-serif;
+    text-decoration: none;
+    position: relative;
+    padding-left: 50px;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li a:before {
+    content: "";
+    top: 50%;
+    left: 0;
+    margin-top: -13px;
+    position: absolute;
+    border: 2px solid #8b9f94;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li a:after {
+    content: "";
+    top: 50%;
+    left: 7px;
+    margin-top: -6px;
+    position: absolute;
+    background-color: #8b9f94;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li.active a {
+    color: #e9d877;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li.active a:before {
+    border-color: #fff;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li.active a:after {
+    background-color: #fff;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li:hover a {
+    color: #e9d877;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li:hover a:before {
+    border-color: #fff;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li:hover a:after {
+    background-color: #fff;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__content .param__content-nav li:last-child {
+    margin-bottom: 0;
   }
   .fullscreen__page #premises .premises__content .params .param .param__content:before {
     content: "";
@@ -4958,30 +5038,47 @@ uncomment this part if you haven't added this code anywhere else
     border-color: transparent transparent #072817 transparent;
   }
   .fullscreen__page #premises .premises__content .params .param .param__items {
+    display: table;
+    width: 100%;
     padding-left: 0;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__items .param__item {
+    display: table-cell;
+    width: 1%;
+    padding: 0 4.5px;
   }
   .fullscreen__page #premises .premises__content .params .param .param__items .param__item a {
     height: 87px;
+    width: 100%;
     padding: 0 45px;
     font-size: 62px;
+    line-height: 96px;
   }
   .fullscreen__page #premises .premises__content .params .param .param__items .param__item.param__item-icon a {
     font-size: 14px;
     padding: 27px 80px;
+    white-space: nowrap;
   }
   .fullscreen__page #premises .premises__content .params .param.param__range {
     margin-right: 0;
     margin-left: 0;
   }
   .fullscreen__page #premises .premises__content .params .param.param__range .param__title {
+    width: 100%;
     font-size: 26px;
     padding: 27px 15px;
   }
   .fullscreen__page #premises .premises__content .params .param.param__range.param__range.first__range {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
   .fullscreen__page #premises .premises__content .params .param.param__range + .param__range {
-    margin-bottom: 0;
+    margin-bottom: 10px;
+  }
+  .fullscreen__page #premises .premises__content .params .param.active .param__dropdown__icons .if-down-arrow {
+    display: none;
+  }
+  .fullscreen__page #premises .premises__content .params .param.active .param__dropdown__icons .if-up-arrow {
+    display: inline-block;
   }
   .fullscreen__page #premises .premises__content .filter__results {
     margin-top: 48px;

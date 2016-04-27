@@ -5291,6 +5291,7 @@ uncomment this part if you haven't added this code anywhere else
 
 				&.menu__item-5 {
 					padding-left: 0;
+					margin-left: -30px;
 				}
 			}
 
@@ -5886,6 +5887,34 @@ uncomment this part if you haven't added this code anywhere else
 		}
 
 		#premises {
+
+			.param__dropdown__icons {
+				float: right;
+
+				.if {
+					fill: @yellow;
+				}
+
+				.if-up-arrow {
+					display: none;
+				}
+			}
+
+			.types {
+				&.active {
+					.param__dropdown__icons {
+
+						.if-down-arrow {
+							display: none;
+						}
+
+						.if-up-arrow {
+							display: inline-block;
+						}
+					}
+				}
+			}
+
 			.premises__content {
 				position: relative;
 				top: 0;
@@ -5895,6 +5924,7 @@ uncomment this part if you haven't added this code anywhere else
 				margin-left: auto;
 
 				.params {
+					margin-bottom: 10px;
 
 					> .row > [class*="col-xs"] {
 						padding: 0;
@@ -5903,6 +5933,7 @@ uncomment this part if you haven't added this code anywhere else
 					.param {
 						margin-right: -15px;
 						margin-left: -15px;
+						margin-bottom: 10px;
 						.param__title {
 							width: 100%;
 							padding: 27px 15px;
@@ -5922,6 +5953,7 @@ uncomment this part if you haven't added this code anywhere else
 							}
 
 							.param__content-inputs {
+								display: block;
 								margin-bottom: 15px;
 								> div {
 									padding: 0;
@@ -5932,6 +5964,76 @@ uncomment this part if you haven't added this code anywhere else
 										font-size: 19.69px;
 										font-family: @fontGMedium;
 										text-align: center;
+									}
+								}
+							}
+
+							.param__content-nav {
+								margin: 0;
+								padding: 0;
+								li {
+									list-style: none;
+									margin-bottom: 34px;
+
+									a {
+										color: #fff;
+										font-size: 14px;
+										font-family: @fontGRegular;
+										text-decoration: none;
+										position: relative;
+										padding-left: 50px;
+
+										&:before {
+											content: "";
+											top: 50%;
+											left: 0;
+											margin-top: -13px;
+											position: absolute;
+											border: 2px solid #8b9f94;
+											border-radius: 50%;
+											width: 24px;
+											height: 24px;
+										}
+
+										&:after {
+											content: "";
+											top: 50%;
+											left: 7px;
+											margin-top: -6px;
+											position: absolute;
+											background-color: #8b9f94;
+											border-radius: 50%;
+											width: 10px;
+											height: 10px;
+										}
+									}
+
+									&.active {
+										a {
+											color: @yellow;
+											&:before {
+												border-color: #fff;
+											}
+											&:after {
+												background-color: #fff;
+											}
+										}
+									}
+
+									&:hover {
+										a {
+											color: @yellow;
+											&:before {
+												border-color: #fff;
+											}
+											&:after {
+												background-color: #fff;
+											}
+										}
+									}
+
+									&:last-child {
+										margin-bottom: 0;
 									}
 								}
 							}
@@ -5952,18 +6054,26 @@ uncomment this part if you haven't added this code anywhere else
 						}
 
 						.param__items {
+							display: table;
+							width: 100%;
 							padding-left: 0;
 							.param__item {
+								display: table-cell;
+								width: 1%;
+								padding: 0 4.5px;
 								a {
 									height: 87px;
+									width: 100%;
 									padding: 0 45px;
-									font-size: 62px
+									font-size: 62px;
+									line-height: 96px;
 								}
 
 								&.param__item-icon {
 									a {
 										font-size: 14px;
 										padding: 27px 80px;
+										white-space: nowrap;
 									}
 								}
 							}
@@ -5974,16 +6084,30 @@ uncomment this part if you haven't added this code anywhere else
 							margin-left: 0;
 
 							.param__title {
+								width: 100%;
 								font-size: 26px;
 								padding: 27px 15px;
 							}
 
 							&.param__range.first__range {
-								margin-bottom: 0;
+								margin-bottom: 10px;
 							}
 
 							+ .param__range {
-								margin-bottom: 0;
+								margin-bottom: 10px;
+							}
+						}
+
+						&.active {
+							.param__dropdown__icons {
+
+								.if-down-arrow {
+									display: none;
+								}
+
+								.if-up-arrow {
+									display: inline-block;
+								}
 							}
 						}
 					}
