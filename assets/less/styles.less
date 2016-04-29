@@ -21,6 +21,7 @@ html {
 }
 
 body {
+	min-width: 320px;
 	color: #000;
 	font: 14px/18px 'WarnockPro-Regular', Helvetica, Verdana, sans-serif;
 }
@@ -264,7 +265,7 @@ sup {
 		font-size: 18px;
 		width: 331px;
 		text-align: center;
-		padmabing: 9px 0;
+		padding: 7px 0;
 		padding-top: 11px;
 		&:hover {
 			background-color: #fdee99;
@@ -6297,10 +6298,250 @@ uncomment this part if you haven't added this code anywhere else
 }
 
 @media (max-width: 719px) {
-
-
 	.visible-xs-inline-block {
 		display: inline-block!important;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		&.btn-yellow {
+			width: 100%;
+		}
+	}
+
+	#header {
+		.header__logo {
+			margin-bottom: 65px;
+		}
+	}
+
+	#indexslider {
+		.slider__wrapper {
+			.slider__content {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.slider__desc {
+		.slider__actions {
+			.btn {
+				width: 100%;
+				display: block;
+			}
+		}
+	}
+
+	.section {
+		.page__title {
+			font-size: 26px;
+			span {
+				line-height: 26px;
+			}
+		}
+	}
+
+	#news {
+		.news__wrapper {
+			margin-bottom: 50px;
+			.news__item {
+				margin: 0;
+				margin-bottom: 50px;
+				text-align: center;
+
+				.item__date,
+				.item__desc {
+					width: 100%;
+					display: block;
+				}
+
+				.item__readmore {
+					display: none;
+				}
+
+				.item__date {
+					margin-bottom: 28px;
+					background-position: top center;
+				}
+
+				.item__desc {
+					padding-left: 0;
+					.item__title {
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}
+
+		.slick-slider {
+			.slick-dots {
+				padding-bottom: 1px;
+				text-align: center;
+				li {
+					&:hover,
+					&.slick-active {
+						button {
+							background-color: #fff;
+						}
+					}
+				}
+				button {
+					border-color: #fff;
+				}
+			}
+		}
+	}
+
+	#features {
+		.features__item {
+			.item__img {
+				height: auto;
+				margin-bottom: 20px;
+			}
+
+			.item__wrapper {
+				padding-bottom: 35px;
+				text-align: center;
+				.item__step {
+					margin-bottom: 15px;
+				}
+
+				.item__title {
+					font-size: 20px;
+					margin-bottom: 25px;
+				}
+
+				.item__desc {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	#statistic {
+		overflow: hidden;
+		min-height: 640px;
+		min-height: 192vw;
+		.statistic__img {
+			position: relative;
+			.img__circle {
+				top: 0;
+				width: 520px;
+				width: 162.5vw;
+				// left: -25%;
+				left: -7em;
+				// left: -70px;
+			}
+
+			.img__house {
+				width: auto;
+				max-width: none;
+				height: 530px;
+				height: 165.625vw;
+				/* right: -60%; */
+				right: -80vw;
+				// right: -16em;
+				// right: -220px;
+			}
+		}
+
+		.statistic__info {
+			top: 43vw;
+			left: 12vw;
+			/* top: 180px;
+			left: 30px; */
+			.info__item {
+				.item__title {
+					font-size: 36px;
+					font-size: 11.25vw;
+				}
+				.item__desc {
+					font-size: 12px;
+					font-size: 3.75vw;
+					line-height: 100%;
+				}
+			}
+		}
+	}
+
+	#footer {
+		.footer__menus {
+			.menu__item {
+				padding-left: 50px !important;
+				padding-right: 15px !important;
+				margin-right: 0 !important;
+				margin-left: 0 !important;
+				margin-bottom: 40px;
+
+				.item__title {
+					margin-bottom: 20px;
+				}
+
+				.item__menu-sub:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.footer__loyalty {
+				margin: 0;
+			}
+		}
+
+		.footer__info {
+
+			.footer__logo {
+				margin: 0 auto;
+				margin-bottom: 20px;
+			}
+			
+			.info__item.info__item-3,
+			.footer__logo-wrapper {
+				width: 100%;
+				text-align: center;
+			}
+
+			.footer__logo-wrapper {
+				margin-bottom: 30px;
+			}
+
+			.info__item {
+				&.info__item-1,
+				&.info__item-2,
+				&.info__item-3,
+				&.info__item-4 {
+					padding-top: 0;
+					padding-left: 0;
+				}
+
+				&.info__item-1,
+				&.info__item-2 {
+					width: 50%;
+				}
+				
+				&.info__item-2 {
+					.info__item-menu {
+						margin-left: 20px;
+					}
+				}
+
+				&.info__item-3 {
+					margin-top: 30px;
+				}
+
+				&.info__item-4 {
+					margin-top: 60px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	#statistic {
+		.statistic__info {
+			top: 52vw;
+		}
 	}
 }
 
