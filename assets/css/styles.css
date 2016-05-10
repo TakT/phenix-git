@@ -2531,7 +2531,7 @@ form .select-style select:focus {
 }
 .statistic .statistic__item .statistic__desc {
   color: #fff;
-  font-size: 16xp;
+  font-size: 16px;
   font-family: 'ProximaNova-Regular', Arial, Helvetica, Verdana, sans-serif;
   line-height: 21px;
 }
@@ -4274,6 +4274,11 @@ uncomment this part if you haven't added this code anywhere else
   }
 }
 @media (max-width: 1023px) {
+  .main__page #navigation,
+  .main__page .slider__desc,
+  .main__page #header {
+    visibility: visible;
+  }
   .container {
     width: 100%;
   }
@@ -4320,7 +4325,7 @@ uncomment this part if you haven't added this code anywhere else
   }
   #navigation {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -4449,6 +4454,10 @@ uncomment this part if you haven't added this code anywhere else
   #indexslider .slick-arrows {
     display: none;
   }
+  #about-desc .full__width .full__width-desc {
+    height: auto;
+    padding: 8.1vw 13.9vw 80px;
+  }
   #news .news__wrapper .news__item {
     display: block;
     position: relative;
@@ -4511,7 +4520,7 @@ uncomment this part if you haven't added this code anywhere else
 					bottom: 0; */
   }
   #header-bg {
-    height: 570px;
+    height: 762px;
     margin-top: 0;
   }
   #header-bg .bg-img {
@@ -4569,6 +4578,7 @@ uncomment this part if you haven't added this code anywhere else
     padding-bottom: 70px;
   }
   #config p {
+    font-size: 16px;
     margin-bottom: 40px;
   }
   #config p br {
@@ -4727,8 +4737,9 @@ uncomment this part if you haven't added this code anywhere else
     margin-top: 45px;
   }
   .mortgage .mortgage__actions .btn {
-    padding: 13px 56px;
+    padding: 13px 0;
     padding-top: 12px;
+    white-space: normal;
   }
   .mortgage .mortgage__title span {
     font-size: 60px;
@@ -5251,6 +5262,11 @@ uncomment this part if you haven't added this code anywhere else
   }
   #indexslider .slider__wrapper .slider__content {
     margin-top: 0;
+    font-size: 21px;
+    line-height: 22.1px;
+  }
+  #indexslider .slider__wrapper .slider__content.error_page {
+    top: 43%;
   }
   .slider__desc .slider__actions .btn {
     width: 100%;
@@ -5401,6 +5417,232 @@ uncomment this part if you haven't added this code anywhere else
   }
   #footer .footer__info .info__item.info__item-4 {
     margin-top: 60px;
+  }
+  .error_page .error__code {
+    font-size: 92px;
+  }
+  .error_page .error__desc {
+    font-size: 20px;
+  }
+  .error_page .btn {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #content.section__bigpadding {
+    padding-top: 45px;
+    padding-bottom: 40px;
+  }
+  #about-developer {
+    height: auto;
+  }
+  #about-developer > .container {
+    position: static;
+  }
+  #about-developer .items {
+    padding-top: 125px;
+    font-size: 0;
+    line-height: 0;
+  }
+  #about-developer .items .item {
+    width: 50%;
+  }
+  #about-developer .items .item .item__wrapper {
+    height: 150px;
+    padding: 35px 10px 0;
+  }
+  #about-desc .full__width .full__width-desc {
+    padding-bottom: 30px;
+  }
+  #statistic__info {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  #statistic__info .info__item .item__desc {
+    font-size: 16px;
+  }
+  #architecture {
+    height: auto;
+    padding-top: 35px;
+    padding-bottom: 130px;
+  }
+  #architecture .page__title {
+    margin-bottom: 100px;
+  }
+  #architecture .section__twotitles .page__title-sub {
+    margin-bottom: 15px;
+  }
+  .section__twotitles {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .section__twotitles .page__title-sub {
+    font-size: 21px;
+    line-height: 26px;
+  }
+  .section__twotitles .page__title-sub.page__title-sub-min {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .section__twotitles p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  #config {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #config p {
+    font-size: 14px;
+  }
+  #config .config__actions .btn {
+    width: auto;
+  }
+  .slick-slider.section__slider .slick-dots {
+    bottom: 20px;
+  }
+  .slick-slider.section__slider .slick-dots li button {
+    width: 10px;
+    height: 10px;
+  }
+  .section__grid {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .section__grid .row {
+    padding: 0 10px;
+  }
+  .section__grid .grid__item {
+    padding-bottom: 50px;
+    margin-bottom: 65px;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .section__grid .grid__item:last-child {
+    margin-bottom: 0;
+  }
+  .section__grid .grid__item .item__img {
+    width: 135px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .section__grid .grid__item .item__title {
+    padding: 0 25px;
+  }
+  #infrastructure .infrastructure__desc .desc__item {
+    width: 100%;
+    font-size: 14px;
+    text-align: center !important;
+    padding: 20px 30px !important;
+  }
+  #infrastructure .infrastructure__desc .desc__item br {
+    display: none;
+  }
+  #ex_offer {
+    padding-bottom: 7px;
+  }
+  #ex_offer p br {
+    display: none;
+  }
+  #security {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  #security .page__title {
+    margin-bottom: 40px;
+  }
+  #security .page__title-sub {
+    margin-bottom: 30px;
+  }
+  #security p {
+    margin-bottom: 30px;
+  }
+  #security p br {
+    display: none;
+  }
+  #security .row__grid {
+    border: none;
+  }
+  #security .row__grid .grid__line {
+    padding: 0 30px;
+  }
+  #security .row__grid .grid__line .grid__item {
+    padding-top: 45px;
+    padding-bottom: 40px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+  }
+  #security .row__grid .grid__line:last-child .grid__item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  #buyng-rules-installment {
+    padding-top: 25px;
+  }
+  #buyng-rules-installment .page__title {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  #buyng-rules-installment .statistic .statistic__item {
+    margin-bottom: 20px;
+  }
+  .installment {
+    margin-bottom: 30px;
+  }
+  .installment .installment__item .item__title {
+    height: auto;
+    text-align: center;
+    font-size: 22px;
+    line-height: 23px;
+    margin-bottom: 20px;
+  }
+  .installment .installment__item .item__text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .statistic .statistic__item {
+    text-align: center;
+  }
+  #buyng-rules-mortgage {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  #buyng-rules-mortgage .page__title {
+    margin-bottom: 45px;
+  }
+  .mortgage .mortgage__image {
+    margin-bottom: 20px;
+  }
+  .mortgage .mortgage__image img {
+    width: 150px;
+  }
+  .mortgage .mortgage__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .mortgage .mortgage__title span {
+    font-size: 50px;
+  }
+  .mortgage .mortgage__title-sub,
+  .mortgage .mortgage__desc {
+    text-align: center;
+  }
+  .mortgage .mortgage__desc {
+    margin-bottom: 35px;
+  }
+  .mortgage .mortgage__title-sub {
+    margin-bottom: 30px;
+  }
+  .mortgage .mortgage__actions {
+    margin: 0;
+    text-align: center;
+  }
+  .mortgage .mortgage__actions .btn {
+    margin-bottom: 10px;
+  }
+  .mortgage .mortgage__image-wrapp {
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 450px) {

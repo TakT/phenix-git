@@ -1019,7 +1019,7 @@
 				var sliderBgImgIndex = true;
 				var slider = jQuery('#indexslider .slider__wrapper');
 
-				if (!oldIE) {
+				if (!oldIE && !isMobile) {
 					var wow = new WOW();
 				}
 
@@ -1028,7 +1028,7 @@
 					if (sliderBgImgIndex && $(this).hasClass('slider__bg')) {
 						sliderBgImgIndex = false;
 
-						if (!oldIE) {
+						if (!oldIE && !isMobile) {
 							wow.init();
 						}
 

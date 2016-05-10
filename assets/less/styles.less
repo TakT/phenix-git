@@ -2857,7 +2857,7 @@ form {
 
 		.statistic__desc {
 			color: #fff;
-			font-size: 16xp;
+			font-size: 16px;
 			font-family: @fontPRegular;
 			line-height: 21px;
 		}
@@ -5026,6 +5026,13 @@ uncomment this part if you haven't added this code anywhere else
 }
 
 @media (max-width: 1023px) {
+
+	.main__page #navigation,
+	.main__page .slider__desc,
+	.main__page #header {
+		visibility: visible;
+	}
+
 	.container {
 		width: 100%;
 	}
@@ -5080,7 +5087,7 @@ uncomment this part if you haven't added this code anywhere else
 
 	#navigation {
 		display: none;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -5251,6 +5258,13 @@ uncomment this part if you haven't added this code anywhere else
 		}
 	}
 
+	#about-desc {
+		.full__width .full__width-desc {
+			height: auto;
+			padding: 8.1vw 13.9vw 80px;
+		}
+	}
+
 	#news .news__wrapper {
 		.news__item {
 			display: block;
@@ -5350,7 +5364,7 @@ uncomment this part if you haven't added this code anywhere else
 	}
 
 	#header-bg {
-		height: 570px;
+		height: 762px;
 		margin-top: 0;
 		.bg-img {
 			position: relative;
@@ -5421,6 +5435,7 @@ uncomment this part if you haven't added this code anywhere else
 		padding-top: 65px;
 		padding-bottom: 70px;
 		p {
+			font-size: 16px;
 			margin-bottom: 40px;
 			.brNone();
 		}
@@ -5628,8 +5643,9 @@ uncomment this part if you haven't added this code anywhere else
 		.mortgage__actions {
 			margin-top: 45px;
 			.btn {
-				padding: 13px 56px;
+				padding: 13px 0;
 				padding-top: 12px;
+				white-space: normal;
 			}
 		}
 
@@ -6320,6 +6336,12 @@ uncomment this part if you haven't added this code anywhere else
 		.slider__wrapper {
 			.slider__content {
 				margin-top: 0;
+				font-size: 21px;
+				line-height: 22.1px;
+
+				&.error_page {
+					top: 43%;
+				}
 			}
 		}
 	}
@@ -6533,6 +6555,314 @@ uncomment this part if you haven't added this code anywhere else
 					margin-top: 60px;
 				}
 			}
+		}
+	}
+
+	.error_page {
+		.error__code {
+			font-size: 92px;
+		}
+
+		.error__desc {
+			font-size: 20px;
+		}
+
+		.btn {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	#content {
+		&.section__bigpadding {
+			padding-top: 45px;
+			padding-bottom: 40px;
+		}
+	}
+
+	#about-developer {
+		height: auto;
+
+		> .container {
+			position: static;
+		}
+
+		.items {
+			padding-top: 125px;
+			font-size: 0;
+			line-height: 0;
+			.item {
+				width: 50%;
+				.item__wrapper {
+					height: 150px;
+					padding: 35px 10px 0;
+				}
+			}
+		}
+	}
+
+	#about-desc {
+		.full__width .full__width-desc {
+			padding-bottom: 30px;
+		}
+	}
+
+	#statistic__info {
+		padding-top: 25px;
+		padding-bottom: 30px;
+		.info__item {
+			.item__desc {
+				font-size: 16px;
+			}
+		}
+	}
+
+	#architecture {
+		height: auto;
+		padding-top: 35px;
+		padding-bottom: 130px;
+
+		.page__title {
+			margin-bottom: 100px;
+		}
+
+		.section__twotitles {
+			.page__title-sub {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	.section__twotitles {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		.page__title-sub {
+			font-size: 21px;
+			line-height: 26px;
+			&.page__title-sub-min {
+				font-size: 18px;
+				line-height: 24px;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 23px;
+		}
+	}
+
+	#config {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		p {
+			font-size: 14px;
+		}
+		.config__actions {
+			.btn {
+				width: auto;
+			}
+		}
+	}
+
+	.slick-slider {
+		&.section__slider {
+			.slick-dots {
+				bottom: 20px;
+				li {
+					button {
+						width: 10px;
+						height: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.section__grid {
+		padding-top: 45px;
+		padding-bottom: 45px;
+
+		.row {
+			padding: 0 10px;
+		}
+
+		.grid__item {
+			padding-bottom: 50px;
+			margin-bottom: 65px;
+			border-right: none;
+			border-bottom: 1px solid #e5e5e5;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.item__img {
+				width: 135px;
+				margin: 0 auto;
+				margin-bottom: 20px;
+			}
+
+			.item__title {
+				padding: 0 25px;
+			}
+		}
+	}
+
+	#infrastructure {
+		.infrastructure__desc {
+			.desc__item {
+				width: 100%;
+				font-size: 14px;
+				text-align: center !important;
+				padding: 20px 30px !important;
+
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+
+	#ex_offer {
+		padding-bottom: 7px;
+		p {
+			br {
+				display: none;
+			}
+		}
+	}
+
+	#security {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		
+		.page__title {
+			margin-bottom: 40px;
+		}
+
+		.page__title-sub {
+			margin-bottom: 30px;
+		}
+
+		p {
+			margin-bottom: 30px;
+			br {
+				display: none;
+			}
+		}
+
+		.row__grid {
+			border: none;
+			.grid__line {
+				padding: 0 30px;
+
+				.grid__item {
+					padding-top: 45px;
+					padding-bottom: 40px;
+					border: 1px solid #e5e5e5;
+					border-bottom: none;
+				}
+
+				&:last-child {
+					.grid__item {
+						border-bottom: 1px solid #e5e5e5;
+					}
+				}
+			}
+		}
+	}
+
+	#buyng-rules-installment {
+		padding-top: 25px;
+		.page__title {
+			text-align: center;
+			margin-bottom: 35px;
+		}
+
+		.statistic {
+			.statistic__item {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.installment {
+		margin-bottom: 30px;
+		.installment__item {
+			.item__title {
+				height: auto;
+				text-align: center;
+				font-size: 22px;
+				line-height: 23px;
+				margin-bottom: 20px;
+			}
+
+			.item__text {
+				text-align: center;
+				font-size: 14px;
+				line-height: 21px;
+			}
+		}
+	}
+
+	.statistic {
+		.statistic__item {
+			text-align: center;
+			.statistic__title {
+
+			}
+		}
+	}
+
+	#buyng-rules-mortgage {
+		padding-top: 35px;
+		padding-bottom: 35px;
+		.page__title {
+			margin-bottom: 45px;
+		}
+	}
+
+	.mortgage {
+		.mortgage__image {
+			margin-bottom: 20px;
+			img {
+				width: 150px;
+			}
+		}
+
+		.mortgage__title {
+			margin-top: 0;
+			margin-bottom: 10px;
+			font-size: 30px;
+			text-align: center;
+			span {
+				font-size: 50px;
+			}
+		}
+		
+		.mortgage__title-sub,
+		.mortgage__desc {
+			text-align: center;
+		}
+
+		.mortgage__desc {
+			margin-bottom: 35px;
+		}
+
+		.mortgage__title-sub {
+			margin-bottom: 30px;
+		}
+
+		.mortgage__actions {
+			margin: 0;
+			text-align: center;
+			.btn {
+				margin-bottom: 10px;
+			}
+		}
+
+		.mortgage__image-wrapp {
+			margin-bottom: 40px;
 		}
 	}
 }
