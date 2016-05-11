@@ -303,17 +303,17 @@
 
 		<section id="statistic__info" class="section statistic__info-oneline">
 			<div class="clearfix">
-				<div class="col-xs-3 col-md-4 info__item wow zoomIn" data-wow-offset="200">
+				<div class="col-xs-12 col-sm-3 col-md-4 info__item wow zoomIn" data-wow-offset="200">
 					<div class="item__title">4 м</div>
 					<div class="item__desc">Высота потолков</div>
 				</div>
 				
-				<div class="col-xs-4 info__item wow zoomIn" data-wow-delay="0.2s" data-wow-offset="200">
+				<div class="col-xs-12 col-sm-4 info__item wow zoomIn" data-wow-delay="0.2s" data-wow-offset="200">
 					<div class="item__title">50-500 м<sup>2</sup></div>
 					<div class="item__desc">Площадь помещений</div>
 				</div>
 				
-				<div class="col-xs-5 col-md-4 info__item wow zoomIn" data-wow-delay="0.3s" data-wow-offset="200">
+				<div class="col-xs-12 col-sm-5 col-md-4 info__item wow zoomIn" data-wow-delay="0.3s" data-wow-offset="200">
 					<div class="item__title">от 700 руб.</div>
 					<div class="item__desc">Стоимость аренды за 1 м<sup>2</sup></div>
 				</div>
@@ -337,7 +337,7 @@
 				<p>Помещения можно как приобрести, так и арендовать. Стоимость аренды одного квадратного метра от 700 рублей. Менеджеры ЖК <br>«Феникс» подберут самые подходящие планировочные решения для вашего бизнеса. С более подробной информацией о способах <br>покупки коммерческой недвижимости можно ознакомиться в разделе «<a href="./buyng-rules.html" title="Условия приобретения">Условия приобретения</a>».</p>
 
 				<div class="config__actions">
-					<a href="javascript:void(0);" class="btn btn-light-green btn-min-i wow fadeInDown" data-wow-offset="300" title="Выбрать коммерческое помещение"><svg class="if if-filter"><use xlink:href="#if-filter"></use></svg> Выбрать коммерческое помещение</a>
+					<a href="javascript:void(0);" class="btn btn-light-green btn-min-i wow fadeInDown" data-wow-offset="300" title="Выбрать коммерческое помещение"><svg class="if if-filter"><use xlink:href="#if-filter"></use></svg> Выбрать <span class="hidden-xs">коммерческое</span> помещение</a>
 				</div>
 			</div>
 		</section>
@@ -554,7 +554,9 @@
 				jQuery('.full__width-img img, .full__width-desc img, #header-bg img, .slider__item img, #comfort-info').preload(function() {
 					if (sliderBgImgIndex) {
 						sliderBgImgIndex = false;
-						new WOW().init();
+						if (!isMobile) {
+							new WOW().init();
+						}
 					}
 					jQuery(this).show();
 				});

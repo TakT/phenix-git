@@ -529,7 +529,9 @@
 				jQuery('.full__width-img img, .full__width-desc img, #header-bg img').preload(function() {
 					if (sliderBgImgIndex) {
 						sliderBgImgIndex = false;
-						new WOW().init();
+						if (!isMobile) {
+							new WOW().init();
+						}
 					}
 					jQuery(this).show();
 				});
