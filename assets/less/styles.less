@@ -2818,9 +2818,10 @@ form {
 }
 
 .installment {
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	.installment__item {
 		color: #fff;
+		margin-bottom: 60px;
 		.item__img {
 			margin-bottom: 20px;
 			img {
@@ -2844,8 +2845,9 @@ form {
 }
 
 .statistic {
-	margin-bottom: 40px;
+	margin-bottom: 0px;
 	.statistic__item {
+		margin-bottom: 40px;
 		.statistic__title {
 			color: @yellow;
 			font-size: 40px;
@@ -6332,6 +6334,13 @@ uncomment this part if you haven't added this code anywhere else
 		}
 	}
 
+	#header-bg {
+		.slider__content {
+			font-size: 24px;
+			line-height: 100%;
+		}
+	}
+
 	#indexslider {
 		.slider__wrapper {
 			.slider__content {
@@ -6789,12 +6798,18 @@ uncomment this part if you haven't added this code anywhere else
 	.installment {
 		margin-bottom: 30px;
 		.installment__item {
+			margin-bottom: 30px;
 			.item__title {
 				height: auto;
 				text-align: center;
 				font-size: 22px;
 				line-height: 23px;
 				margin-bottom: 20px;
+			}
+
+			.item__img {
+				margin-left: -15px;
+				margin-right: -15px;
 			}
 
 			.item__text {
@@ -6806,6 +6821,7 @@ uncomment this part if you haven't added this code anywhere else
 	}
 
 	.statistic {
+		margin-bottom: 60px;
 		.statistic__item {
 			text-align: center;
 			.statistic__title {

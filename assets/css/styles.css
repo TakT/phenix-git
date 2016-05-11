@@ -2495,10 +2495,11 @@ form .select-style select:focus {
   background-color: #009d73;
 }
 .installment {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .installment .installment__item {
   color: #fff;
+  margin-bottom: 60px;
 }
 .installment .installment__item .item__img {
   margin-bottom: 20px;
@@ -2519,6 +2520,9 @@ form .select-style select:focus {
   line-height: 21px;
 }
 .statistic {
+  margin-bottom: 0px;
+}
+.statistic .statistic__item {
   margin-bottom: 40px;
 }
 .statistic .statistic__item .statistic__title {
@@ -5260,6 +5264,10 @@ uncomment this part if you haven't added this code anywhere else
   #header .header__logo {
     margin-bottom: 65px;
   }
+  #header-bg .slider__content {
+    font-size: 24px;
+    line-height: 100%;
+  }
   #indexslider .slider__wrapper .slider__content {
     margin-top: 0;
     font-size: 21px;
@@ -5587,6 +5595,9 @@ uncomment this part if you haven't added this code anywhere else
   .installment {
     margin-bottom: 30px;
   }
+  .installment .installment__item {
+    margin-bottom: 30px;
+  }
   .installment .installment__item .item__title {
     height: auto;
     text-align: center;
@@ -5594,10 +5605,17 @@ uncomment this part if you haven't added this code anywhere else
     line-height: 23px;
     margin-bottom: 20px;
   }
+  .installment .installment__item .item__img {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
   .installment .installment__item .item__text {
     text-align: center;
     font-size: 14px;
     line-height: 21px;
+  }
+  .statistic {
+    margin-bottom: 60px;
   }
   .statistic .statistic__item {
     text-align: center;
