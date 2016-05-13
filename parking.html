@@ -308,22 +308,22 @@
 
 			<div class="clearfix">
 				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300" data-wow-delay="0.3s">
-					<div class="item__title">198</div>
+					<div class="item__title"><span>198</span></div>
 					<div class="item__desc">Машиномест в подземном паркинге</div>
 				</div>
 				
 				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300" data-wow-delay="0.4s">
-					<div class="item__title">36</div>
+					<div class="item__title"><span>36</span></div>
 					<div class="item__desc">Машиномест наземный паркинг</div>
 				</div>
 				
 				<div class="col-xs-12 col-md-4 info__item wow zoomIn" data-wow-offset="300" data-wow-delay="0.5s">
-					<div class="item__title">от 550  тыс. руб. </div>
+					<div class="item__title">от <span>550</span>  тыс. руб. </div>
 					<div class="item__desc">Стоимость парковочного места</div>
 				</div>
 			</div>
 
-			<div class="text-center">
+			<div class="statistic__info-action text-center">
 				<a href="javascript:void(0);" title="Оформить заявку" class="btn btn-light-green wow fadeInDown" data-wow-offset="250">Оформить заявку</a>
 			</div>
 		</section>
@@ -541,7 +541,9 @@
 				jQuery('.full__width-img img, .full__width-desc img, #header-bg img').preload(function() {
 					if (sliderBgImgIndex) {
 						sliderBgImgIndex = false;
-						new WOW().init();
+						if (!isMobile) {
+							new WOW().init();
+						}
 					}
 					jQuery(this).show();
 				});

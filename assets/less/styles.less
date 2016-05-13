@@ -6369,6 +6369,9 @@ uncomment this part if you haven't added this code anywhere else
 			font-size: 26px;
 			span {
 				line-height: 26px;
+				&:before {
+					bottom: -10px;
+				}
 			}
 		}
 		&.section__white {
@@ -7042,6 +7045,163 @@ uncomment this part if you haven't added this code anywhere else
 			font-size: 18px;
 			line-height: 20px;
 			margin-bottom: 25px;
+		}
+	}
+
+	#content {
+		.content__menu {
+			margin-bottom: 35px;
+			ul {
+				li {
+					font-size: 26px;
+					a {
+						line-height: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.page__news {
+		#content {
+			padding-top: 15px;
+			.content__news {
+				.news__col {
+					padding-right: 15px;
+					padding-left: 15px;
+					.news__item {
+						padding: 0;
+						margin-bottom: 35px;
+						.news__date,
+						.news__desc {
+							display: block;
+							width: 100%;
+						}
+
+						.news__date {
+							padding-top: 40px;
+							background-position: center;
+							margin-bottom: 30px;
+						}
+
+						.news__desc {
+							text-align: center;
+							padding-left: 0;
+							.item__text {
+								margin-bottom: 0;
+							}
+						}
+
+						.news__readmore {
+							display: none;
+						}
+					}
+				}
+			}
+		
+			.content__news-item {
+				// height: auto;
+				.content__news-item-wrapper {
+					padding: 105px 30px 12px 30px;
+					.content__news-item-panel {
+						right: -26px;
+					}
+
+					.item {
+						.item__date {
+							.date__day {
+								font-size: 30px;
+							}
+
+							.date__month {
+								font-size: 12px;
+							}
+						}
+
+						.item__title {
+							font-size: 20px;
+							line-height: 24px;
+						}
+
+						.item__text {
+							b {
+								font-size: 16px;
+								line-height: 23px;
+							}
+							p {
+								font-size: 14px;
+								line-height: 23px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.parking__page {
+		#statistic__info {
+			padding-top: 45px;
+			padding-bottom: 50px;
+
+			.statistic__info-desc {
+				margin-bottom: 35px;
+			}
+
+			.info__item {
+				margin-bottom: 45px;
+				.item__title {
+					font-size: 30px;
+					line-height: 100%;
+					span {
+						font-size: 50px;
+						line-height: 100%;
+					}
+				}
+			}
+
+			.btn {
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.statistic__info-action {
+				padding: 0 15px;
+			}
+		}
+	}
+
+	.fullscreen__page {
+		#premises {
+			.premises__content {
+				.params {
+					.param {
+						.param__title {
+							font-size: 20px;
+							line-height: 25.1px;
+						}
+						
+						&.active {
+							.param__dropdown__icons .if-up-arrow {}
+						}
+
+						&.param__range {
+							.param__title {
+								font-size: 20px;
+								line-height: 25.1px;
+							}
+						}
+					}
+				}
+			}
+
+			.param__dropdown__icons {
+				.if {
+					width: 18px;
+					height: 23px;
+				}
+			}
 		}
 	}
 }

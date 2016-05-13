@@ -5286,6 +5286,9 @@ uncomment this part if you haven't added this code anywhere else
   .section .page__title span {
     line-height: 26px;
   }
+  .section .page__title span:before {
+    bottom: -10px;
+  }
   .section.section__white .page__title {
     margin-bottom: 40px;
   }
@@ -5778,6 +5781,108 @@ uncomment this part if you haven't added this code anywhere else
     font-size: 18px;
     line-height: 20px;
     margin-bottom: 25px;
+  }
+  #content .content__menu {
+    margin-bottom: 35px;
+  }
+  #content .content__menu ul li {
+    font-size: 26px;
+  }
+  #content .content__menu ul li a {
+    line-height: 100%;
+  }
+  .page__news #content {
+    padding-top: 15px;
+  }
+  .page__news #content .content__news .news__col {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .page__news #content .content__news .news__col .news__item {
+    padding: 0;
+    margin-bottom: 35px;
+  }
+  .page__news #content .content__news .news__col .news__item .news__date,
+  .page__news #content .content__news .news__col .news__item .news__desc {
+    display: block;
+    width: 100%;
+  }
+  .page__news #content .content__news .news__col .news__item .news__date {
+    padding-top: 40px;
+    background-position: center;
+    margin-bottom: 30px;
+  }
+  .page__news #content .content__news .news__col .news__item .news__desc {
+    text-align: center;
+    padding-left: 0;
+  }
+  .page__news #content .content__news .news__col .news__item .news__desc .item__text {
+    margin-bottom: 0;
+  }
+  .page__news #content .content__news .news__col .news__item .news__readmore {
+    display: none;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper {
+    padding: 105px 30px 12px 30px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .content__news-item-panel {
+    right: -26px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .item .item__date .date__day {
+    font-size: 30px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .item .item__date .date__month {
+    font-size: 12px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .item .item__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .item .item__text b {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .page__news #content .content__news-item .content__news-item-wrapper .item .item__text p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .parking__page #statistic__info {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+  .parking__page #statistic__info .statistic__info-desc {
+    margin-bottom: 35px;
+  }
+  .parking__page #statistic__info .info__item {
+    margin-bottom: 45px;
+  }
+  .parking__page #statistic__info .info__item .item__title {
+    font-size: 30px;
+    line-height: 100%;
+  }
+  .parking__page #statistic__info .info__item .item__title span {
+    font-size: 50px;
+    line-height: 100%;
+  }
+  .parking__page #statistic__info .btn {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .parking__page #statistic__info .statistic__info-action {
+    padding: 0 15px;
+  }
+  .fullscreen__page #premises .premises__content .params .param .param__title {
+    font-size: 20px;
+    line-height: 25.1px;
+  }
+  .fullscreen__page #premises .premises__content .params .param.param__range .param__title {
+    font-size: 20px;
+    line-height: 25.1px;
+  }
+  .fullscreen__page #premises .param__dropdown__icons .if {
+    width: 18px;
+    height: 23px;
   }
 }
 @media (max-width: 450px) {
